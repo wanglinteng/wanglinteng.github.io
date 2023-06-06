@@ -91,6 +91,41 @@
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
+			<a href="/post/2014-d-%E4%BA%8C-3/" rel="bookmark">
+			2014-d-二-3
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-23T00:00:00Z">October 23, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		// 未确认
+int visit[maxSize]; int stack[maxSize]; int j=0; int u,pre;//第二个结点、用于指向出栈前的结点 int len; void dfs(AGraph *G,int v) { ArcNode *p;//边结点  visit[v]=1;//标记访问  stack[++j]=v;//新访问结点入栈  if(v==u)//找到一条联通路径  { if(j-1==len)//判断路径长度是否符合规定  { //输出路径  } visit[v]=0; pre=v; --j;//u顶点先出栈  for(k=j;k&gt;0;k--) { p=G-&gt;adjlist[stack[k]].firstarc; while(p!=NULL) { if(visit[p-&gt;adjvex]==0&amp;&amp;p-adjvex!=pre) { dfs(G,p-&gt;adjvex); } p=p-&gt;next; } } } p=G-&gt;adjlist[v].firstarc; while(p!=NULL) { if(visit[p-&gt;adjvex]==0) { dfs(G,p-&gt;adjvex); } p=p-&gt;next; } } 
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/2014-c-%E4%B8%89-1/" rel="bookmark">
+			2014-c-三-1
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-20T00:00:00Z">October 20, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		int main() { int i=1; while(((i%5==1)&amp;&amp;(i%6==5)&amp;&amp;(i%7==4)&amp;&amp;(i%11==10))==0) { i++; } printf(&#34;i=%d&#34;,i); } 
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
 			<a href="/post/2014-c-%E4%B8%89-2/" rel="bookmark">
 			2014-c-三-2
 			</a>
@@ -223,40 +258,6 @@
 	<div class="content list__excerpt post__content clearfix">
 		#include &lt;stdio.h&gt;#define maxSize 100 //字符串复制函数 str_copy(char *str,char *kid,int k) { char *p;//原始字符串指针  char *q;//新字符串指针  p=str+k-1;//指向第k个字符  q=kid; while(*p!=&#39;\0&#39;) { *q=*p; q++; p++; } *q=&#39;\0&#39;; } //主函数 int main() { char str[maxSize]; char kid[maxSize]; int k; scanf(&#34;%s&#34;,str); scanf(&#34;%d&#34;,&amp;k); str_copy(str,kid,k);//调用复制函数  printf(&#34;%s\n&#34;,str); printf(&#34;%s\n&#34;,kid); } 
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/2016-d-%E4%BA%8C-2/" rel="bookmark">
-			【2016-d-二-2】求二叉树指定结点的层数
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-16T00:00:00Z">October 16, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		/** 算法思想：由二叉树的遍历特点，指针总是由上层走向下层，一直走到最底层 然后返回上层。设置变量记录层数，当指针走向下层时层数加一 返回上层时，层数减一。如果找到指定结点，输出层数。 **/ int l = 1; void leno (BTNode *p,char x) { if(p!=NULL) { if(p-&gt;data==x) printf(&#34;%d&#34;,l); ++l; leno(p-&gt;lchild,x); leno(p-&gt;rchild,x); --l; } } 
-	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/2016-d-%E4%BA%8C-3/" rel="bookmark">
-			【2016-d-二-3】求无向图联通分量个数，并输出联通分量的顶点集
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-16T00:00:00Z">October 16, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		/** 算法思想： 从任意一个结点开始，进行深度优先搜索，输出访问过的结点。 连通分量加一，再选取未被访问过的节点进行深度优先搜索。 直到所有结点都被访问完。 **/ #define maxSize 100 int visit[maxSize]; void conCom(AGraph *G) { int i; int count=0; for(i=0;i&lt;G-&gt;n;i++) { if(visit[i]==0) { DFS(G,i); count++; } } printf(&#34;%d&#34;,count); } void DFS(AGraph *G,int v) { ArcNode *p;//边指针  visit[v]=1;//标记访问  printf(&#34;%d&#34;,v); p=G-&gt;adjlist[v].firstarc; while(p!=NULL) { if(visit[p-&gt;adjvex]==0) { DFS(G,p-&gt;adjvex); p=p-&gt;nextarc; } } } 
-	</div>
 </article>
 </main>
 
@@ -297,7 +298,6 @@
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/842%E8%80%83%E7%A0%94/" title="842考研">842考研</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/js/" title="js">js</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/langchain/" title="langchain">langchain</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/llama-index/" title="llama-index">llama-index</a>
