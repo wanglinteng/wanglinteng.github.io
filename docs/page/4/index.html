@@ -74,14 +74,21 @@
 			</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="/842%E8%80%83%E7%A0%94/">
+			<a class="menu__link" href="/post/1994-%E5%9B%9B/">
 				
 				<span class="menu__text">842考研</span>
 				
 			</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="/about/">
+			<a class="menu__link" href="/docs/842/">
+				
+				<span class="menu__text">842</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/docs/about/">
 				
 				<span class="menu__text">About</span>
 				
@@ -97,6 +104,40 @@
 			
 <main class="main list" role="main">
 	<article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/2006-d-%E4%B8%89/" rel="bookmark">
+			2006-d-三
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-10T00:00:00Z">November 10, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		//分别求出一个结点的左右孩子结点的高度做差即为平衡因子  int depth(BTNode *bt) { int r,l; if(bt==NULL) return 0; else { l=depth(bt-&gt;lchild); r=depth(bt-&gt;rchild); return (l&gt;r?l:r)+1; } } int balance(BTNode *T,int n)//n初始传入值为0 { int l,r; if(T!=NULL) { balance(T-&gt;lchild,n); balance(T-&gt;rchild,n); l=depth(T-&gt;lchild); r=depth(T-&gt;rchild); if(l+r&gt;0) ++n;//记录非叶子结点个数  printf(&#34;%d&#34;,l-r);//打印平衡因子  } return n; } 
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/2006-d-%E4%BA%8C/" rel="bookmark">
+			2006-d-二
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-10T00:00:00Z">November 10, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		#include&lt;stdio.h&gt;#define maxSize 100  void Palindrome(LNode *h,int n) { char stack[maxSize],top=-1;//定义栈  char queue[maxSize],front=0,rear=0;//定义队列  char a,b; int i,count=0; LNode *p=h; for(i=0;i&lt;n;i++)//前n个字母分别入栈入队  { stack[++top]=p-&gt;data; queue[rear++]=p-&gt;data; p=p-&gt;next; } for(i=0;i&lt;n;i++) { a=stack[top--];//出栈  b=queue[front++];//出队  if(a!=b) break; else count++; } if(count!=n) printf(&#34;非回文\n&#34;); else printf(&#34;回文\n&#34;); } 
+	</div>
+</article><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
@@ -238,40 +279,6 @@
 	<div class="content list__excerpt post__content clearfix">
 		#include &lt;stdio.h&gt; int main() { char *s=&#34;121&#34;; int k=0,a=0,b=0; do{ k++; if(k%2==0){a=a+s[k]-&#39;0&#39;;continue;} b=b+s[k]-&#39;0&#39;;a=a+s[k]-&#39;0&#39;; }while(s[k+1]); printf(&#34;k=%d,a=%d,b=%d&#34;,k,a,b); } 
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/2007-c-%E5%9B%9B/" rel="bookmark">
-			2007-c-四
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-05T00:00:00Z">November 05, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		//优化简洁算法 void recycle(LNode *c) { int i=1; LNode *p,*q,*pre; pre=c; p=c-&gt;next; while(p!=NULL) { if((x&amp;(x-1))==0)//此处采取位运算：如果一个数x为2的平方，那么x&amp;x-1==0 { printf(&#34;%d&#34;,p-&gt;data); pre-&gt;next=p-&gt;next; q=p;//暂存待释放结点 p=p-&gt;next; free(q);//释放 } p=p-&gt;next;pre=pre-&gt;next;//指针下移 ++i;//报数增加一 } if(c-&gt;next!=NULL) recycle(c);//圈子里面，还有人继续报数 } ----------------------------------------------------------------------------------------- #include #include #define N 10  typedef struct LNode { int data; struct LNode *next; } LNode; //建立线性表 LNode* create() { LNode *c,*s,*r; int i; c=(LNode*)malloc(sizeof(LNode)); c-&gt;next=NULL; r=c; for(i=1;i&lt;=N;++i) { s=(LNode*)malloc(sizeof(LNode)); s-&gt;data=i; s-&gt;next=NULL; r-&gt;next=s; r=r-&gt;next; } return c; } //删除线性表某个节点 void seaDel(LNode *c,int x) { LNode *p,*q; p=c; //查找 while(p-&gt;next!
-	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/2007-d-%E5%9B%9B/" rel="bookmark">
-			2007-d-四
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-05T00:00:00Z">November 05, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		#include #include typedef struct BTNode { int	data; struct BTNode	* lchild; struct BTNode	* rchild; } BTNode; /* 创建排序树 */ BTNode* create() { BTNode	*root; int	n; scanf( &#34;%d&#34;, &amp;n ); if ( n == -1 ) return(NULL); else{ root	= (BTNode *) malloc( sizeof(BTNode) ); root-&gt;data	= n; root-&gt;lchild	= create(); root-&gt;rchild	= create(); } return(root); } /* 向二叉排序树中插入值 */ void insert( BTNode* root, int key ) { BTNode	* p	= NULL, *pre = NULL; BTNode	* c	= (BTNode *) malloc( sizeof(BTNode) ); c-&gt;data	= key; c-&gt;lchild	= NULL; c-&gt;rchild	= NULL; /* 树为空 */ if ( NULL == root ) { root == c; }else{ p = root; while ( NULL !
-	</div>
 </article>
 </main>
 
@@ -298,8 +305,8 @@
 			<li class="widget__item"><a class="widget__link" href="/docs/getting-started/">Getting started</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/customization/">Customization</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/faq/">Frequently asked questions (FAQ)</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/llm_develop_tools/">LLM Develop Tools</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/%E6%88%91%E7%9A%84%E8%80%83%E7%A0%94%E8%B7%AF/">我的考研路</a></li>
+			<li class="widget__item"><a class="widget__link" href="/docs/842/">842考研</a></li>
+			<li class="widget__item"><a class="widget__link" href="/docs/about/">About</a></li>
 		</ul>
 	</div>
 </div>

@@ -74,14 +74,21 @@
 			</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="/842%E8%80%83%E7%A0%94/">
+			<a class="menu__link" href="/post/1994-%E5%9B%9B/">
 				
 				<span class="menu__text">842考研</span>
 				
 			</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="/about/">
+			<a class="menu__link" href="/docs/842/">
+				
+				<span class="menu__text">842</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/docs/about/">
 				
 				<span class="menu__text">About</span>
 				
@@ -97,6 +104,40 @@
 			
 <main class="main list" role="main">
 	<article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/2007-c-%E5%9B%9B/" rel="bookmark">
+			2007-c-四
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-05T00:00:00Z">November 05, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		//优化简洁算法 void recycle(LNode *c) { int i=1; LNode *p,*q,*pre; pre=c; p=c-&gt;next; while(p!=NULL) { if((x&amp;(x-1))==0)//此处采取位运算：如果一个数x为2的平方，那么x&amp;x-1==0 { printf(&#34;%d&#34;,p-&gt;data); pre-&gt;next=p-&gt;next; q=p;//暂存待释放结点 p=p-&gt;next; free(q);//释放 } p=p-&gt;next;pre=pre-&gt;next;//指针下移 ++i;//报数增加一 } if(c-&gt;next!=NULL) recycle(c);//圈子里面，还有人继续报数 } ----------------------------------------------------------------------------------------- #include #include #define N 10  typedef struct LNode { int data; struct LNode *next; } LNode; //建立线性表 LNode* create() { LNode *c,*s,*r; int i; c=(LNode*)malloc(sizeof(LNode)); c-&gt;next=NULL; r=c; for(i=1;i&lt;=N;++i) { s=(LNode*)malloc(sizeof(LNode)); s-&gt;data=i; s-&gt;next=NULL; r-&gt;next=s; r=r-&gt;next; } return c; } //删除线性表某个节点 void seaDel(LNode *c,int x) { LNode *p,*q; p=c; //查找 while(p-&gt;next!
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/2007-d-%E5%9B%9B/" rel="bookmark">
+			2007-d-四
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-05T00:00:00Z">November 05, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		#include #include typedef struct BTNode { int	data; struct BTNode	* lchild; struct BTNode	* rchild; } BTNode; /* 创建排序树 */ BTNode* create() { BTNode	*root; int	n; scanf( &#34;%d&#34;, &amp;n ); if ( n == -1 ) return(NULL); else{ root	= (BTNode *) malloc( sizeof(BTNode) ); root-&gt;data	= n; root-&gt;lchild	= create(); root-&gt;rchild	= create(); } return(root); } /* 向二叉排序树中插入值 */ void insert( BTNode* root, int key ) { BTNode	* p	= NULL, *pre = NULL; BTNode	* c	= (BTNode *) malloc( sizeof(BTNode) ); c-&gt;data	= key; c-&gt;lchild	= NULL; c-&gt;rchild	= NULL; /* 树为空 */ if ( NULL == root ) { root == c; }else{ p = root; while ( NULL !
+	</div>
+</article><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
@@ -233,41 +274,6 @@
 	<div class="content list__excerpt post__content clearfix">
 		//void BFS(AGraph *G,int v,int visit[maxSize]) void DS(AGraph *G,int v,int visit[maxSize]) { //visit数组被初始化为全0  ArcNode *p; //int que[maxSize],front=0,rear=0;  int stack[maxSize],top=-1; int j; visit[v]=1; //rear=(rear+1)%maxSize;  //que[rear]=v;  stack[++top]=v; while(front!=rear) { //front =(front+1)%maxSize;  //j=que[front];  j=stack[top--]; p=G-&gt;adjlist[j].firstarc; while(p!=NULL) { if(visit[p-&gt;adjvex]==0) { visit[p-&gt;adjvex]=1; //rear=rear+1;  //que[rear]=p-&gt;adjvex;  stack[++top]=p-&gt;adjvex; } p=p-&gt;nextarc; } } } 
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/2011-c-%E4%B8%80-5/" rel="bookmark">
-			2011-c-一-5
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-30T00:00:00Z">October 30, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		//递增：1，不递增：0 int dec(int a[],int n) { if(n==0) return 1; //递增  if(a[n]&gt;a[n-1]) return dec(a,n-1); else return 0; //不递增 } 方法二：
-int dec(int a[], int n) { //printf(&#34;n=%d,&#34;,n);  //printf(&#34;a[0]=%d\n&#34;,a[0]);  if (n &lt;= 1) { return 0;//非递增  } if (a[0] &lt; a[1]) { return dec(++a,--n);//注意n--是先把值给dec再减  }else{ return 1;//递增  } } int main() { int a[]={1,2,9,5}; printf(&#34;%d&#34;,dec(a,4)); } 
-	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/2011-c-%E4%BA%8C-1/" rel="bookmark">
-			2011-c-二-1
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-30T00:00:00Z">October 30, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;int main() { //定义文件指针  FILE *p; char c; int num=0; //打开文件  if((p=fopen(&#34;.\\demo.txt&#34;,&#34;r&#34;))==NULL) { printf(&#34;error&#34;); exit(-1); } while(fscanf(p,&#34;%c&#34;,&amp;c)!=EOF) { ++num; printf(&#34;%c&#34;,c); if(num==10) { printf(&#34;\n&#34;); num=0; } } } 
-	</div>
 </article>
 </main>
 
@@ -294,8 +300,8 @@ int dec(int a[], int n) { //printf(&#34;n=%d,&#34;,n);  //printf(&#34;a[0]=%d\n&
 			<li class="widget__item"><a class="widget__link" href="/docs/getting-started/">Getting started</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/customization/">Customization</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/faq/">Frequently asked questions (FAQ)</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/llm_develop_tools/">LLM Develop Tools</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/%E6%88%91%E7%9A%84%E8%80%83%E7%A0%94%E8%B7%AF/">我的考研路</a></li>
+			<li class="widget__item"><a class="widget__link" href="/docs/842/">842考研</a></li>
+			<li class="widget__item"><a class="widget__link" href="/docs/about/">About</a></li>
 		</ul>
 	</div>
 </div>

@@ -74,14 +74,21 @@
 			</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="/842%E8%80%83%E7%A0%94/">
+			<a class="menu__link" href="/post/1994-%E5%9B%9B/">
 				
 				<span class="menu__text">842考研</span>
 				
 			</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="/about/">
+			<a class="menu__link" href="/docs/842/">
+				
+				<span class="menu__text">842</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/docs/about/">
 				
 				<span class="menu__text">About</span>
 				
@@ -97,6 +104,40 @@
 			
 <main class="main list" role="main">
 	<article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/2015-d-%E4%BA%8C-2/" rel="bookmark">
+			2015-d-二-2
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-18T00:00:00Z">October 18, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		//天勤p141原题 typedef struct { BTNode *p; int lno; }st; int maxNode(BTNode *b) { //新队列初始化  st que[maxSize]; int front,rear; front=rear=0; //辅助变量  int lno,i,j,n=0,max=0; BTNode *q; if(b!=NULL) { ++rear; que[rear].p=b; que[rear].lno=1; while(front!=rear) { ++front; q=que[front].p; lno=que[front].lno; if(q-&gt;lchild!=NULL) { ++rear; que[rear].p=q-&gt;lchild; que[rear].lno=lno+1; } if(q-&gt;rchild!=NULL) { ++rear; que[rear].p=q-&gt;rchild; que[rear].lno=lno+1; } } for(i=1;i&lt;=lno;i++) { for(j=1;j&lt;=rear;++j) if(que[j].lno==i) ++n; if(max&lt;n) max=n; } return max; } return 0; } 
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/2015-d-%E4%BA%8C-3/" rel="bookmark">
+			2015-d-二-3
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-18T00:00:00Z">October 18, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		/** 算法思想： 采用迪杰斯特拉算法，找出v0到其余各个节点的最小路径。 遍历输出最小路径为k的节点 **/ // 邻接矩阵 typedef struct Graph { char vexs[MAX];	// 顶点集合 	int vexnum;	// 顶点数 	int edgnum;	// 边数 	int matrix[MAX][MAX]; // 邻接矩阵 }Graph; /* * 参数说明： *	G -- 图 *	vs -- 起始顶点(start vertex)。即计算&#34;顶点vs&#34;到其它顶点的最短路径。 *	prev -- 前驱顶点数组。即，prev[i]的值是&#34;顶点vs&#34;到&#34;顶点i&#34;的最短路径所经历的全部顶点中，位于&#34;顶点i&#34;之前的那个顶点。 *	dist -- 长度数组。即，dist[i]是&#34;顶点vs&#34;到&#34;顶点i&#34;的最短路径的长度。 */ void dijkstra(Graph G, int vs, int prev[], int dist[]) { int i,j,k; int min; int tmp; int flag[MAX];	// flag[i]=1表示&#34;顶点vs&#34;到&#34;顶点i&#34;的最短路径已成功获取。  // 初始化 	for (i = 0; i &lt; G.
+	</div>
+</article><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
@@ -233,43 +274,6 @@
 	<div class="content list__excerpt post__content clearfix">
 		#include &lt;stdio.h&gt; int main() { int i,j,l;//中间变量  int n;//项数  int s=0;//总和  printf(&#34;请输入项数n的值\n&#34;); scanf(&#34;%d&#34;,&amp;n); for(i=1;i&lt;=n;i++) { int k =1;//每次开始的值  int m =1;//每次累乘和  for(j=1;j&lt;i;j++) k=k+j;//求出每项开始值  for(l=k;l&lt;k+i;l++) m=m*l;//每项累乘  s=s+m; } printf(&#34;前%d项和为：%d\n&#34;,n,s); } 
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/2016-c-%E4%B8%89-2/" rel="bookmark">
-			【2016-c-三-2】歌咏比赛，去掉最高分最低分，输出前三名
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-06T00:00:00Z">October 06, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		#include &lt;stdio.h&gt; //定义学生结构体，包含学生编号和成绩两部分 typedef struct Competitor { double grade; int number; } Competitor; double get_grade(int n) { int sum = 0; int min,max;//定义总分，最高分，最低分  int s;//老师打分  int i;//循环控制变量  double average;//定义平均分  printf(&#34;现在对编号为%d的选手打分\n&#34;,n); for(i=0;i&lt;8;i++) { printf(&#34;请第%d位老师打分:\n&#34;,i+1); scanf(&#34;%d&#34;,&amp;s); //第一个老师打的分赋值  if(i==0) { max=s; min=s; } //找最高分最低分  if(max&lt;s) max=s; if(min&gt;s) min=s; sum = sum + s; } sum = sum - min - max;//去掉最高分、去掉最低分  average = sum/6.0; printf(&#34;编号为%d的选手平均分为%f\n&#34;,n,average); return average; } int main() { Competitor c[5];//20位太多了，5位测试  int i; int j; for(i=0;i&lt;5;i++) { int n; printf(&#34;请输入学生编号：&#34;); scanf(&#34;%d&#34;,&amp;n); c[i].
-	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/1998-c-%E4%BA%8C/" rel="bookmark">
-			1998-c-二
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-05T00:00:00Z">October 05, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		算法思想: 输入一个数x，将其对n取余(n从2开始)，如果余数为零，m=m/n,重复操作。如果余数不为零，n++,直到找到能够被其整除的数。
-非递归算法
-#include &lt;stdio.h&gt;int main() { int n, i, c;//需要分解的自然数  scanf(&#34;%d&#34;, &amp;n); i = 2; c = n; printf(&#34;%d=&#34;, n); while(n != 1) { if(n%i == 0) { printf(&#34;%s%d&#34;, c == n ? &#34;&#34; : &#34;*&#34;, i); n /= i; } else ++i; } } 递归算法实现
-#include &lt;stdio.h&gt; void num_break(int c,int n,int i) { if(n!=1)//n==1,证明分解完毕 	{ if(n%i==0) { printf(&#34;%s%d&#34;, c == n ? &#34;&#34; : &#34;*&#34;, i); n/=i; num_break(c,n,i); }	else num_break(c,n,++i); } } int main() { num_break(140,140,2); } 
-	</div>
 </article>
 </main>
 
@@ -296,8 +300,8 @@
 			<li class="widget__item"><a class="widget__link" href="/docs/getting-started/">Getting started</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/customization/">Customization</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/faq/">Frequently asked questions (FAQ)</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/llm_develop_tools/">LLM Develop Tools</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/%E6%88%91%E7%9A%84%E8%80%83%E7%A0%94%E8%B7%AF/">我的考研路</a></li>
+			<li class="widget__item"><a class="widget__link" href="/docs/842/">842考研</a></li>
+			<li class="widget__item"><a class="widget__link" href="/docs/about/">About</a></li>
 		</ul>
 	</div>
 </div>
