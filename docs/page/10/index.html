@@ -64,13 +64,6 @@
 			</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="/post/llm_develop_tools/">
-				
-				<span class="menu__text">Article</span>
-				
-			</a>
-		</li>
-		<li class="menu__item">
 			<a class="menu__link" href="/about/">
 				
 				<span class="menu__text">About</span>
@@ -87,6 +80,40 @@
 			
 <main class="main list" role="main">
 	<article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/1996-d-%E4%BA%94/" rel="bookmark">
+			1996-d-五
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-09-24T00:00:00Z">September 24, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		/** 交换二叉树每个结点左右孩子节点（非递归算法） 算法的基本思想： 1.判断根节点地址是否为空，为空返回 2.将结点放入顺序队列中，每次出队一个结点 3.交换该节点的左右孩子结点,并将孩子结点插入队尾 **/ void change(BTNode *p){ if(p==null) retrun;//判断树是否为空 	BTNode *queue[maxSize];//定义一个队列用于存储结点 	BTNode *out,*temp;//out为出队指针、temp用于交换左右子树 	int front=0;//队列头尾 	int rear=0; queue[front]=p;//初始化队列 	queue[rear]=p; //循环交换左右子树 	while(rear&lt;front) { out=queue[front++]; //出队 	//交换左右子树 	temp=out-&gt;lchild; out-&gt;lchild=out-&gt;rchild; ouot-&gt;rchild=temp; //将交换完成结点插入队列 	if(out-&gt;lchild!=NULL) queue[++rear]=out-&gt;lchild; if(out-&gt;rchild!=NULL) queue[++rear]=out-&gt;rchild; } } /** 递归算法 **/ void change(BTNode *p){ if(p==NULL)return; BTNode *temp; temp=p-&gt;lchild; p-&gt;lchild=p-&gt;rchild; p-&gt;rchild=temp; change(p-&gt;lchild); change(p-&gt;rchild); } 
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/1996-%E4%BA%8C/" rel="bookmark">
+			1996-c-二
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-09-18T00:00:00Z">September 18, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt; #define MAXSIZE 100  int main() { int reverse_string(char *string);//函数原型声明  char str[MAXSIZE];//数组最大下标  scanf(&#34;%s&#34;, str); printf(&#34;%s\n&#34;, str); reverse_string(str); } int reverse_string(char *string) { char *tail = NULL; char *head = NULL; head = string; tail = string; while(*(++tail));//调整tail指针指向字符串尾部  tail--;//在while判断时多移动一个位置  printf(&#34;*head:%c\n&#34;, *head); printf(&#34;*tail:%c\n&#34;, *tail); while ((tail &gt;= head) &amp;&amp; (*tail== *head)) { //当前位置对称，指针往后移动  //不对称，或者尾指针小于头指针，就结束比较  tail--; head++; } //尾指针大于等于头指针，说明不是回文  //因为没有比较完字符串中的所有元素就中断了循环，存在*tail ！= *head的情况  if (tail &gt;= head) { printf(&#34;Not reverse string.
+	</div>
+</article><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
@@ -140,8 +167,8 @@ var str=&#34;cnbtldms-vqhsd&#39;!;rbqhosrqb&lt;[!gsso9..vvv-fnnfkd`crk-bnl.rob
 			<li class="widget__item"><a class="widget__link" href="/docs/seechat/">SeeChat</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/842/">842</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/llm_develop_tools/">LLM Develop Tools</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/%E6%88%91%E7%9A%84%E8%80%83%E7%A0%94%E8%B7%AF/">我的考研路</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/2006-%E4%B8%80-4/">2006-一-4</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E5%AF%B9%E5%BD%A9%E7%A4%BC%E7%9A%84%E7%90%86%E8%A7%A3/">对彩礼的理解</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E5%AF%B9%E7%BB%9F%E6%B2%BB%E4%B8%8E%E8%A2%AB%E7%BB%9F%E6%B2%BB%E7%9A%84%E7%90%86%E8%A7%A3/">对统治与被统治的理解</a></li>
 		</ul>
 	</div>
 </div>
@@ -168,6 +195,7 @@ var str=&#34;cnbtldms-vqhsd&#39;!;rbqhosrqb&lt;[!gsso9..vvv-fnnfkd`crk-bnl.rob
 		<a class="widget-taglist__link widget__link btn" href="/tags/php/" title="php">php</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/semantic-kernel/" title="semantic-kernel">semantic-kernel</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" title="东北大学842考研">东北大学842考研</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E6%97%A5%E5%B8%B8/" title="日常">日常</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%E6%9C%A8%E9%A9%AC/" title="木马">木马</a>
 	</div>
 </div>

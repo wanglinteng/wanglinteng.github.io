@@ -63,13 +63,6 @@
 			</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="/post/llm_develop_tools/">
-				
-				<span class="menu__text">Article</span>
-				
-			</a>
-		</li>
-		<li class="menu__item">
 			<a class="menu__link" href="/about/">
 				
 				<span class="menu__text">About</span>
@@ -86,6 +79,43 @@
 			
 <main class="main list" role="main">
 	<article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/1998-c-%E4%BA%8C/" rel="bookmark">
+			1998-c-二
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-05T00:00:00Z">October 05, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		算法思想: 输入一个数x，将其对n取余(n从2开始)，如果余数为零，m=m/n,重复操作。如果余数不为零，n++,直到找到能够被其整除的数。
+非递归算法
+#include &lt;stdio.h&gt;int main() { int n, i, c;//需要分解的自然数  scanf(&#34;%d&#34;, &amp;n); i = 2; c = n; printf(&#34;%d=&#34;, n); while(n != 1) { if(n%i == 0) { printf(&#34;%s%d&#34;, c == n ? &#34;&#34; : &#34;*&#34;, i); n /= i; } else ++i; } } 递归算法实现
+#include &lt;stdio.h&gt; void num_break(int c,int n,int i) { if(n!=1)//n==1,证明分解完毕 	{ if(n%i==0) { printf(&#34;%s%d&#34;, c == n ? &#34;&#34; : &#34;*&#34;, i); n/=i; num_break(c,n,i); }	else num_break(c,n,++i); } } int main() { num_break(140,140,2); } 
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/1998-c-%E5%9B%9B/" rel="bookmark">
+			1998-c-四
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-05T00:00:00Z">October 05, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;string.h&gt;//逆置指针字符串 void invert(char *str,int len) { char * p1 = str; char * p2 = str + len - 1; while(p1 &lt; p2) { char c = *p1; *p1 = *p2; *p2 = c; ++p1; --p2; } } int main() { char str1[] = &#34;5689&#34;;//字符串1 	char str2[] = &#34;356&#34;;//字符串2  int len1 = strlen(str1);//取字符串1的长度 	int len2 = strlen(str2);//取字符串2的长度  invert(str1,len1);//逆置 	invert(str2,len2); //结果字符串动态分配 	char *result; result = (char*)malloc(len1 + len2); //初始化结果字符串 	for(int k = 0; k &lt; len1 + len2; k++) { result[k] = &#39;0&#39;; } for(int i=0;i&lt;len1+len2;i++) { printf(&#34;%c&#34;,result[i]); } printf(&#34;\n&#34;); for(int i=0; i&lt;len1; i++) { for(int j=0; j&lt;len2; j++) { int pos = i + j;//待写入位置 	int tmp = (str1[i] - &#39;0&#39;) * (str2[j] - &#39;0&#39;) + (result[pos] - &#39;0&#39;); result[pos] = tmp % 10 + &#39;0&#39;; //将余数写入对应位置 	//产生的进位 	int carry = tmp / 10; //当进位大于0,则更新下一位，一直更新，直到进位为0 	while(carry &gt; 0) { //下一个位置的数真值加上进位得到tmp 	tmp = result[pos + 1] - &#39;0&#39; + carry; //下一个位置等于tmp对10求余数 	result[pos + 1] = tmp % 10 + &#39;0&#39;; //计算进位 	carry = tmp / 10; //移动位置 	pos++; } for(int i=0; i&lt;len1+len2;i++) { printf(&#34;%c&#34;,result[i]); }	printf(&#34;\n&#34;); } } /** char *str1= &#34;5689&#34;（静态存储区） char str[] = &#34;5689&#34;(栈区) (char*)malloc(len1 + len2)(堆区); **/ invert(result,len1+len2); for(int i=0; i&lt;len1+len2;i++) { printf(&#34;%c&#34;,result[i]); }	return 0; } 
+	</div>
+</article><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
@@ -221,40 +251,6 @@
 	<div class="content list__excerpt post__content clearfix">
 		#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;/* **数组中有N个元素，要移动K个位置，那么数组的大小最小是N+K **宏定义N与K */ #define N 3 //存储的数据 #define K 2 //移动的位置  #define MAXSIZE (N + K)  void EnterIntegers(int *p); void Move_k_Position(int *p); void ShowArray(int *p); int main() { int A[MAXSIZE]; //输入N个整数  EnterIntegers(A); //移动K个位置  Move_k_Position(A); //显示数组元素  ShowArray(A); } //输入N个整数 void EnterIntegers(int *p) { int i = 0; printf(&#34;Enter N integers.\n&#34;); for (i = 0; i &lt; N; i++) { scanf(&#34;%d&#34;, p + i); printf(&#34;%d\n&#34;, *(p + i)); } } //移动K个位置 void Move_k_Position(int *p) { int i = 0; p = p + N -1; //从头部开始，每个元素都往后移动K个位置  for (i = N - 1 ; i &gt;= 0; i--) { *(p + K) = *p; *p = -1;//移动后将数据域清零  p--; } //输出数组中的数据域中的内容  } //显示数组元素 //空出来的位置以-1标记 void ShowArray(int *p) { int i = 0; for (i = 0; i &lt; N + K; i++) { printf(&#34;%d\n&#34;, p[i]); } } 
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/1996-d-%E4%BA%94/" rel="bookmark">
-			1996-d-五
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-09-24T00:00:00Z">September 24, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		/** 交换二叉树每个结点左右孩子节点（非递归算法） 算法的基本思想： 1.判断根节点地址是否为空，为空返回 2.将结点放入顺序队列中，每次出队一个结点 3.交换该节点的左右孩子结点,并将孩子结点插入队尾 **/ void change(BTNode *p){ if(p==null) retrun;//判断树是否为空 	BTNode *queue[maxSize];//定义一个队列用于存储结点 	BTNode *out,*temp;//out为出队指针、temp用于交换左右子树 	int front=0;//队列头尾 	int rear=0; queue[front]=p;//初始化队列 	queue[rear]=p; //循环交换左右子树 	while(rear&lt;front) { out=queue[front++]; //出队 	//交换左右子树 	temp=out-&gt;lchild; out-&gt;lchild=out-&gt;rchild; ouot-&gt;rchild=temp; //将交换完成结点插入队列 	if(out-&gt;lchild!=NULL) queue[++rear]=out-&gt;lchild; if(out-&gt;rchild!=NULL) queue[++rear]=out-&gt;rchild; } } /** 递归算法 **/ void change(BTNode *p){ if(p==NULL)return; BTNode *temp; temp=p-&gt;lchild; p-&gt;lchild=p-&gt;rchild; p-&gt;rchild=temp; change(p-&gt;lchild); change(p-&gt;rchild); } 
-	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/1996-%E4%BA%8C/" rel="bookmark">
-			1996-c-二
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-09-18T00:00:00Z">September 18, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt; #define MAXSIZE 100  int main() { int reverse_string(char *string);//函数原型声明  char str[MAXSIZE];//数组最大下标  scanf(&#34;%s&#34;, str); printf(&#34;%s\n&#34;, str); reverse_string(str); } int reverse_string(char *string) { char *tail = NULL; char *head = NULL; head = string; tail = string; while(*(++tail));//调整tail指针指向字符串尾部  tail--;//在while判断时多移动一个位置  printf(&#34;*head:%c\n&#34;, *head); printf(&#34;*tail:%c\n&#34;, *tail); while ((tail &gt;= head) &amp;&amp; (*tail== *head)) { //当前位置对称，指针往后移动  //不对称，或者尾指针小于头指针，就结束比较  tail--; head++; } //尾指针大于等于头指针，说明不是回文  //因为没有比较完字符串中的所有元素就中断了循环，存在*tail ！= *head的情况  if (tail &gt;= head) { printf(&#34;Not reverse string.
-	</div>
 </article>
 </main>
 
@@ -273,8 +269,8 @@
 			<li class="widget__item"><a class="widget__link" href="/docs/seechat/">SeeChat</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/842/">842</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/llm_develop_tools/">LLM Develop Tools</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/%E6%88%91%E7%9A%84%E8%80%83%E7%A0%94%E8%B7%AF/">我的考研路</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/2006-%E4%B8%80-4/">2006-一-4</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E5%AF%B9%E5%BD%A9%E7%A4%BC%E7%9A%84%E7%90%86%E8%A7%A3/">对彩礼的理解</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E5%AF%B9%E7%BB%9F%E6%B2%BB%E4%B8%8E%E8%A2%AB%E7%BB%9F%E6%B2%BB%E7%9A%84%E7%90%86%E8%A7%A3/">对统治与被统治的理解</a></li>
 		</ul>
 	</div>
 </div>
@@ -301,6 +297,7 @@
 		<a class="widget-taglist__link widget__link btn" href="/tags/php/" title="php">php</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/semantic-kernel/" title="semantic-kernel">semantic-kernel</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" title="东北大学842考研">东北大学842考研</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E6%97%A5%E5%B8%B8/" title="日常">日常</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%E6%9C%A8%E9%A9%AC/" title="木马">木马</a>
 	</div>
 </div>

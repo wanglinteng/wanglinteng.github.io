@@ -64,13 +64,6 @@
 			</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="/post/llm_develop_tools/">
-				
-				<span class="menu__text">Article</span>
-				
-			</a>
-		</li>
-		<li class="menu__item">
 			<a class="menu__link" href="/about/">
 				
 				<span class="menu__text">About</span>
@@ -87,6 +80,41 @@
 			
 <main class="main list" role="main">
 	<article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/2007-d-%E5%9B%9B/" rel="bookmark">
+			2007-d-四
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-05T00:00:00Z">November 05, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		#include #include typedef struct BTNode { int	data; struct BTNode	* lchild; struct BTNode	* rchild; } BTNode; /* 创建排序树 */ BTNode* create() { BTNode	*root; int	n; scanf( &#34;%d&#34;, &amp;n ); if ( n == -1 ) return(NULL); else{ root	= (BTNode *) malloc( sizeof(BTNode) ); root-&gt;data	= n; root-&gt;lchild	= create(); root-&gt;rchild	= create(); } return(root); } /* 向二叉排序树中插入值 */ void insert( BTNode* root, int key ) { BTNode	* p	= NULL, *pre = NULL; BTNode	* c	= (BTNode *) malloc( sizeof(BTNode) ); c-&gt;data	= key; c-&gt;lchild	= NULL; c-&gt;rchild	= NULL; /* 树为空 */ if ( NULL == root ) { root == c; }else{ p = root; while ( NULL !
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/2007-d-%E4%B8%89/" rel="bookmark">
+			2007-d-三
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-04T00:00:00Z">November 04, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		有錯誤
+#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt; #define maxSize 100  //邻接表定义存储 typedef struct ArcNode { int adjvex; struct ArcNode *nextarc; } ArcNode; typedef struct VNode { int data; ArcNode *firstarc; }VNode; typedef struct AGraph { VNode adjlist[maxSize]; int n,e; } AGraph; //邻接表建立 void create(AGraph *G) { int i; int h,t; ArcNode *p; printf(&#34;请输入顶点数、弧数：\n&#34;); scanf(&#34;%d,%d&#34;,&amp;G-&gt;n,&amp;G-&gt;e); //输入顶点数、弧数  for(i=0;i&lt;G-&gt;n;++i) { printf(&#34;请输入第%d个顶点值\n&#34;,i); scanf(&#34;%d&#34;,&amp;G-&gt;adjlist[i].data); G-&gt;adjlist[i].firstarc=NULL; } //输入弧  for(i=0;i&lt;G-&gt;e;++i) { printf(&#34;请按顺序输入弧头[h]、弧尾[t]\n&#34;); scanf(&#34;%d,%d&#34;,&amp;h,&amp;t); p=(ArcNode*)malloc(sizeof(ArcNode)); p-&gt;adjvex=t; /*将新边表结点p 插入到顶点Vh 的边表头部*/ p-&gt;nextarc=G-&gt;adjlist[h].
+	</div>
+</article><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
@@ -223,40 +251,6 @@
 		//递增：1，不递增：0 int dec(int a[],int n) { if(n==0) return 1; //递增  if(a[n]&gt;a[n-1]) return dec(a,n-1); else return 0; //不递增 } 方法二：
 int dec(int a[], int n) { //printf(&#34;n=%d,&#34;,n);  //printf(&#34;a[0]=%d\n&#34;,a[0]);  if (n &lt;= 1) { return 0;//非递增  } if (a[0] &lt; a[1]) { return dec(++a,--n);//注意n--是先把值给dec再减  }else{ return 1;//递增  } } int main() { int a[]={1,2,9,5}; printf(&#34;%d&#34;,dec(a,4)); } 
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/2011-c-%E4%BA%8C-1/" rel="bookmark">
-			2011-c-二-1
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-30T00:00:00Z">October 30, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;int main() { //定义文件指针  FILE *p; char c; int num=0; //打开文件  if((p=fopen(&#34;.\\demo.txt&#34;,&#34;r&#34;))==NULL) { printf(&#34;error&#34;); exit(-1); } while(fscanf(p,&#34;%c&#34;,&amp;c)!=EOF) { ++num; printf(&#34;%c&#34;,c); if(num==10) { printf(&#34;\n&#34;); num=0; } } } 
-	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/2011-c-%E4%BA%8C-2/" rel="bookmark">
-			2011-c-二-2
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-30T00:00:00Z">October 30, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		//分为三部分复制到新的字符串中 char *stuff(char *str1,char *str2,int i,int j) { char buf[512]; char *p,*q; int m; p=str1; q=buf; //复制前半段  for(m=0;m&lt;i;m++) { *q=*p; p++; q++; } //插入替换部分  p=str2; while(*p!=&#39;\0&#39;) { *q=*p; p++; q++; } //复制后半部分  p=str1+j+1; while(*p!=&#39;\0&#39;) { *q=*p; p++; q++; } *q=&#39;\0&#39;;//字符串结束  return buf; } int main() { char a[64]=&#34;asdfghjkdffsfjhfj&#34;; printf(&#34;%s\n&#34;,stuff(a,&#34;12345&#34;,6,8)); } 
-	</div>
 </article>
 </main>
 
@@ -275,8 +269,8 @@ int dec(int a[], int n) { //printf(&#34;n=%d,&#34;,n);  //printf(&#34;a[0]=%d\n&
 			<li class="widget__item"><a class="widget__link" href="/docs/seechat/">SeeChat</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/842/">842</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/llm_develop_tools/">LLM Develop Tools</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/%E6%88%91%E7%9A%84%E8%80%83%E7%A0%94%E8%B7%AF/">我的考研路</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/2006-%E4%B8%80-4/">2006-一-4</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E5%AF%B9%E5%BD%A9%E7%A4%BC%E7%9A%84%E7%90%86%E8%A7%A3/">对彩礼的理解</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E5%AF%B9%E7%BB%9F%E6%B2%BB%E4%B8%8E%E8%A2%AB%E7%BB%9F%E6%B2%BB%E7%9A%84%E7%90%86%E8%A7%A3/">对统治与被统治的理解</a></li>
 		</ul>
 	</div>
 </div>
@@ -303,6 +297,7 @@ int dec(int a[], int n) { //printf(&#34;n=%d,&#34;,n);  //printf(&#34;a[0]=%d\n&
 		<a class="widget-taglist__link widget__link btn" href="/tags/php/" title="php">php</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/semantic-kernel/" title="semantic-kernel">semantic-kernel</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" title="东北大学842考研">东北大学842考研</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E6%97%A5%E5%B8%B8/" title="日常">日常</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%E6%9C%A8%E9%A9%AC/" title="木马">木马</a>
 	</div>
 </div>
