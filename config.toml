@@ -30,7 +30,7 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
   list = "right"   # Configure layout for list pages
   single = "right" # Configure layout for single pages
   # Enable widgets in given order
-  widgets = ["search", "recent", "categories", "taglist", "social"]
+  widgets = ["recent", "categories", "taglist", "social"]
 
 [Params.widgets]
   recent_num = 5 # Set the number of articles in the "Recent articles" widget
@@ -40,10 +40,3 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
   cached = false
   twitter = "maillinteng"
   github = "wanglinteng"
-
-[Params.widgets.search]
-  url = "https://www.bing.com/search"
-  [Params.widgets.search.input]
-    name = "q1"
-    pre = "site:"
-
