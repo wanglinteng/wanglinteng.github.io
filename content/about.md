@@ -6,7 +6,7 @@ sidebar: false
 pager: false
 menu: main
 
-comment: false
+comments: false
 ---
 
 My name is Linteng Wang. I’m a Machine Learning Engineer working in NLP, news recommendation and LLM at Sina Weibo.
