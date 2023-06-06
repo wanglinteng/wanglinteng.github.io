@@ -13,4 +13,6 @@ menu:
 
 目信（SeeChat）
 
+目信（SeeChat）：目之所及的通讯。（在此之前亦称icebreak）
+
 <!--more-->
