@@ -37,7 +37,7 @@
 		<a class="logo__link" href="/" title="LINTENG&#39;S BLOG" rel="home">
 			<div class="logo__item logo__text">
 					<div class="logo__title">LINTENG&#39;S BLOG</div>
-					<div class="logo__tagline">坠欢莫拾，酒痕在衣。</div>
+					<div class="logo__tagline">linteng&#39;s little corner of the internet!</div>
 				</div>
 		</a>
 	</div>
@@ -62,13 +62,6 @@
 			</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="/post/llm_develop_tools/">
-				
-				<span class="menu__text">Article</span>
-				
-			</a>
-		</li>
-		<li class="menu__item">
 			<a class="menu__link" href="/about/">
 				
 				<span class="menu__text">About</span>
@@ -87,6 +80,44 @@
 	<header class="main__header">
 		<h1 class="main__title">东北大学842考研</h1>
 	</header><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/docs/842/" rel="bookmark">
+			842
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-06-01T00:00:00Z">June 01, 2023</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		《842》 是考研时写的博客，记录了199x-2016年东北大学842专业课（C语言、数据结构）部分代码，由于时间有限并没有完整的题目，欢迎PR补充。
+  我的考研路 在图书馆回顾了考研历程。
+  东北大学842考研 代码详情。
+  
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/%E6%88%91%E7%9A%84%E8%80%83%E7%A0%94%E8%B7%AF/" rel="bookmark">
+			我的考研路
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2017-04-06T00:00:00Z">April 06, 2017</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		<h3 id="写在前面">写在前面</h3>
+<p>坐在图书馆看着毕老师的JAVA教程，虽然不是第一次看了，但是想系统的学一遍。看着周围正在准备考研的学弟学妹们，刚过去不久的考研画面，不断地浮现在我的脑海里。考研我并不是一个成功者，但是这段经历一直在影响我，所以我决定写下来，写在我的博客上！</p>
+	</div>
+</article><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
@@ -226,40 +257,6 @@ void swap(int &amp;in1, int &amp;in2) { int tmp = in1; in1 = in2; in2 = tmp; } i
 		 http://wenku.baidu.com/link?url=JkAd9TULbhz6--1Tt7jseTi5Gw2gqfCWF6VnVqy-NzZwFkatKTDUXZfYoiWTswuOdLMyoyOkaa6sXWz1X6JnO_tVASd901XTvj7Pr7c2j_q
  /** 基本思想：采取逆先序遍历方法，判断结点是否为叶子节点，在访问右子树、最后访问左子树 **/ int arr[maxSize];int k=0; void del(BTNode *bt) { if(bt!=NULL) { if(bt-&gt;lchld==NULL&amp;&amp;bt-&gt;rchild==NULL) { arr[k++]=bt-&gt;data; free(bt); bt=NULL; } else { del(bt-&gt;rchild);//注意此时的顺序  del(bt-&gt;lchild); } } } 
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/2001-c-%E4%B8%89/" rel="bookmark">
-			2001-c-三
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-12-05T00:00:00Z">December 05, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		void common(char *str,char *sub) { int i=0,j=0,k=0,max=0; for(i=0;str[i]!=&#39;\0&#39;;++i) { j=0; k=i; while(str[k]==sub[j]) { ++k; ++j; } if(j&gt;max) max=j; } sub[max]=&#39;\0&#39;; printf(&#34;%s&#34;,sub); } int main() { char str1[40]=&#34;123456123456vhgaaasdd&#34;; char str2[20]=&#34;123456vhgvhg&#34;; common(str1,str2); } 
-	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/2001-c-%E4%BA%94/" rel="bookmark">
-			2001-c-五
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-12-05T00:00:00Z">December 05, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		int similar(BTNode *n1,BTNode *n2) { if((n1==NULL)&amp;&amp;(n2==NULL))//都为空  return 1;//相似  else//有一个不空，或都不空  { if((n1==NULL)||(n2==NULL))//有一个不空  return 0; else return similar(n1-&gt;lchild,n2-&gt;lchild)&amp;&amp;similar(n1-&gt;rchild,n2-&gt;rchild);//继续判断  } } 
-	</div>
 </article>
 </main>
 
@@ -278,8 +275,8 @@ void swap(int &amp;in1, int &amp;in2) { int tmp = in1; in1 = in2; in2 = tmp; } i
 			<li class="widget__item"><a class="widget__link" href="/docs/seechat/">SeeChat</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/842/">842</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/llm_develop_tools/">LLM Develop Tools</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/%E6%88%91%E7%9A%84%E8%80%83%E7%A0%94%E8%B7%AF/">我的考研路</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/2006-%E4%B8%80-4/">2006-一-4</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E5%AF%B9%E5%BD%A9%E7%A4%BC%E7%9A%84%E7%90%86%E8%A7%A3/">对彩礼的理解</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E5%AF%B9%E7%BB%9F%E6%B2%BB%E4%B8%8E%E8%A2%AB%E7%BB%9F%E6%B2%BB%E7%9A%84%E7%90%86%E8%A7%A3/">对统治与被统治的理解</a></li>
 		</ul>
 	</div>
 </div>
@@ -299,19 +296,15 @@ void swap(int &amp;in1, int &amp;in2) { int tmp = in1; in1 = in2; in2 = tmp; } i
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/842/" title="842">842</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/842%E8%80%83%E7%A0%94/" title="842考研">842考研</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/js/" title="js">js</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/langchain/" title="langchain">langchain</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/llama-index/" title="llama-index">llama-index</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/llm/" title="LLM">LLM</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/php/" title="php">php</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/semantic-kernel/" title="semantic-kernel">semantic-kernel</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6/" title="东北大学">东北大学</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" title="东北大学842考研">东北大学842考研</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E6%97%A5%E5%B8%B8/" title="日常">日常</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%E6%9C%A8%E9%A9%AC/" title="木马">木马</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/%E8%80%83%E7%A0%94/" title="考研">考研</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/%E8%B0%83%E5%89%82/" title="调剂">调剂</a>
 	</div>
 </div>
 <div class="widget-social widget">

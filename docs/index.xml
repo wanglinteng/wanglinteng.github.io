@@ -344,10 +344,10 @@ void swap(int &amp;amp;in1, int &amp;amp;in2) { int tmp = in1; in1 = in2; in2 = 
     
     <item>
       <title>2006-c-四</title>
-      <link>/post/578/</link>
+      <link>/post/2006-c-%E5%9B%9B/</link>
       <pubDate>Thu, 10 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>/post/578/</guid>
+      <guid>/post/2006-c-%E5%9B%9B/</guid>
       <description>链表的创建、输出等 原文链接
 void Delete(LNode *La, LNode *Lb, LNode *Lc) //删除链表A中既存在B又存在C中的元素 { LNode *pa, *pb, *pc, *q; pa = La; pb = Lb-&amp;gt;next; pc = Lc-&amp;gt;next; while (pb &amp;amp;&amp;amp; pc) //思路：在链表B和C中查找相同的元素看看此元素是否在A链表中  { if (pb-&amp;gt;data &amp;lt; pc-&amp;gt;data) pb = pb-&amp;gt;next; else if (pc-&amp;gt;data &amp;lt; pb-&amp;gt;data) pc = pc-&amp;gt;next; else //找到lb和lc中都出现的结点  { while (pa-&amp;gt;next) { if (pa-&amp;gt;next-&amp;gt;data &amp;lt; pb-&amp;gt;data) pa = pa-&amp;gt;next; else if (pa-&amp;gt;next-&amp;gt;data &amp;gt; pb-&amp;gt;data) { //pa = pa-&amp;gt;next;//此处注释，原因，添加此句会有漏解情况  pb = pb-&amp;gt;next; pc = pc-&amp;gt;next; break; } else //删除la中也包含的该元素  { q = pa-&amp;gt;next; pa-&amp;gt;next = q-&amp;gt;next; free(q); pa = pa-&amp;gt;next; pb = pb-&amp;gt;next; pc = pc-&amp;gt;next; break; } } } } } </description>
     </item>

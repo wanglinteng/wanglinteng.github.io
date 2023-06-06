@@ -37,7 +37,7 @@
 		<a class="logo__link" href="/" title="LINTENG&#39;S BLOG" rel="home">
 			<div class="logo__item logo__text">
 					<div class="logo__title">LINTENG&#39;S BLOG</div>
-					<div class="logo__tagline">坠欢莫拾，酒痕在衣。</div>
+					<div class="logo__tagline">linteng&#39;s little corner of the internet!</div>
 				</div>
 		</a>
 	</div>
@@ -62,13 +62,6 @@
 			</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="/post/llm_develop_tools/">
-				
-				<span class="menu__text">Article</span>
-				
-			</a>
-		</li>
-		<li class="menu__item">
 			<a class="menu__link" href="/about/">
 				
 				<span class="menu__text">About</span>
@@ -87,6 +80,40 @@
 	<header class="main__header">
 		<h1 class="main__title">Posts</h1>
 	</header><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/2015-c-%E4%BA%8C-2/" rel="bookmark">
+			2015-c-二-2
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-17T00:00:00Z">October 17, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		#include &lt;stdio.h&gt;typedef struct Date { int year; int month; int day; }Date; int calculate(Date d) { int n=0; switch(d.month-1) { case 11:n+=30; case 10:n+=31; case 9:n+=30; case 8:n+=31; case 7:n+=31; case 6:n+=30; case 5:n+=31; case 4:n+=30; case 3:n+=31; case 2:n+=28; case 1:n+=31; } return n; } int main() { int year,month,day,num; Date d; //输入数据  printf(&#34;按格式输入：年,月,日\n&#34;); scanf(&#34;%d,%d,%d&#34;,&amp;year,&amp;month,&amp;day); //向结构体传数据  d.year=year; d.month=month; d.day=day; //计算天数不考虑是否闰年  num = calculate(d)+day; //判断是否是闰年  if((year%4==0&amp;&amp;year%100!=0)||year%400==0) { //判断月份是否大于2  if(month&gt;2) num=num+1; } printf(&#34;%d月%d日是%d年的第%d天\n&#34;,month,day,year,num); } 
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/2015-c-%E4%BA%8C-3/" rel="bookmark">
+			2015-c-二-3
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-17T00:00:00Z">October 17, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		#include &lt;stdio.h&gt;#define maxSize 100 //字符串复制函数 str_copy(char *str,char *kid,int k) { char *p;//原始字符串指针  char *q;//新字符串指针  p=str+k-1;//指向第k个字符  q=kid; while(*p!=&#39;\0&#39;) { *q=*p; q++; p++; } *q=&#39;\0&#39;; } //主函数 int main() { char str[maxSize]; char kid[maxSize]; int k; scanf(&#34;%s&#34;,str); scanf(&#34;%d&#34;,&amp;k); str_copy(str,kid,k);//调用复制函数  printf(&#34;%s\n&#34;,str); printf(&#34;%s\n&#34;,kid); } 
+	</div>
+</article><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
@@ -226,46 +253,12 @@
 	<div class="content list__excerpt post__content clearfix">
 		#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;string.h&gt;//逆置指针字符串 void invert(char *str,int len) { char * p1 = str; char * p2 = str + len - 1; while(p1 &lt; p2) { char c = *p1; *p1 = *p2; *p2 = c; ++p1; --p2; } } int main() { char str1[] = &#34;5689&#34;;//字符串1 	char str2[] = &#34;356&#34;;//字符串2  int len1 = strlen(str1);//取字符串1的长度 	int len2 = strlen(str2);//取字符串2的长度  invert(str1,len1);//逆置 	invert(str2,len2); //结果字符串动态分配 	char *result; result = (char*)malloc(len1 + len2); //初始化结果字符串 	for(int k = 0; k &lt; len1 + len2; k++) { result[k] = &#39;0&#39;; } for(int i=0;i&lt;len1+len2;i++) { printf(&#34;%c&#34;,result[i]); } printf(&#34;\n&#34;); for(int i=0; i&lt;len1; i++) { for(int j=0; j&lt;len2; j++) { int pos = i + j;//待写入位置 	int tmp = (str1[i] - &#39;0&#39;) * (str2[j] - &#39;0&#39;) + (result[pos] - &#39;0&#39;); result[pos] = tmp % 10 + &#39;0&#39;; //将余数写入对应位置 	//产生的进位 	int carry = tmp / 10; //当进位大于0,则更新下一位，一直更新，直到进位为0 	while(carry &gt; 0) { //下一个位置的数真值加上进位得到tmp 	tmp = result[pos + 1] - &#39;0&#39; + carry; //下一个位置等于tmp对10求余数 	result[pos + 1] = tmp % 10 + &#39;0&#39;; //计算进位 	carry = tmp / 10; //移动位置 	pos++; } for(int i=0; i&lt;len1+len2;i++) { printf(&#34;%c&#34;,result[i]); }	printf(&#34;\n&#34;); } } /** char *str1= &#34;5689&#34;（静态存储区） char str[] = &#34;5689&#34;(栈区) (char*)malloc(len1 + len2)(堆区); **/ invert(result,len1+len2); for(int i=0; i&lt;len1+len2;i++) { printf(&#34;%c&#34;,result[i]); }	return 0; } 
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/1997-c-%E4%BA%8C/" rel="bookmark">
-			1997-c-二
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-04T00:00:00Z">October 04, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;//向量 typedef struct Vector { int x; int y; }Vector; //坐标点 typedef struct Point { int x; int y; }Point; //判断两向量是否共线，不共线即可构成三角形 int triangle(Vector v[]) { if(v[0].x*v[1].y == v[1].x*v[0].y) return 0;//共线、不能构成三角形  else return 1; } //将三点坐标转换为两个向量的坐标 void change(Point p[],Vector v[]) { v[0].x = p[0].x-p[1].x; v[0].y = p[0].y-p[1].y; v[1].x = p[0].x-p[2].x; v[1].y = p[0].y-p[2].y; } int main() { int n;//坐标点总数  int i,j,k;//循环变量  Point m[3];//三个点  Vector l[2];//两个向量  printf(&#34;请输入坐标点个数：\n&#34;);//输入坐标点个数  scanf(&#34;%d&#34;,&amp;n); Point *p = (Point*)malloc(sizeof(Point)*n);//分配点存储空间  for(i=0;i&lt;n;i++) { printf(&#34;请输入第%d个坐标：\n&#34;,i); scanf(&#34;%d,%d&#34;,&amp;p[i].
-	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/1997-d-%E5%85%AD/" rel="bookmark">
-			1997-d-六
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-04T00:00:00Z">October 04, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		// 先序遍历树中每个节点 int visit( int T[],int n,int id) { if(id &gt; n) return 0; printf(&#34;%d&#34;,id); visit(T,n,id*2); visit(T,n,id*2+1); } //打印全部祖先结点 int print_ancestor(int T[],int n) { int parent = 0; parent = n/2; while(parent &gt;0) { printf(&#34;%d&#34;,parent); parent = parent/2; } } 
-	</div>
 </article>
 </main>
 
 <div class="pagination">
 	<a class="pagination__item pagination__item--prev btn" href="/post/page/7/">«</a>
-	<span class="pagination__item pagination__item--current">8/9</span>
+	<span class="pagination__item pagination__item--current">8/10</span>
 	<a class="pagination__item pagination__item--next btn" href="/post/page/9/">»</a>
 </div>
 
@@ -279,8 +272,8 @@
 			<li class="widget__item"><a class="widget__link" href="/docs/seechat/">SeeChat</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/842/">842</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/llm_develop_tools/">LLM Develop Tools</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/%E6%88%91%E7%9A%84%E8%80%83%E7%A0%94%E8%B7%AF/">我的考研路</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/2006-%E4%B8%80-4/">2006-一-4</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E5%AF%B9%E5%BD%A9%E7%A4%BC%E7%9A%84%E7%90%86%E8%A7%A3/">对彩礼的理解</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E5%AF%B9%E7%BB%9F%E6%B2%BB%E4%B8%8E%E8%A2%AB%E7%BB%9F%E6%B2%BB%E7%9A%84%E7%90%86%E8%A7%A3/">对统治与被统治的理解</a></li>
 		</ul>
 	</div>
 </div>
@@ -300,19 +293,15 @@
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/842/" title="842">842</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/842%E8%80%83%E7%A0%94/" title="842考研">842考研</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/js/" title="js">js</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/langchain/" title="langchain">langchain</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/llama-index/" title="llama-index">llama-index</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/llm/" title="LLM">LLM</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/php/" title="php">php</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/semantic-kernel/" title="semantic-kernel">semantic-kernel</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6/" title="东北大学">东北大学</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" title="东北大学842考研">东北大学842考研</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E6%97%A5%E5%B8%B8/" title="日常">日常</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%E6%9C%A8%E9%A9%AC/" title="木马">木马</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/%E8%80%83%E7%A0%94/" title="考研">考研</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/%E8%B0%83%E5%89%82/" title="调剂">调剂</a>
 	</div>
 </div>
 <div class="widget-social widget">

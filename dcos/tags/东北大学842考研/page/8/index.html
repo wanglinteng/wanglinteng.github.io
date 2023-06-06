@@ -37,7 +37,7 @@
 		<a class="logo__link" href="/" title="LINTENG&#39;S BLOG" rel="home">
 			<div class="logo__item logo__text">
 					<div class="logo__title">LINTENG&#39;S BLOG</div>
-					<div class="logo__tagline">坠欢莫拾，酒痕在衣。</div>
+					<div class="logo__tagline">linteng&#39;s little corner of the internet!</div>
 				</div>
 		</a>
 	</div>
@@ -62,13 +62,6 @@
 			</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="/post/llm_develop_tools/">
-				
-				<span class="menu__text">Article</span>
-				
-			</a>
-		</li>
-		<li class="menu__item">
 			<a class="menu__link" href="/about/">
 				
 				<span class="menu__text">About</span>
@@ -87,6 +80,40 @@
 	<header class="main__header">
 		<h1 class="main__title">东北大学842考研</h1>
 	</header><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/2016-d-%E4%BA%8C-2/" rel="bookmark">
+			【2016-d-二-2】求二叉树指定结点的层数
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-16T00:00:00Z">October 16, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		/** 算法思想：由二叉树的遍历特点，指针总是由上层走向下层，一直走到最底层 然后返回上层。设置变量记录层数，当指针走向下层时层数加一 返回上层时，层数减一。如果找到指定结点，输出层数。 **/ int l = 1; void leno (BTNode *p,char x) { if(p!=NULL) { if(p-&gt;data==x) printf(&#34;%d&#34;,l); ++l; leno(p-&gt;lchild,x); leno(p-&gt;rchild,x); --l; } } 
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/2016-d-%E4%BA%8C-3/" rel="bookmark">
+			【2016-d-二-3】求无向图联通分量个数，并输出联通分量的顶点集
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-16T00:00:00Z">October 16, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		/** 算法思想： 从任意一个结点开始，进行深度优先搜索，输出访问过的结点。 连通分量加一，再选取未被访问过的节点进行深度优先搜索。 直到所有结点都被访问完。 **/ #define maxSize 100 int visit[maxSize]; void conCom(AGraph *G) { int i; int count=0; for(i=0;i&lt;G-&gt;n;i++) { if(visit[i]==0) { DFS(G,i); count++; } } printf(&#34;%d&#34;,count); } void DFS(AGraph *G,int v) { ArcNode *p;//边指针  visit[v]=1;//标记访问  printf(&#34;%d&#34;,v); p=G-&gt;adjlist[v].firstarc; while(p!=NULL) { if(visit[p-&gt;adjvex]==0) { DFS(G,p-&gt;adjvex); p=p-&gt;nextarc; } } } 
+	</div>
+</article><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
@@ -226,40 +253,6 @@
 	<div class="content list__excerpt post__content clearfix">
 		// 先序遍历树中每个节点 int visit( int T[],int n,int id) { if(id &gt; n) return 0; printf(&#34;%d&#34;,id); visit(T,n,id*2); visit(T,n,id*2+1); } //打印全部祖先结点 int print_ancestor(int T[],int n) { int parent = 0; parent = n/2; while(parent &gt;0) { printf(&#34;%d&#34;,parent); parent = parent/2; } } 
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/1998-c-%E4%B8%80/" rel="bookmark">
-			1998-c-一
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-04T00:00:00Z">October 04, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		void merge(LNode *A,LNode * B) { LNode *r = A;//用于指向新链表的链尾,A为新链表的头指针 	LNode *p = A-&gt;next; LNode *q = B-&gt;next; free(B); while(p-&gt;next!=NULL &amp;&amp; q-&gt;next!=NULL) { //按照从小到大顺序排列 	if(p-&gt;data &lt;q-&gt;data) { r-&gt;next=p; r=r-&gt;next; p=p-&gt;next; }else{ r-&gt;next=q; r=r-&gt;next; q=q-&gt;next; } } if(p-&gt;next!=NULL) r-&gt;next=p; if(q-&gt;next!=NULL) r-&gt;next=q; } 
-	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/1997-d-%E4%B8%89/" rel="bookmark">
-			1997-d-三
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-03T00:00:00Z">October 03, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		#include &lt;stdio.h&gt;  //数组p中有n个数 void move (int p[],int n) { int i=0; int j=n-1; int t=p[0]; while(i&lt;j) { while(i&lt;j&amp;&amp;p[j]%2==0) j--;//从后往前找到奇数位置 	if(i&lt;j) { p[i]=p[j];//将找到的奇数移到前面 	i++;//开始位置后移		} while(i&lt;j&amp;&amp;p[i]%2==1) i++;//从前往后找到偶数位置 	if(i&lt;j) { p[j]=p[i]; j--;//结束位置前移 	} } p[i]=t; } int main() { int p[] = {2,6,1,5,14,3,18,9,10,11}; for(int i=0;i&lt;10;i++) printf(&#34;%d\n&#34;,p[i]); printf(&#34;-----------\n&#34;); move(p,10); for(int i=0;i&lt;10;i++) printf(&#34;%d\n&#34;,p[i]); } 
-	</div>
 </article>
 </main>
 
@@ -279,8 +272,8 @@
 			<li class="widget__item"><a class="widget__link" href="/docs/seechat/">SeeChat</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/842/">842</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/llm_develop_tools/">LLM Develop Tools</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/%E6%88%91%E7%9A%84%E8%80%83%E7%A0%94%E8%B7%AF/">我的考研路</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/2006-%E4%B8%80-4/">2006-一-4</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E5%AF%B9%E5%BD%A9%E7%A4%BC%E7%9A%84%E7%90%86%E8%A7%A3/">对彩礼的理解</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E5%AF%B9%E7%BB%9F%E6%B2%BB%E4%B8%8E%E8%A2%AB%E7%BB%9F%E6%B2%BB%E7%9A%84%E7%90%86%E8%A7%A3/">对统治与被统治的理解</a></li>
 		</ul>
 	</div>
 </div>
@@ -300,19 +293,15 @@
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/842/" title="842">842</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/842%E8%80%83%E7%A0%94/" title="842考研">842考研</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/js/" title="js">js</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/langchain/" title="langchain">langchain</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/llama-index/" title="llama-index">llama-index</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/llm/" title="LLM">LLM</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/php/" title="php">php</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/semantic-kernel/" title="semantic-kernel">semantic-kernel</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6/" title="东北大学">东北大学</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" title="东北大学842考研">东北大学842考研</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E6%97%A5%E5%B8%B8/" title="日常">日常</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%E6%9C%A8%E9%A9%AC/" title="木马">木马</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/%E8%80%83%E7%A0%94/" title="考研">考研</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/%E8%B0%83%E5%89%82/" title="调剂">调剂</a>
 	</div>
 </div>
 <div class="widget-social widget">

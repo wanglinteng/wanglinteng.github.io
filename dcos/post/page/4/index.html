@@ -37,7 +37,7 @@
 		<a class="logo__link" href="/" title="LINTENG&#39;S BLOG" rel="home">
 			<div class="logo__item logo__text">
 					<div class="logo__title">LINTENG&#39;S BLOG</div>
-					<div class="logo__tagline">坠欢莫拾，酒痕在衣。</div>
+					<div class="logo__tagline">linteng&#39;s little corner of the internet!</div>
 				</div>
 		</a>
 	</div>
@@ -62,13 +62,6 @@
 			</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="/post/llm_develop_tools/">
-				
-				<span class="menu__text">Article</span>
-				
-			</a>
-		</li>
-		<li class="menu__item">
 			<a class="menu__link" href="/about/">
 				
 				<span class="menu__text">About</span>
@@ -87,6 +80,42 @@
 	<header class="main__header">
 		<h1 class="main__title">Posts</h1>
 	</header><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/2005-c-%E4%BA%8C-3/" rel="bookmark">
+			2005-c-二-3
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-08T00:00:00Z">November 08, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		原文链接
+ http://blog.csdn.net/jcwKyl/article/details/4137398
+ #include &lt;stdio.h&gt; #define MAX_NM 10 #define MAX_POSTAGE 1024 #define INF 2147483647  int n, m; int x[MAX_NM], ans[MAX_NM], y[MAX_POSTAGE], maxStamp, r; /* * backtrack(i)表示x[0...i-1]这i张邮票已经完全确定， * 相应于x[0...i-1]的最大连续邮资区间r和每种邮资所需要的 * 最少邮票张数y[0...r]也都确定，现在枚举x[i] * 的每个值，确定x[i] */ void backtrack(int i) { int *backup_y, backup_r; int next, postage, num, tmp; if(i &gt;= n) { if(r &gt; maxStamp) { maxStamp = r; for(tmp = 0; tmp &lt; n; tmp++) ans[tmp] = x[tmp]; } return; } backup_y = (int*)malloc(MAX_POSTAGE * sizeof(int)); for(tmp = 0; tmp &lt; MAX_POSTAGE; tmp++) backup_y[tmp] = y[tmp]; backup_r = r; for(next = x[i - 1] + 1; next &lt;= r + 1; next++) { /* update x[i] */ x[i] = next; /* update y */ for(postage = 0; postage &lt; x[i-1] * m; postage++) { if(y[postage] &gt;= m) continue; for(num = 1; num &lt;= m - y[postage]; num++) if(y[postage] + num &lt; y[postage + num * next] &amp;&amp; (postage + num * next &lt; MAX_POSTAGE)) y[postage + num * next] = y[postage] + num; } /* update r */ while(y[r + 1] &lt; INF) r++; backtrack(i + 1); /* restore */ r = backup_r; for(tmp = 0; tmp &lt; MAX_POSTAGE; tmp++) y[tmp] = backup_y[tmp]; } free(backup_y); } int main() { int i; scanf(&#34;%d%d&#34;, &amp;n, &amp;m); x[0] = 1; r = m; for(i = 0; i &lt;= r; i++) y[i] = i; while(i &lt; MAX_POSTAGE) y[i++] = INF; maxStamp = 0; backtrack(1); printf(&#34;max stamp is: %d/n&#34;, maxStamp); for(i = 0; i &lt; n; i++) printf(&#34;%4d&#34;, ans[i]); return 0; } 
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/2005-c-%E4%BA%8C-1/" rel="bookmark">
+			2005-c-二-1
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-07T00:00:00Z">November 07, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		#include&lt;stdio.h&gt;int main() { int i,temp,reversedNum; for(i=1993; i&gt;0; --i) { temp=i; reversedNum=0; while(temp)//除2取余倒排的逆运算！！！  { reversedNum=reversedNum*2+temp%2; temp/=2; } if(i==reversedNum) { printf(&#34;%d&#34;,i); break; } } return 0; } 
+	</div>
+</article><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
@@ -225,46 +254,12 @@
 		有錯誤
 #include &lt;stdio.h&gt;#include &lt;stdlib.h&gt; #define maxSize 100  //邻接表定义存储 typedef struct ArcNode { int adjvex; struct ArcNode *nextarc; } ArcNode; typedef struct VNode { int data; ArcNode *firstarc; }VNode; typedef struct AGraph { VNode adjlist[maxSize]; int n,e; } AGraph; //邻接表建立 void create(AGraph *G) { int i; int h,t; ArcNode *p; printf(&#34;请输入顶点数、弧数：\n&#34;); scanf(&#34;%d,%d&#34;,&amp;G-&gt;n,&amp;G-&gt;e); //输入顶点数、弧数  for(i=0;i&lt;G-&gt;n;++i) { printf(&#34;请输入第%d个顶点值\n&#34;,i); scanf(&#34;%d&#34;,&amp;G-&gt;adjlist[i].data); G-&gt;adjlist[i].firstarc=NULL; } //输入弧  for(i=0;i&lt;G-&gt;e;++i) { printf(&#34;请按顺序输入弧头[h]、弧尾[t]\n&#34;); scanf(&#34;%d,%d&#34;,&amp;h,&amp;t); p=(ArcNode*)malloc(sizeof(ArcNode)); p-&gt;adjvex=t; /*将新边表结点p 插入到顶点Vh 的边表头部*/ p-&gt;nextarc=G-&gt;adjlist[h].
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/2007-d-%E4%BA%8C/" rel="bookmark">
-			2007-d-二
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-04T00:00:00Z">November 04, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		typedef struct BTNode { int data; int b;//平衡因子  struct BTNode *lchild; struct BTNode *rchild; } BTNode; int getDepth(BTNode *T) { int level=0; BTNode *p; p=T; while(p!=NULL) { ++level; if(p-&gt;b&lt;0) p=p-&gt;rchild;//右子树高  else p=p-&gt;lchild;//左子树高  } return level; } 
-	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/2009-d-%E4%BA%8C-1/" rel="bookmark">
-			2009-d-二-1
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-02T00:00:00Z">November 02, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		void delpre(LNode *x) { LNode *r,*p;//r是p的前驱结点，当p的后继结点是x时，删除p  p=x; if(p-&gt;next!=NULL) { while(p-&gt;next!=x) { r=p; p=p-&gt;next; } r-&gt;next=x; free(p); } } 
-	</div>
 </article>
 </main>
 
 <div class="pagination">
 	<a class="pagination__item pagination__item--prev btn" href="/post/page/3/">«</a>
-	<span class="pagination__item pagination__item--current">4/9</span>
+	<span class="pagination__item pagination__item--current">4/10</span>
 	<a class="pagination__item pagination__item--next btn" href="/post/page/5/">»</a>
 </div>
 
@@ -278,8 +273,8 @@
 			<li class="widget__item"><a class="widget__link" href="/docs/seechat/">SeeChat</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/842/">842</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/llm_develop_tools/">LLM Develop Tools</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/%E6%88%91%E7%9A%84%E8%80%83%E7%A0%94%E8%B7%AF/">我的考研路</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/2006-%E4%B8%80-4/">2006-一-4</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E5%AF%B9%E5%BD%A9%E7%A4%BC%E7%9A%84%E7%90%86%E8%A7%A3/">对彩礼的理解</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E5%AF%B9%E7%BB%9F%E6%B2%BB%E4%B8%8E%E8%A2%AB%E7%BB%9F%E6%B2%BB%E7%9A%84%E7%90%86%E8%A7%A3/">对统治与被统治的理解</a></li>
 		</ul>
 	</div>
 </div>
@@ -299,19 +294,15 @@
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="/tags/842/" title="842">842</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/842%E8%80%83%E7%A0%94/" title="842考研">842考研</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/js/" title="js">js</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/langchain/" title="langchain">langchain</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/llama-index/" title="llama-index">llama-index</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/llm/" title="LLM">LLM</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/php/" title="php">php</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/semantic-kernel/" title="semantic-kernel">semantic-kernel</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6/" title="东北大学">东北大学</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" title="东北大学842考研">东北大学842考研</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E6%97%A5%E5%B8%B8/" title="日常">日常</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%E6%9C%A8%E9%A9%AC/" title="木马">木马</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/%E8%80%83%E7%A0%94/" title="考研">考研</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/%E8%B0%83%E5%89%82/" title="调剂">调剂</a>
 	</div>
 </div>
 <div class="widget-social widget">

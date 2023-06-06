@@ -24,7 +24,7 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
   mainSections = ["post", "docs"]
 
 [Params.logo]
-  subtitle = "坠欢莫拾，酒痕在衣。" # Logo subtitle
+  subtitle = "linteng's little corner of the internet!" # Logo subtitle
 
 [Params.sidebar]
   home = "right"   # Configure layout for home page
