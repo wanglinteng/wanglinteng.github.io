@@ -18,6 +18,7 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
   readmore = false # Show "Read more" button in list if true
   authorbox = true
   pager = true
+  twitter_cards = true # Enable Twitter Cards if true
   post_meta = ["date", "categories"] # Order of post meta information
   mainSections = ["post", "docs"]
 
@@ -29,11 +30,20 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
   list = "right"   # Configure layout for list pages
   single = "right" # Configure layout for single pages
   # Enable widgets in given order
-  widgets = ["search", "recent", "categories", "taglist"]
+  widgets = ["search", "recent", "categories", "taglist", "social"]
 
 [Params.widgets]
   recent_num = 5 # Set the number of articles in the "Recent articles" widget
   tags_counter = false # Enable counter for each tag in "Tags" widget (disabled by default)
 
 [Params.widgets.social]
+  cached = false
   twitter = "maillinteng"
+  github = "wanglinteng"
+
+[Params.widgets.search]
+  url = "https://www.bing.com/search"
+  [Params.widgets.search.input]
+    name = "q1"
+    pre = "site:"
+

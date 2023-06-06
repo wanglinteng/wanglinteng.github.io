@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>semantic-kernel on LINTENG&#39;S BLOG</title>
+    <link>//localhost:1313/tags/semantic-kernel/</link>
+    <description>Recent content in semantic-kernel on LINTENG&#39;S BLOG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 31 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/tags/semantic-kernel/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LLM Develop Tools</title>
+      <link>//localhost:1313/post/llm_develop_tools/</link>
+      <pubDate>Wed, 31 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/post/llm_develop_tools/</guid>
+      <description>&lt;h2 id=&#34;motivation&#34;&gt;Motivation&lt;/h2&gt;
+&lt;p&gt;如何开发以下需求？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;业务 （Models、Prompt）&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;多模型（gpt-3.5, gpt-4, chatglm-6b, chatglm-6b-ft）&lt;/li&gt;
+&lt;li&gt;多业务（运营push、个性化push、weibo地域、商业评论、新闻评论……）&lt;/li&gt;
+&lt;li&gt;不同业务 X 不同模型 = 不同prompt&lt;/li&gt;
+&lt;li&gt;敏感词风控&lt;/li&gt;
+&lt;li&gt;输出标准化json格式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;网页 （Memory）&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;多轮对话&lt;/li&gt;
+&lt;li&gt;控制记忆上限（按轮数、按token[全量, 摘要……]）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;外部数据 （Indexes）&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;汽车博文生成，需要参考车型各类参数（pdf，md, txt……）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;任务拆分 （Chain）&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;汽车博文3段式生成
+&lt;ol&gt;
+&lt;li&gt;根据brief =》开头&lt;/li&gt;
+&lt;li&gt;根据brief、开头 =》 中间&lt;/li&gt;
+&lt;li&gt;根据开头、中间 =》结尾&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;日志（Callbacks）&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;过程日志统计、token统计……&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;……&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;工具&#34;&gt;工具&lt;/h2&gt;
+&lt;p&gt;目前开源工具包括以下几种：llama_index、langchain、semantic-kernel等。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
