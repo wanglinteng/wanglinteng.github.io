@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>semantic-kernel - LINTENG&#39;S BLOG</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="semantic-kernel" />
+<meta property="og:description" content="Linteng&#39;s Personal blog about everything" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/tags/semantic-kernel/" />
+
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+	<link rel="alternate" type="application/rss+xml" href="/tags/semantic-kernel/index.xml" title="LINTENG'S BLOG">
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="LINTENG&#39;S BLOG" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">LINTENG&#39;S BLOG</div>
+					<div class="logo__tagline">坠欢莫拾，酒痕在衣。</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/docs/getting-started/">
+				
+				<span class="menu__text">Getting started</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/docs/customization/">
+				
+				<span class="menu__text">Customization</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/docs/faq/">
+				
+				<span class="menu__text">FAQ</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/llm_develop_tools/">
+				
+				<span class="menu__text">Article</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/842%E8%80%83%E7%A0%94/">
+				
+				<span class="menu__text">842考研</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">About</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main list" role="main">
+	<header class="main__header">
+		<h1 class="main__title">semantic-kernel</h1>
+	</header><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/llm_develop_tools/" rel="bookmark">
+			LLM Develop Tools
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-05-31T00:00:00Z">May 31, 2023</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/llm/" rel="category">LLM</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		<h2 id="motivation">Motivation</h2>
+<p>如何开发以下需求？</p>
+<ul>
+<li>
+<p><strong>业务 （Models、Prompt）</strong></p>
+<ul>
+<li>多模型（gpt-3.5, gpt-4, chatglm-6b, chatglm-6b-ft）</li>
+<li>多业务（运营push、个性化push、weibo地域、商业评论、新闻评论……）</li>
+<li>不同业务 X 不同模型 = 不同prompt</li>
+<li>敏感词风控</li>
+<li>输出标准化json格式</li>
+</ul>
+</li>
+<li>
+<p><strong>网页 （Memory）</strong></p>
+<ul>
+<li>多轮对话</li>
+<li>控制记忆上限（按轮数、按token[全量, 摘要……]）</li>
+</ul>
+</li>
+<li>
+<p><strong>外部数据 （Indexes）</strong></p>
+<ul>
+<li>汽车博文生成，需要参考车型各类参数（pdf，md, txt……）</li>
+</ul>
+</li>
+<li>
+<p><strong>任务拆分 （Chain）</strong></p>
+<ul>
+<li>汽车博文3段式生成
+<ol>
+<li>根据brief =》开头</li>
+<li>根据brief、开头 =》 中间</li>
+<li>根据开头、中间 =》结尾</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>日志（Callbacks）</strong></p>
+<ul>
+<li>过程日志统计、token统计……</li>
+</ul>
+</li>
+<li>
+<p><strong>……</strong></p>
+</li>
+</ul>
+<h2 id="工具">工具</h2>
+<p>目前开源工具包括以下几种：llama_index、langchain、semantic-kernel等。</p>
+	</div>
+</article>
+</main>
+
+
+			</div>
+			
+<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="/">
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/docs/getting-started/">Getting started</a></li>
+			<li class="widget__item"><a class="widget__link" href="/docs/customization/">Customization</a></li>
+			<li class="widget__item"><a class="widget__link" href="/docs/faq/">Frequently asked questions (FAQ)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/llm_develop_tools/">LLM Develop Tools</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E6%88%91%E7%9A%84%E8%80%83%E7%A0%94%E8%B7%AF/">我的考研路</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/llm/">LLM</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/">东北大学842考研</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/842/" title="842">842</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/842%E8%80%83%E7%A0%94/" title="842考研">842考研</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/installation/" title="Installation">Installation</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/js/" title="js">js</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/langchain/" title="langchain">langchain</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/llama-index/" title="llama-index">llama-index</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/llm/" title="LLM">LLM</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/php/" title="php">php</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/semantic-kernel/" title="semantic-kernel">semantic-kernel</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6/" title="东北大学">东北大学</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" title="东北大学842考研">东北大学842考研</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E6%9C%A8%E9%A9%AC/" title="木马">木马</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E8%80%83%E7%A0%94/" title="考研">考研</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E8%B0%83%E5%89%82/" title="调剂">调剂</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2023 LINTENG&#39;S BLOG.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

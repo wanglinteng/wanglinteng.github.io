@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta name="generator" content="Hugo 0.87.0" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>LINTENG&#39;S BLOG</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Linteng&#39;s Personal blog about everything">
+		<meta property="og:title" content="LINTENG&#39;S BLOG" />
+<meta property="og:description" content="Linteng&#39;s Personal blog about everything" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/" />
+
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+	<link rel="alternate" type="application/rss+xml" href="/index.xml" title="LINTENG'S BLOG">
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="LINTENG&#39;S BLOG" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">LINTENG&#39;S BLOG</div>
+					<div class="logo__tagline">坠欢莫拾，酒痕在衣。</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/docs/getting-started/">
+				
+				<span class="menu__text">Getting started</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/docs/customization/">
+				
+				<span class="menu__text">Customization</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/docs/faq/">
+				
+				<span class="menu__text">FAQ</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/llm_develop_tools/">
+				
+				<span class="menu__text">Article</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/842%E8%80%83%E7%A0%94/">
+				
+				<span class="menu__text">842考研</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">About</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main list" role="main">
+	<article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/2007-d-%E4%B8%89/" rel="bookmark">
+			2007-d-三
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-04T00:00:00Z">November 04, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		有錯誤
+#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt; #define maxSize 100  //邻接表定义存储 typedef struct ArcNode { int adjvex; struct ArcNode *nextarc; } ArcNode; typedef struct VNode { int data; ArcNode *firstarc; }VNode; typedef struct AGraph { VNode adjlist[maxSize]; int n,e; } AGraph; //邻接表建立 void create(AGraph *G) { int i; int h,t; ArcNode *p; printf(&#34;请输入顶点数、弧数：\n&#34;); scanf(&#34;%d,%d&#34;,&amp;G-&gt;n,&amp;G-&gt;e); //输入顶点数、弧数  for(i=0;i&lt;G-&gt;n;++i) { printf(&#34;请输入第%d个顶点值\n&#34;,i); scanf(&#34;%d&#34;,&amp;G-&gt;adjlist[i].data); G-&gt;adjlist[i].firstarc=NULL; } //输入弧  for(i=0;i&lt;G-&gt;e;++i) { printf(&#34;请按顺序输入弧头[h]、弧尾[t]\n&#34;); scanf(&#34;%d,%d&#34;,&amp;h,&amp;t); p=(ArcNode*)malloc(sizeof(ArcNode)); p-&gt;adjvex=t; /*将新边表结点p 插入到顶点Vh 的边表头部*/ p-&gt;nextarc=G-&gt;adjlist[h].
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/2007-d-%E4%BA%8C/" rel="bookmark">
+			2007-d-二
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-04T00:00:00Z">November 04, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		typedef struct BTNode { int data; int b;//平衡因子  struct BTNode *lchild; struct BTNode *rchild; } BTNode; int getDepth(BTNode *T) { int level=0; BTNode *p; p=T; while(p!=NULL) { ++level; if(p-&gt;b&lt;0) p=p-&gt;rchild;//右子树高  else p=p-&gt;lchild;//左子树高  } return level; } 
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/2009-d-%E4%BA%8C-1/" rel="bookmark">
+			2009-d-二-1
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-02T00:00:00Z">November 02, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		void delpre(LNode *x) { LNode *r,*p;//r是p的前驱结点，当p的后继结点是x时，删除p  p=x; if(p-&gt;next!=NULL) { while(p-&gt;next!=x) { r=p; p=p-&gt;next; } r-&gt;next=x; free(p); } } 
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/2009-d-%E4%BA%8C-2/" rel="bookmark">
+			2009-d-二-2
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-02T00:00:00Z">November 02, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		void swap(BTNode *T) { BTNode *p,*temp; p=T; if(p!=NULL) { //交换左右子树  temp=p-&gt;rchild; p-&gt;rchild=p-&gt;lchild; p-&gt;lchild=temp; //递归实现全部指针互换  swap(p-&gt;lchild); swap(p-&gt;rchild); } } 
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/2009-d-%E4%BA%8C-3/" rel="bookmark">
+			2009-d-二-3
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-02T00:00:00Z">November 02, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		//天勤p150原题  BTNode *CreateBT(char pre[],char in[],int l1,int r1,int l2, int r2) { BTNode *s; int i; if(l1&gt;r1) return NULL; s=(BTNode*)malloc(sizeof(BTNode)); s-&gt;lchild=s-&gt;rchild=NULL; for(i=l2,i&lt;r2;++i) if(in[i]==pre[l1]) break; s-&gt;data=in[i]; s-&gt;lchild=CreateBT(pre,in,l1+1,l1+i-l2,l2,i-1); s-&gt;rchild=CreateBT(pre,in,l1+i-l2+1,r1,i+1,r2); return s; } 
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/2010-d-%E4%BA%8C-1/" rel="bookmark">
+			2010-d-二-1
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-01T00:00:00Z">November 01, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		int fun(LNode *l) { int max,min; LNode *p; p=l; max=p-&gt;data; min=p-&gt;data; //先找出最大值最小值  while(p!=NULL) { if(p-&gt;data&gt;max) max=p-&gt;data; if(p-&gt;data&lt;min) min=p-&gt;data; p=p-&gt;next; } //判断是否符合要求  while(p-&gt;next-&gt;next!=NULL&amp;&amp;p-&gt;data==p-&gt;next-&gt;data+p-&gt;next-next-&gt;data) { p=p-&gt;next; } //判断退出循环时p-&gt;next-&gt;next的值是否为空，不为空证明提前跳出循环  if(p-&gt;next-&gt;next-&gt;data==NULL) { printf(&#34;%d&#34;,max); return 1; }else{ printf(&#34;%d&#34;,min); return 0; } } 
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/2010-d-%E4%BA%8C-2/" rel="bookmark">
+			2010-d-二-2
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-01T00:00:00Z">November 01, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		//类似于天勤p136 double calfun(BTNode *p) { int l,r; if(p!=NULL) { if(p-&gt;lchild!=NULL&amp;&amp;p-&gt;rchild!=NULL) { l=calfun(p-&gt;lchild); r=calfun(p-&gt;rchild); return op(l,r,p-&gt;data); } else return p-&gt;data;//假设采用数值型存储  } else return 0; } 
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/2010-d-%E4%BA%8C-3/" rel="bookmark">
+			2010-d-二-3
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-01T00:00:00Z">November 01, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		//void BFS(AGraph *G,int v,int visit[maxSize]) void DS(AGraph *G,int v,int visit[maxSize]) { //visit数组被初始化为全0  ArcNode *p; //int que[maxSize],front=0,rear=0;  int stack[maxSize],top=-1; int j; visit[v]=1; //rear=(rear+1)%maxSize;  //que[rear]=v;  stack[++top]=v; while(front!=rear) { //front =(front+1)%maxSize;  //j=que[front];  j=stack[top--]; p=G-&gt;adjlist[j].firstarc; while(p!=NULL) { if(visit[p-&gt;adjvex]==0) { visit[p-&gt;adjvex]=1; //rear=rear+1;  //que[rear]=p-&gt;adjvex;  stack[++top]=p-&gt;adjvex; } p=p-&gt;nextarc; } } } 
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/2011-c-%E4%B8%80-5/" rel="bookmark">
+			2011-c-一-5
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-30T00:00:00Z">October 30, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		//递增：1，不递增：0 int dec(int a[],int n) { if(n==0) return 1; //递增  if(a[n]&gt;a[n-1]) return dec(a,n-1); else return 0; //不递增 } 方法二：
+int dec(int a[], int n) { //printf(&#34;n=%d,&#34;,n);  //printf(&#34;a[0]=%d\n&#34;,a[0]);  if (n &lt;= 1) { return 0;//非递增  } if (a[0] &lt; a[1]) { return dec(++a,--n);//注意n--是先把值给dec再减  }else{ return 1;//递增  } } int main() { int a[]={1,2,9,5}; printf(&#34;%d&#34;,dec(a,4)); } 
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/2011-c-%E4%BA%8C-1/" rel="bookmark">
+			2011-c-二-1
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-30T00:00:00Z">October 30, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;int main() { //定义文件指针  FILE *p; char c; int num=0; //打开文件  if((p=fopen(&#34;.\\demo.txt&#34;,&#34;r&#34;))==NULL) { printf(&#34;error&#34;); exit(-1); } while(fscanf(p,&#34;%c&#34;,&amp;c)!=EOF) { ++num; printf(&#34;%c&#34;,c); if(num==10) { printf(&#34;\n&#34;); num=0; } } } 
+	</div>
+</article>
+</main>
+
+<div class="pagination">
+	<a class="pagination__item pagination__item--prev btn" href="/page/4/">«</a>
+	<span class="pagination__item pagination__item--current">5/10</span>
+	<a class="pagination__item pagination__item--next btn" href="/page/6/">»</a>
+</div>
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="/">
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/docs/getting-started/">Getting started</a></li>
+			<li class="widget__item"><a class="widget__link" href="/docs/customization/">Customization</a></li>
+			<li class="widget__item"><a class="widget__link" href="/docs/faq/">Frequently asked questions (FAQ)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/llm_develop_tools/">LLM Develop Tools</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E6%88%91%E7%9A%84%E8%80%83%E7%A0%94%E8%B7%AF/">我的考研路</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/llm/">LLM</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/">东北大学842考研</a></li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/842/" title="842">842</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/842%E8%80%83%E7%A0%94/" title="842考研">842考研</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/installation/" title="Installation">Installation</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/js/" title="js">js</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/langchain/" title="langchain">langchain</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/llama-index/" title="llama-index">llama-index</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/llm/" title="LLM">LLM</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/php/" title="php">php</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/semantic-kernel/" title="semantic-kernel">semantic-kernel</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6/" title="东北大学">东北大学</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" title="东北大学842考研">东北大学842考研</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E6%9C%A8%E9%A9%AC/" title="木马">木马</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E8%80%83%E7%A0%94/" title="考研">考研</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E8%B0%83%E5%89%82/" title="调剂">调剂</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2023 LINTENG&#39;S BLOG.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>
