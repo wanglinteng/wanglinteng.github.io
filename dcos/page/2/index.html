@@ -70,7 +70,7 @@
 			</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="/docs/about/">
+			<a class="menu__link" href="/about/">
 				
 				<span class="menu__text">About</span>
 				
@@ -86,23 +86,6 @@
 			
 <main class="main list" role="main">
 	<article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/2002-d-%E4%BA%94/" rel="bookmark">
-			2002-d-五
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-12-08T00:00:00Z">December 08, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		/** 算法思想：1.分别求出此节点的左子树与右子树的高度 2.做差即为平衡因子 3.递归遍历二叉树 **/ //求二叉树深度 int depth(BTNode *bt) { if(bt!=NULL) { int l=depth(bt-&gt;lchild); int r=depth(bt-&gt;rchild); return l&gt;r?l+1:r+1; } return 0; } //递归求二叉树每个结点的平衡因子 void balance(BTNode *bt) { if(bt!=NULL) { balance(bt-&gt;lchild); balance(bt-&gt;rchild); int l=depth(bt-&gt;lchild); int r=depth(bt-&gt;rchild); printf(&#34;%d&#34;,l-r); } } 
-	</div>
-</article><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
@@ -258,6 +241,23 @@
 	<div class="content list__excerpt post__content clearfix">
 		#include &lt;stdio.h&gt; typedef struct student { float grade; struct student *next; } student; struct student *SortLink(struct student *head) { struct student *pre,*p,*pre_m,*m,*n; float min;//最小值  n=NULL;//将指针变为空，用于区别是否为首次插入  while(head-&gt;next!=NULL) { pre=head; p=head-&gt;next;//工作指针  m=p; pre_m=pre; min=p-&gt;grade;//最小值信息初始化  while(p!=NULL) { if(p-&gt;grade&lt;min) { min=p-&gt;grade; m=p;//保留当前次最小值地址  pre_m=pre; } p=p-&gt;next; pre=pre-&gt;next; } pre_m-&gt;next=m-&gt;next;//将最小值结点从当前链表移除  if(n==NULL)//第一个结点  { n=m; } else { m-&gt;next=n; n=m;//采用头插法  } } return n; } 
 	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/1997-c-%E4%B8%80-1-2/" rel="bookmark">
+			1997-c-一-1-(2)
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-30T00:00:00Z">November 30, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		
+	</div>
 </article>
 </main>
 
@@ -283,9 +283,9 @@
 		<ul class="widget__list">
 			<li class="widget__item"><a class="widget__link" href="/docs/seechat/">SeeChat</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/842/">842</a></li>
-			<li class="widget__item"><a class="widget__link" href="/docs/about/">About</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/llm_develop_tools/">LLM Develop Tools</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E6%88%91%E7%9A%84%E8%80%83%E7%A0%94%E8%B7%AF/">我的考研路</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/2006-%E4%B8%80-4/">2006-一-4</a></li>
 		</ul>
 	</div>
 </div>

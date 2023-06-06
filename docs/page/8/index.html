@@ -71,7 +71,7 @@
 			</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="/docs/about/">
+			<a class="menu__link" href="/about/">
 				
 				<span class="menu__text">About</span>
 				
@@ -87,23 +87,6 @@
 			
 <main class="main list" role="main">
 	<article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/2015-c-%E4%BA%8C-1/" rel="bookmark">
-			2015-c-二-1
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-17T00:00:00Z">October 17, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		#include &lt;stdio.h&gt;//功能函数 int total(int n) { if(n==1) return 1; else{ return total(n-1)+n+1; } } //主函数 int main() { int n; scanf(&#34;%d&#34;,&amp;n); printf(&#34;%d&#34;,total(n)); } 
-	</div>
-</article><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
@@ -260,6 +243,23 @@
 #include &lt;stdio.h&gt;int main() { int n, i, c;//需要分解的自然数  scanf(&#34;%d&#34;, &amp;n); i = 2; c = n; printf(&#34;%d=&#34;, n); while(n != 1) { if(n%i == 0) { printf(&#34;%s%d&#34;, c == n ? &#34;&#34; : &#34;*&#34;, i); n /= i; } else ++i; } } 递归算法实现
 #include &lt;stdio.h&gt; void num_break(int c,int n,int i) { if(n!=1)//n==1,证明分解完毕 	{ if(n%i==0) { printf(&#34;%s%d&#34;, c == n ? &#34;&#34; : &#34;*&#34;, i); n/=i; num_break(c,n,i); }	else num_break(c,n,++i); } } int main() { num_break(140,140,2); } 
 	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/1998-c-%E5%9B%9B/" rel="bookmark">
+			1998-c-四
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-05T00:00:00Z">October 05, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;string.h&gt;//逆置指针字符串 void invert(char *str,int len) { char * p1 = str; char * p2 = str + len - 1; while(p1 &lt; p2) { char c = *p1; *p1 = *p2; *p2 = c; ++p1; --p2; } } int main() { char str1[] = &#34;5689&#34;;//字符串1 	char str2[] = &#34;356&#34;;//字符串2  int len1 = strlen(str1);//取字符串1的长度 	int len2 = strlen(str2);//取字符串2的长度  invert(str1,len1);//逆置 	invert(str2,len2); //结果字符串动态分配 	char *result; result = (char*)malloc(len1 + len2); //初始化结果字符串 	for(int k = 0; k &lt; len1 + len2; k++) { result[k] = &#39;0&#39;; } for(int i=0;i&lt;len1+len2;i++) { printf(&#34;%c&#34;,result[i]); } printf(&#34;\n&#34;); for(int i=0; i&lt;len1; i++) { for(int j=0; j&lt;len2; j++) { int pos = i + j;//待写入位置 	int tmp = (str1[i] - &#39;0&#39;) * (str2[j] - &#39;0&#39;) + (result[pos] - &#39;0&#39;); result[pos] = tmp % 10 + &#39;0&#39;; //将余数写入对应位置 	//产生的进位 	int carry = tmp / 10; //当进位大于0,则更新下一位，一直更新，直到进位为0 	while(carry &gt; 0) { //下一个位置的数真值加上进位得到tmp 	tmp = result[pos + 1] - &#39;0&#39; + carry; //下一个位置等于tmp对10求余数 	result[pos + 1] = tmp % 10 + &#39;0&#39;; //计算进位 	carry = tmp / 10; //移动位置 	pos++; } for(int i=0; i&lt;len1+len2;i++) { printf(&#34;%c&#34;,result[i]); }	printf(&#34;\n&#34;); } } /** char *str1= &#34;5689&#34;（静态存储区） char str[] = &#34;5689&#34;(栈区) (char*)malloc(len1 + len2)(堆区); **/ invert(result,len1+len2); for(int i=0; i&lt;len1+len2;i++) { printf(&#34;%c&#34;,result[i]); }	return 0; } 
+	</div>
 </article>
 </main>
 
@@ -285,9 +285,9 @@
 		<ul class="widget__list">
 			<li class="widget__item"><a class="widget__link" href="/docs/seechat/">SeeChat</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/842/">842</a></li>
-			<li class="widget__item"><a class="widget__link" href="/docs/about/">About</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/llm_develop_tools/">LLM Develop Tools</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E6%88%91%E7%9A%84%E8%80%83%E7%A0%94%E8%B7%AF/">我的考研路</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/2006-%E4%B8%80-4/">2006-一-4</a></li>
 		</ul>
 	</div>
 </div>

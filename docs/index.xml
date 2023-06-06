@@ -30,10 +30,10 @@
     
     <item>
       <title>About</title>
-      <link>/docs/about/</link>
+      <link>/about/</link>
       <pubDate>Wed, 31 May 2023 14:00:00 +0000</pubDate>
       
-      <guid>/docs/about/</guid>
+      <guid>/about/</guid>
       <description>My name is Linteng Wang. I’m a Machine Learning Engineer working in NLP, news recommendation and LLM at Sina Weibo.
 Previously, I was a Machine Learning Intern at Meituan working in Anti-Cheat in the Bike Share Team.
 This blog is my little corner of the internet!

@@ -71,7 +71,7 @@
 			</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="/docs/about/">
+			<a class="menu__link" href="/about/">
 				
 				<span class="menu__text">About</span>
 				
@@ -87,23 +87,6 @@
 			
 <main class="main list" role="main">
 	<article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/2013-c-%E4%BA%8C-3/" rel="bookmark">
-			2013-c-二-3
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-25T00:00:00Z">October 25, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt; int main() { char str[50][32];//用于存储从文件中读取的单词  char temp[32];//用于临时存储变量  FILE *in,*out; int i,j,n=0; //判断打开文件是否成功  if((in=fopen(&#34;.\\file.txt&#34;,&#34;r&#34;))==NULL)//文件当前路径  { printf(&#34;open error&#34;); exit(-1);//需要 stdlib.h  } //读取文件  while(fscanf(in,&#34;%s &#34;,str[n])!=EOF) n++; //关闭文件  fclose(in); //对单词进行排序，采用冒泡法  for(i=0;i&lt;n;i++) { for(j=0;j&lt;n;j++) { if(strcmp(str[j],str[j+1])&gt;0) { strcpy(temp,str[j+1]); strcpy(str[j+1],str[j]); strcpy(str[j],temp); } } } //输出文件  //判断打开文件是否成功  if((out=fopen(&#34;.\\file2.txt&#34;,&#34;w&#34;))==NULL) { printf(&#34;open error&#34;); exit(-1);//需要 stdlib.h  } for(i=0;i&lt;n;i++) fprintf(out,&#34;%s &#34;,str[i]); fclose(out); } 
-	</div>
-</article><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
@@ -257,6 +240,23 @@ int visit[maxSize]; int stack[maxSize]; int j=0; int u,pre;//第二个结点、�
 	<div class="content list__excerpt post__content clearfix">
 		/** 算法思想： 采用迪杰斯特拉算法，找出v0到其余各个节点的最小路径。 遍历输出最小路径为k的节点 **/ // 邻接矩阵 typedef struct Graph { char vexs[MAX];	// 顶点集合 	int vexnum;	// 顶点数 	int edgnum;	// 边数 	int matrix[MAX][MAX]; // 邻接矩阵 }Graph; /* * 参数说明： *	G -- 图 *	vs -- 起始顶点(start vertex)。即计算&#34;顶点vs&#34;到其它顶点的最短路径。 *	prev -- 前驱顶点数组。即，prev[i]的值是&#34;顶点vs&#34;到&#34;顶点i&#34;的最短路径所经历的全部顶点中，位于&#34;顶点i&#34;之前的那个顶点。 *	dist -- 长度数组。即，dist[i]是&#34;顶点vs&#34;到&#34;顶点i&#34;的最短路径的长度。 */ void dijkstra(Graph G, int vs, int prev[], int dist[]) { int i,j,k; int min; int tmp; int flag[MAX];	// flag[i]=1表示&#34;顶点vs&#34;到&#34;顶点i&#34;的最短路径已成功获取。  // 初始化 	for (i = 0; i &lt; G.
 	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/2015-c-%E4%BA%8C-1/" rel="bookmark">
+			2015-c-二-1
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-17T00:00:00Z">October 17, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		#include &lt;stdio.h&gt;//功能函数 int total(int n) { if(n==1) return 1; else{ return total(n-1)+n+1; } } //主函数 int main() { int n; scanf(&#34;%d&#34;,&amp;n); printf(&#34;%d&#34;,total(n)); } 
+	</div>
 </article>
 </main>
 
@@ -282,9 +282,9 @@ int visit[maxSize]; int stack[maxSize]; int j=0; int u,pre;//第二个结点、�
 		<ul class="widget__list">
 			<li class="widget__item"><a class="widget__link" href="/docs/seechat/">SeeChat</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/842/">842</a></li>
-			<li class="widget__item"><a class="widget__link" href="/docs/about/">About</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/llm_develop_tools/">LLM Develop Tools</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E6%88%91%E7%9A%84%E8%80%83%E7%A0%94%E8%B7%AF/">我的考研路</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/2006-%E4%B8%80-4/">2006-一-4</a></li>
 		</ul>
 	</div>
 </div>

@@ -70,7 +70,7 @@
 			</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="/docs/about/">
+			<a class="menu__link" href="/about/">
 				
 				<span class="menu__text">About</span>
 				
@@ -86,25 +86,6 @@
 			
 <main class="main list" role="main">
 	<article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/2000-2011/" rel="bookmark">
-			2000-2011
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-08T00:00:00Z">November 08, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		前辈答案
- http://blog.csdn.net/zl19890124
- #include &lt;stdio.h&gt; #define MAX_NM 10 #define MAX_POSTAGE 1024 #define INF 2147483647  int n, m; int x[MAX_NM], ans[MAX_NM], y[MAX_POSTAGE], maxStamp, r; /* * backtrack(i)表示x[0...i-1]这i张邮票已经完全确定， * 相应于x[0...i-1]的最大连续邮资区间r和每种邮资所需要的 * 最少邮票张数y[0...r]也都确定，现在枚举x[i] * 的每个值，确定x[i] */ void backtrack(int i) { int *backup_y, backup_r; int next, postage, num, tmp; if(i &gt;= n) { if(r &gt; maxStamp) { maxStamp = r; for(tmp = 0; tmp &lt; n; tmp++) ans[tmp] = x[tmp]; } return; } backup_y = (int*)malloc(MAX_POSTAGE * sizeof(int)); for(tmp = 0; tmp &lt; MAX_POSTAGE; tmp++) backup_y[tmp] = y[tmp]; backup_r = r; for(next = x[i - 1] + 1; next &lt;= r + 1; next++) { /* update x[i] */ x[i] = next; /* update y */ for(postage = 0; postage &lt; x[i-1] * m; postage++) { if(y[postage] &gt;= m) continue; for(num = 1; num &lt;= m - y[postage]; num++) if(y[postage] + num &lt; y[postage + num * next] &amp;&amp; (postage + num * next &lt; MAX_POSTAGE)) y[postage + num * next] = y[postage] + num; } /* update r */ while(y[r + 1] &lt; INF) r++; backtrack(i + 1); /* restore */ r = backup_r; for(tmp = 0; tmp &lt; MAX_POSTAGE; tmp++) y[tmp] = backup_y[tmp]; } free(backup_y); } int main() { int i; scanf(&#34;%d%d&#34;, &amp;n, &amp;m); x[0] = 1; r = m; for(i = 0; i &lt;= r; i++) y[i] = i; while(i &lt; MAX_POSTAGE) y[i++] = INF; maxStamp = 0; backtrack(1); printf(&#34;max stamp is: %d/n&#34;, maxStamp); for(i = 0; i &lt; n; i++) printf(&#34;%4d&#34;, ans[i]); return 0; } 
-	</div>
-</article><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
@@ -261,6 +242,24 @@
 	<div class="content list__excerpt post__content clearfix">
 		#include #include typedef struct BTNode { int	data; struct BTNode	* lchild; struct BTNode	* rchild; } BTNode; /* 创建排序树 */ BTNode* create() { BTNode	*root; int	n; scanf( &#34;%d&#34;, &amp;n ); if ( n == -1 ) return(NULL); else{ root	= (BTNode *) malloc( sizeof(BTNode) ); root-&gt;data	= n; root-&gt;lchild	= create(); root-&gt;rchild	= create(); } return(root); } /* 向二叉排序树中插入值 */ void insert( BTNode* root, int key ) { BTNode	* p	= NULL, *pre = NULL; BTNode	* c	= (BTNode *) malloc( sizeof(BTNode) ); c-&gt;data	= key; c-&gt;lchild	= NULL; c-&gt;rchild	= NULL; /* 树为空 */ if ( NULL == root ) { root == c; }else{ p = root; while ( NULL !
 	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/2007-d-%E4%B8%89/" rel="bookmark">
+			2007-d-三
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-04T00:00:00Z">November 04, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		有錯誤
+#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt; #define maxSize 100  //邻接表定义存储 typedef struct ArcNode { int adjvex; struct ArcNode *nextarc; } ArcNode; typedef struct VNode { int data; ArcNode *firstarc; }VNode; typedef struct AGraph { VNode adjlist[maxSize]; int n,e; } AGraph; //邻接表建立 void create(AGraph *G) { int i; int h,t; ArcNode *p; printf(&#34;请输入顶点数、弧数：\n&#34;); scanf(&#34;%d,%d&#34;,&amp;G-&gt;n,&amp;G-&gt;e); //输入顶点数、弧数  for(i=0;i&lt;G-&gt;n;++i) { printf(&#34;请输入第%d个顶点值\n&#34;,i); scanf(&#34;%d&#34;,&amp;G-&gt;adjlist[i].data); G-&gt;adjlist[i].firstarc=NULL; } //输入弧  for(i=0;i&lt;G-&gt;e;++i) { printf(&#34;请按顺序输入弧头[h]、弧尾[t]\n&#34;); scanf(&#34;%d,%d&#34;,&amp;h,&amp;t); p=(ArcNode*)malloc(sizeof(ArcNode)); p-&gt;adjvex=t; /*将新边表结点p 插入到顶点Vh 的边表头部*/ p-&gt;nextarc=G-&gt;adjlist[h].
+	</div>
 </article>
 </main>
 
@@ -286,9 +285,9 @@
 		<ul class="widget__list">
 			<li class="widget__item"><a class="widget__link" href="/docs/seechat/">SeeChat</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/842/">842</a></li>
-			<li class="widget__item"><a class="widget__link" href="/docs/about/">About</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/llm_develop_tools/">LLM Develop Tools</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E6%88%91%E7%9A%84%E8%80%83%E7%A0%94%E8%B7%AF/">我的考研路</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/2006-%E4%B8%80-4/">2006-一-4</a></li>
 		</ul>
 	</div>
 </div>
