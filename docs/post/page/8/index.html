@@ -63,6 +63,13 @@
 			</a>
 		</li>
 		<li class="menu__item">
+			<a class="menu__link" href="/docs/tools/">
+				
+				<span class="menu__text">Tools</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
 			<a class="menu__link" href="/about/">
 				
 				<span class="menu__text">About</span>
@@ -81,6 +88,40 @@
 	<header class="main__header">
 		<h1 class="main__title">Posts</h1>
 	</header><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/2015-d-%E4%BA%8C-3/" rel="bookmark">
+			2015-d-二-3
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-18T00:00:00Z">October 18, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		/** 算法思想： 采用迪杰斯特拉算法，找出v0到其余各个节点的最小路径。 遍历输出最小路径为k的节点 **/ // 邻接矩阵 typedef struct Graph { char vexs[MAX];	// 顶点集合 	int vexnum;	// 顶点数 	int edgnum;	// 边数 	int matrix[MAX][MAX]; // 邻接矩阵 }Graph; /* * 参数说明： *	G -- 图 *	vs -- 起始顶点(start vertex)。即计算&#34;顶点vs&#34;到其它顶点的最短路径。 *	prev -- 前驱顶点数组。即，prev[i]的值是&#34;顶点vs&#34;到&#34;顶点i&#34;的最短路径所经历的全部顶点中，位于&#34;顶点i&#34;之前的那个顶点。 *	dist -- 长度数组。即，dist[i]是&#34;顶点vs&#34;到&#34;顶点i&#34;的最短路径的长度。 */ void dijkstra(Graph G, int vs, int prev[], int dist[]) { int i,j,k; int min; int tmp; int flag[MAX];	// flag[i]=1表示&#34;顶点vs&#34;到&#34;顶点i&#34;的最短路径已成功获取。  // 初始化 	for (i = 0; i &lt; G.
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/2015-c-%E4%BA%8C-1/" rel="bookmark">
+			2015-c-二-1
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-17T00:00:00Z">October 17, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		#include &lt;stdio.h&gt;//功能函数 int total(int n) { if(n==1) return 1; else{ return total(n-1)+n+1; } } //主函数 int main() { int n; scanf(&#34;%d&#34;,&amp;n); printf(&#34;%d&#34;,total(n)); } 
+	</div>
+</article><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
@@ -217,43 +258,6 @@
 	<div class="content list__excerpt post__content clearfix">
 		#include &lt;stdio.h&gt; //定义学生结构体，包含学生编号和成绩两部分 typedef struct Competitor { double grade; int number; } Competitor; double get_grade(int n) { int sum = 0; int min,max;//定义总分，最高分，最低分  int s;//老师打分  int i;//循环控制变量  double average;//定义平均分  printf(&#34;现在对编号为%d的选手打分\n&#34;,n); for(i=0;i&lt;8;i++) { printf(&#34;请第%d位老师打分:\n&#34;,i+1); scanf(&#34;%d&#34;,&amp;s); //第一个老师打的分赋值  if(i==0) { max=s; min=s; } //找最高分最低分  if(max&lt;s) max=s; if(min&gt;s) min=s; sum = sum + s; } sum = sum - min - max;//去掉最高分、去掉最低分  average = sum/6.0; printf(&#34;编号为%d的选手平均分为%f\n&#34;,n,average); return average; } int main() { Competitor c[5];//20位太多了，5位测试  int i; int j; for(i=0;i&lt;5;i++) { int n; printf(&#34;请输入学生编号：&#34;); scanf(&#34;%d&#34;,&amp;n); c[i].
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/1998-c-%E4%BA%8C/" rel="bookmark">
-			1998-c-二
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-05T00:00:00Z">October 05, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		算法思想: 输入一个数x，将其对n取余(n从2开始)，如果余数为零，m=m/n,重复操作。如果余数不为零，n++,直到找到能够被其整除的数。
-非递归算法
-#include &lt;stdio.h&gt;int main() { int n, i, c;//需要分解的自然数  scanf(&#34;%d&#34;, &amp;n); i = 2; c = n; printf(&#34;%d=&#34;, n); while(n != 1) { if(n%i == 0) { printf(&#34;%s%d&#34;, c == n ? &#34;&#34; : &#34;*&#34;, i); n /= i; } else ++i; } } 递归算法实现
-#include &lt;stdio.h&gt; void num_break(int c,int n,int i) { if(n!=1)//n==1,证明分解完毕 	{ if(n%i==0) { printf(&#34;%s%d&#34;, c == n ? &#34;&#34; : &#34;*&#34;, i); n/=i; num_break(c,n,i); }	else num_break(c,n,++i); } } int main() { num_break(140,140,2); } 
-	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/1998-c-%E5%9B%9B/" rel="bookmark">
-			1998-c-四
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-05T00:00:00Z">October 05, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;string.h&gt;//逆置指针字符串 void invert(char *str,int len) { char * p1 = str; char * p2 = str + len - 1; while(p1 &lt; p2) { char c = *p1; *p1 = *p2; *p2 = c; ++p1; --p2; } } int main() { char str1[] = &#34;5689&#34;;//字符串1 	char str2[] = &#34;356&#34;;//字符串2  int len1 = strlen(str1);//取字符串1的长度 	int len2 = strlen(str2);//取字符串2的长度  invert(str1,len1);//逆置 	invert(str2,len2); //结果字符串动态分配 	char *result; result = (char*)malloc(len1 + len2); //初始化结果字符串 	for(int k = 0; k &lt; len1 + len2; k++) { result[k] = &#39;0&#39;; } for(int i=0;i&lt;len1+len2;i++) { printf(&#34;%c&#34;,result[i]); } printf(&#34;\n&#34;); for(int i=0; i&lt;len1; i++) { for(int j=0; j&lt;len2; j++) { int pos = i + j;//待写入位置 	int tmp = (str1[i] - &#39;0&#39;) * (str2[j] - &#39;0&#39;) + (result[pos] - &#39;0&#39;); result[pos] = tmp % 10 + &#39;0&#39;; //将余数写入对应位置 	//产生的进位 	int carry = tmp / 10; //当进位大于0,则更新下一位，一直更新，直到进位为0 	while(carry &gt; 0) { //下一个位置的数真值加上进位得到tmp 	tmp = result[pos + 1] - &#39;0&#39; + carry; //下一个位置等于tmp对10求余数 	result[pos + 1] = tmp % 10 + &#39;0&#39;; //计算进位 	carry = tmp / 10; //移动位置 	pos++; } for(int i=0; i&lt;len1+len2;i++) { printf(&#34;%c&#34;,result[i]); }	printf(&#34;\n&#34;); } } /** char *str1= &#34;5689&#34;（静态存储区） char str[] = &#34;5689&#34;(栈区) (char*)malloc(len1 + len2)(堆区); **/ invert(result,len1+len2); for(int i=0; i&lt;len1+len2;i++) { printf(&#34;%c&#34;,result[i]); }	return 0; } 
-	</div>
 </article>
 </main>
 
@@ -270,11 +274,11 @@
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/%E7%91%9E%E5%B9%B8%E6%8A%A2%E6%88%91%E4%B8%80%E5%9D%97%E4%B8%80%E6%AF%9B%E4%B9%9D/">瑞幸抢我一块一毛九</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/llm_embedding/">LLM Embedding</a></li>
+			<li class="widget__item"><a class="widget__link" href="/docs/tools/">Tools</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/seechat/">SeeChat</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/842/">842</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/llm_develop_tools/">LLM Develop Tools</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/%E5%AF%B9%E5%BD%A9%E7%A4%BC%E7%9A%84%E7%90%86%E8%A7%A3/">对彩礼的理解</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/%E5%AF%B9%E7%BB%9F%E6%B2%BB%E4%B8%8E%E8%A2%AB%E7%BB%9F%E6%B2%BB%E7%9A%84%E7%90%86%E8%A7%A3/">对统治与被统治的理解</a></li>
 		</ul>
 	</div>
 </div>
@@ -294,6 +298,7 @@
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/embedding/" title="Embedding">Embedding</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/js/" title="js">js</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/langchain/" title="langchain">langchain</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/llama-index/" title="llama-index">llama-index</a>

@@ -8,6 +8,35 @@
     <language>en-us</language>
     <lastBuildDate>Tue, 06 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>瑞幸抢我一块一毛九</title>
+      <link>//localhost:1313/post/%E7%91%9E%E5%B9%B8%E6%8A%A2%E6%88%91%E4%B8%80%E5%9D%97%E4%B8%80%E6%AF%9B%E4%B9%9D/</link>
+      <pubDate>Thu, 08 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/post/%E7%91%9E%E5%B9%B8%E6%8A%A2%E6%88%91%E4%B8%80%E5%9D%97%E4%B8%80%E6%AF%9B%E4%B9%9D/</guid>
+      <description>&lt;p&gt;Q: app付款后退款你会检查退款金额吗？&lt;/p&gt;
+&lt;p&gt;A: 大部分时间不会，今天无意瞟了一眼发现了问题，对不上！&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>LLM Embedding</title>
+      <link>//localhost:1313/post/llm_embedding/</link>
+      <pubDate>Wed, 07 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/post/llm_embedding/</guid>
+      <description>LLM Embedding ChatGLM   ChatGLM获取Embedding向量
+inputs = tokenizer([text], return_tensors=&amp;#34;pt&amp;#34;).to(device) resp = model.transformer(**inputs, output_hidden_states=True) y = resp.last_hidden_state y_mean = torch.mean(y, dim=0, keepdim=True) y_mean = y_mean.cpu().detach().numpy() print(y_mean.shape) &amp;gt; [1, 4096]   </description>
+    </item>
+    
+    <item>
+      <title>Tools</title>
+      <link>//localhost:1313/docs/tools/</link>
+      <pubDate>Wed, 07 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/tools/</guid>
+      <description>Common tools shell  kill through name ps aux | grep &amp;#34;xxx.py&amp;#34;|grep -v grep|awk &amp;#39;{print $2}&amp;#39;|xargs kill -9   python  pip tsinghua source pip install -i https://pypi.tuna.tsinghua.edu.cn/simple numpy   git  clone LLM git lfs install git lfs clone &amp;lt;repo_URL&amp;gt; # breakpoint continuation git lfs fetch --all --resume &amp;lt;repo_URL&amp;gt; # clone without large files git lfs clone --skip-smudge &amp;lt;repo_URL&amp;gt;   regex  https://regex101.com/  ping  https://17ce.</description>
+    </item>
+    
+    <item>
       <title>SeeChat</title>
       <link>//localhost:1313/docs/seechat/</link>
       <pubDate>Tue, 06 Jun 2023 00:00:00 +0000</pubDate>

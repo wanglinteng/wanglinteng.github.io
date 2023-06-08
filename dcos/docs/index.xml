@@ -6,7 +6,16 @@
     <description>Recent content in Documentation on LINTENG&#39;S BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 06 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/docs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/docs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tools</title>
+      <link>//localhost:1313/docs/tools/</link>
+      <pubDate>Wed, 07 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/tools/</guid>
+      <description>Common tools shell  kill through name ps aux | grep &amp;#34;xxx.py&amp;#34;|grep -v grep|awk &amp;#39;{print $2}&amp;#39;|xargs kill -9   python  pip tsinghua source pip install -i https://pypi.tuna.tsinghua.edu.cn/simple numpy   git  clone LLM git lfs install git lfs clone &amp;lt;repo_URL&amp;gt; # breakpoint continuation git lfs fetch --all --resume &amp;lt;repo_URL&amp;gt; # clone without large files git lfs clone --skip-smudge &amp;lt;repo_URL&amp;gt;   regex  https://regex101.com/  ping  https://17ce.</description>
+    </item>
+    
     <item>
       <title>SeeChat</title>
       <link>//localhost:1313/docs/seechat/</link>

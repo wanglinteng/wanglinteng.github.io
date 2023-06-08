@@ -6,7 +6,34 @@
     <description>Recent content in Tags on LINTENG&#39;S BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>日常</title>
+      <link>/tags/%E6%97%A5%E5%B8%B8/</link>
+      <pubDate>Thu, 08 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/%E6%97%A5%E5%B8%B8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Embedding</title>
+      <link>/tags/embedding/</link>
+      <pubDate>Wed, 07 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/embedding/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>LLM</title>
+      <link>/tags/llm/</link>
+      <pubDate>Wed, 07 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/llm/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>东北大学842考研</title>
       <link>/tags/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/</link>
@@ -35,29 +62,11 @@
     </item>
     
     <item>
-      <title>LLM</title>
-      <link>/tags/llm/</link>
-      <pubDate>Wed, 31 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/llm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>semantic-kernel</title>
       <link>/tags/semantic-kernel/</link>
       <pubDate>Wed, 31 May 2023 00:00:00 +0000</pubDate>
       
       <guid>/tags/semantic-kernel/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>日常</title>
-      <link>/tags/%E6%97%A5%E5%B8%B8/</link>
-      <pubDate>Tue, 24 May 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/%E6%97%A5%E5%B8%B8/</guid>
       <description></description>
     </item>
     

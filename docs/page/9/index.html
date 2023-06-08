@@ -64,6 +64,13 @@
 			</a>
 		</li>
 		<li class="menu__item">
+			<a class="menu__link" href="/docs/tools/">
+				
+				<span class="menu__text">Tools</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
 			<a class="menu__link" href="/about/">
 				
 				<span class="menu__text">About</span>
@@ -80,6 +87,58 @@
 			
 <main class="main list" role="main">
 	<article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/2016-c-%E4%B8%89-3/" rel="bookmark">
+			【2016-c-三-3】找出指定字符在字串中首次出现的位置
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-07T00:00:00Z">October 07, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		找出指定字符在字串中首次出现的位置
+// 在编写这个程序的时候遇到的问题：  /** scanf(&#34;%s&#34;,str); 输入完成时会有一个\n被压栈存储，导致第二个scanf失效 解决方案： 1. scanf(&#34;%s]&#34;,str); fflush(stdin);//清空缓冲区 2. scanf(&#34;%s&#34;,str);//用getchar将\n取出 char test = getchar(); printf(&#34;%d&#34;,test); 3.gets(str);// 串中有空格等： 1.字符串里面可能有空格、制表符等空白字符，如果直接用%s是不可以的 2.gets()可以实现，但是gets不安全，控制难度大。 3.scanf(&#34;%[^\n]%*c&#34;,str); //%*c的作用是读入\n,否则后面读入的将一直是\n 、%*c表示读入不存储注意c不可以换成其他字符 //^表示&#34;非&#34;，即读入其后面的字符就结束读入 **/ // 参考链接： // http://blog.csdn.net/hao5743/article/details/6939661 // http://blog.sina.com.cn/s/blog_60cbc1700100ohil.html // http://blog.csdn.net/why850901938/article/details/51298656  // 本题答案：  #include #define MaxSize 100 int search_pos(char *str,char c) { int i = 1;//用于标记位置 while(*str) { if(*str==c) return i; str++;//指针下移 i++;//标记加一  } return 0; } int main() { char str[MaxSize],x; int pos; printf(&#34;请输入字符串\n&#34;); gets(str);//考试应该可以写 //scanf(&#34;%[^\n]%*c&#34;,str);//%*c表示输入但不存储 标准写法 printf(&#34;请输入要查找的字符\n&#34;); scanf(&#34;%c&#34;,&amp;x); pos = search_pos(str,x); if(pos == 0) printf(&#34;此字符不存在于字符串中\n&#34;); else printf(&#34;查找成功此字符在字符串的第%d个位置\n&#34;,pos); } 另一种思路：先输入字符再输入字符串，可以完美解决 #include int main(){ char str[100]; printf(&#34;输入字符\n&#34;); char c = getchar(); //char x = getchar(); //printf(&#34;%d&#34;,x); printf(&#34;输入字符串\n&#34;); scanf(&#34;%s&#34;,str); printf(&#34;%d&#34;,str[0]); } 补充： #include int main(){ // 同时使用scanf输入两个字符串可以 /** char str[100], a[100]; printf(&#34;输入字符串\n&#34;); scanf(&#34;%s&#34;,str); printf(&#34;输入字符串\n&#34;); scanf(&#34;%s&#34;,a); **/ //先输入字符（getchar、scanf均可）后输入字符串可以 /** char str[100], a; printf(&#34;输入字符\n&#34;); scanf(&#34;%c&#34;,&amp;a); printf(&#34;输入字符串\n&#34;); scanf(&#34;%s&#34;,str); **/ //先输入字符串（scanf输入），后输入字符不可以但是使用gets()可以 char str[100], a; printf(&#34;输入字符串\n&#34;); //scanf(&#34;%s&#34;,str); gets(str); printf(&#34;输入字符\n&#34;); scanf(&#34;%c&#34;,&amp;a); //总结：不能使用scanf先输入字符串再输入字符，其他情况均可  } 
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/2016-c-%E4%B8%89-1/" rel="bookmark">
+			【2016-c-三-1】求1&#43;2×3&#43;4x5x6&#43;7x8x9x10&#43;……至n项
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-06T00:00:00Z">October 06, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		#include &lt;stdio.h&gt; int main() { int i,j,l;//中间变量  int n;//项数  int s=0;//总和  printf(&#34;请输入项数n的值\n&#34;); scanf(&#34;%d&#34;,&amp;n); for(i=1;i&lt;=n;i++) { int k =1;//每次开始的值  int m =1;//每次累乘和  for(j=1;j&lt;i;j++) k=k+j;//求出每项开始值  for(l=k;l&lt;k+i;l++) m=m*l;//每项累乘  s=s+m; } printf(&#34;前%d项和为：%d\n&#34;,n,s); } 
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/2016-c-%E4%B8%89-2/" rel="bookmark">
+			【2016-c-三-2】歌咏比赛，去掉最高分最低分，输出前三名
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-06T00:00:00Z">October 06, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		#include &lt;stdio.h&gt; //定义学生结构体，包含学生编号和成绩两部分 typedef struct Competitor { double grade; int number; } Competitor; double get_grade(int n) { int sum = 0; int min,max;//定义总分，最高分，最低分  int s;//老师打分  int i;//循环控制变量  double average;//定义平均分  printf(&#34;现在对编号为%d的选手打分\n&#34;,n); for(i=0;i&lt;8;i++) { printf(&#34;请第%d位老师打分:\n&#34;,i+1); scanf(&#34;%d&#34;,&amp;s); //第一个老师打的分赋值  if(i==0) { max=s; min=s; } //找最高分最低分  if(max&lt;s) max=s; if(min&gt;s) min=s; sum = sum + s; } sum = sum - min - max;//去掉最高分、去掉最低分  average = sum/6.0; printf(&#34;编号为%d的选手平均分为%f\n&#34;,n,average); return average; } int main() { Competitor c[5];//20位太多了，5位测试  int i; int j; for(i=0;i&lt;5;i++) { int n; printf(&#34;请输入学生编号：&#34;); scanf(&#34;%d&#34;,&amp;n); c[i].
+	</div>
+</article><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
@@ -201,57 +260,6 @@
 	<div class="content list__excerpt post__content clearfix">
 		//假设有那个元素已经存在于数组a中，用尾插法建立链表 //需要改变的变量用引用型 void creatListR(LNode *&amp;c,int a[],int n) { LNode *s,*r; int i; c=(LNode *)malloc(sizeof(LNode)); c-&gt;next=NULL; r=c; for(i=1;i&lt;=n;++i) { s=(LNode *)malloc(sizeof(LNode)); s-&gt;data=a[i]; r-&gt;next=s; r=r-&gt;next; } r-&gt;next=NULL; } 
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/1996-c-%E5%85%AD/" rel="bookmark">
-			1996-c-六
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-01T00:00:00Z">October 01, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		#include &lt;stdio.h&gt; //汉诺塔移动，递归算法  //将n个盘子从 x 借助 y 移动到 z void move (int n,char x,char y,char z){ if (n==1) printf(&#34;%c--&gt;%c\n&#34;,x,z); else { move (n-1,x,z,y); printf(&#34;%c--&gt;%c\n&#34;,x,z); move(n-1,y,x,z); } } int main(){ int n; printf(&#34;请输入汉诺塔的层数：&#34;); scanf(&#34;%d&#34;,&amp;n); printf(&#34;移动步骤如下：\n&#34;); move(n,&#39;X&#39;,&#39;Y&#39;,&#39;Z&#39;); return 0; } 
-	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/1997-c-%E4%B8%89/" rel="bookmark">
-			1997-c-三
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-01T00:00:00Z">October 01, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;//不能使用数组，但是可以用malloc生成一串连续的存储单元  typedef struct StuInfo { int grades; int stu_id; }StuInfo; int main() { int N;//输入的学生人数  StuInfo *buffer = NULL;//指向连续的存储空间  int i = 0; int sum = 0; int averge = 0; scanf(&#34;%d&#34;, &amp;N); printf(&#34;%d\n&#34;, N); buffer =(StuInfo *)malloc(sizeof(StuInfo) * N); //输入学生信息，并统计学生成绩的总和  for (i = 0 ; i &lt; N; i++) { printf(&#34;Enter student information inluding grades and stu_id.\n&#34;); scanf(&#34;%d%d&#34;, &amp;((buffer + i)-&gt;grades), &amp;((buffer + i)-&gt;stu_id)); sum += (buffer + i)-&gt;grades; } averge = sum / N;//计算学生的平均值  //求大于平均分的学生的成绩，并输入成绩和学号  for (i = 0; i &lt; N; i++) { if ((buffer + i)-&gt;grades &gt;= averge) { printf(&#34;%d %d\n&#34;, (buffer + i)-&gt;grades, (buffer + i)-&gt;stu_id); } } } 
-	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/1997-c-%E5%9B%9B/" rel="bookmark">
-			1997-c-四
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-01T00:00:00Z">October 01, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;/* **数组中有N个元素，要移动K个位置，那么数组的大小最小是N+K **宏定义N与K */ #define N 3 //存储的数据 #define K 2 //移动的位置  #define MAXSIZE (N + K)  void EnterIntegers(int *p); void Move_k_Position(int *p); void ShowArray(int *p); int main() { int A[MAXSIZE]; //输入N个整数  EnterIntegers(A); //移动K个位置  Move_k_Position(A); //显示数组元素  ShowArray(A); } //输入N个整数 void EnterIntegers(int *p) { int i = 0; printf(&#34;Enter N integers.\n&#34;); for (i = 0; i &lt; N; i++) { scanf(&#34;%d&#34;, p + i); printf(&#34;%d\n&#34;, *(p + i)); } } //移动K个位置 void Move_k_Position(int *p) { int i = 0; p = p + N -1; //从头部开始，每个元素都往后移动K个位置  for (i = N - 1 ; i &gt;= 0; i--) { *(p + K) = *p; *p = -1;//移动后将数据域清零  p--; } //输出数组中的数据域中的内容  } //显示数组元素 //空出来的位置以-1标记 void ShowArray(int *p) { int i = 0; for (i = 0; i &lt; N + K; i++) { printf(&#34;%d\n&#34;, p[i]); } } 
-	</div>
 </article>
 </main>
 
@@ -267,11 +275,11 @@
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/%E7%91%9E%E5%B9%B8%E6%8A%A2%E6%88%91%E4%B8%80%E5%9D%97%E4%B8%80%E6%AF%9B%E4%B9%9D/">瑞幸抢我一块一毛九</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/llm_embedding/">LLM Embedding</a></li>
+			<li class="widget__item"><a class="widget__link" href="/docs/tools/">Tools</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/seechat/">SeeChat</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/842/">842</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/llm_develop_tools/">LLM Develop Tools</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/%E5%AF%B9%E5%BD%A9%E7%A4%BC%E7%9A%84%E7%90%86%E8%A7%A3/">对彩礼的理解</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/%E5%AF%B9%E7%BB%9F%E6%B2%BB%E4%B8%8E%E8%A2%AB%E7%BB%9F%E6%B2%BB%E7%9A%84%E7%90%86%E8%A7%A3/">对统治与被统治的理解</a></li>
 		</ul>
 	</div>
 </div>
@@ -291,6 +299,7 @@
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/embedding/" title="Embedding">Embedding</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/js/" title="js">js</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/langchain/" title="langchain">langchain</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/llama-index/" title="llama-index">llama-index</a>

@@ -6,7 +6,17 @@
     <description>Recent content in LLM on LINTENG&#39;S BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 31 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/llm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/llm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LLM Embedding</title>
+      <link>/post/llm_embedding/</link>
+      <pubDate>Wed, 07 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/llm_embedding/</guid>
+      <description>LLM Embedding ChatGLM   ChatGLM获取Embedding向量
+inputs = tokenizer([text], return_tensors=&amp;#34;pt&amp;#34;).to(device) resp = model.transformer(**inputs, output_hidden_states=True) y = resp.last_hidden_state y_mean = torch.mean(y, dim=0, keepdim=True) y_mean = y_mean.cpu().detach().numpy() print(y_mean.shape) &amp;gt; [1, 4096]   </description>
+    </item>
+    
     <item>
       <title>LLM Develop Tools</title>
       <link>/post/llm_develop_tools/</link>

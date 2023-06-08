@@ -64,6 +64,13 @@
 			</a>
 		</li>
 		<li class="menu__item">
+			<a class="menu__link" href="/docs/tools/">
+				
+				<span class="menu__text">Tools</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
 			<a class="menu__link" href="/about/">
 				
 				<span class="menu__text">About</span>
@@ -80,6 +87,58 @@
 			
 <main class="main list" role="main">
 	<article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/2006-c-%E4%BA%94/" rel="bookmark">
+			2006-c-五
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-10T00:00:00Z">November 10, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		//优化版 #include &lt;stdio.h&gt;int main() { FILE *fp; int num, numCur, flag = 0; printf(&#34;\nInput a integer: &#34;); scanf(&#34;%d&#34;, &amp;num); //&#34;r+&#34; 以可读写方式打开文件，该文件必须存在。  //&#34;w&#34; 打开只写文件，若文件存在则文件长度清为0，即该文件内容会消失。若文件不存在则建立该文件。  //&#34;a&#34;为追加写、只写  //&#34;a+&#34;为追加写、可读可写  if ((fp = fopen(&#34;a.dat&#34;, &#34;a+&#34;))!=NULL) { while (!feof(fp)) { fscanf(fp, &#34;%d&#34;, &amp;numCur); if (numCur == num)flag = 1; } if (!flag) { fprintf(fp, &#34; %d&#34;, num); //因为要将这个数字写到文件中（相当于计算机input），所以用的是fp1  fclose(fp); } } } /*五.试编写一个程序，从键盘上输入一个整数，在整数文件&#34;a.dat&#34;中查找，要求： 1.若文件&#34;a.dat&#34;不存在，则建立一个新文件&#34;a.dat&#34;，将该整数写入文件； 2.若文件中找到了这个整数，则显示数据存在，否则将该数据写入文件。*/ #include &lt;stdio.h&gt;int main() { FILE *fp1, *fp2; int num, numCur, flag = 0; printf(&#34;\nInput a integer: &#34;); scanf(&#34;%d&#34;, &amp;num); //“r+” 以可读写方式打开文件，该文件必须存在。  //“w” 打开只写文件，若文件存在则文件长度清为0，即该文件内容会消失。若文件不存在则建立该文件。  if ((fp1 = fopen(&#34;a.
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/2006-c-%E5%9B%9B/" rel="bookmark">
+			2006-c-四
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-10T00:00:00Z">November 10, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		链表的创建、输出等 原文链接
+void Delete(LNode *La, LNode *Lb, LNode *Lc) //删除链表A中既存在B又存在C中的元素 { LNode *pa, *pb, *pc, *q; pa = La; pb = Lb-&gt;next; pc = Lc-&gt;next; while (pb &amp;&amp; pc) //思路：在链表B和C中查找相同的元素看看此元素是否在A链表中  { if (pb-&gt;data &lt; pc-&gt;data) pb = pb-&gt;next; else if (pc-&gt;data &lt; pb-&gt;data) pc = pc-&gt;next; else //找到lb和lc中都出现的结点  { while (pa-&gt;next) { if (pa-&gt;next-&gt;data &lt; pb-&gt;data) pa = pa-&gt;next; else if (pa-&gt;next-&gt;data &gt; pb-&gt;data) { //pa = pa-&gt;next;//此处注释，原因，添加此句会有漏解情况  pb = pb-&gt;next; pc = pc-&gt;next; break; } else //删除la中也包含的该元素  { q = pa-&gt;next; pa-&gt;next = q-&gt;next; free(q); pa = pa-&gt;next; pb = pb-&gt;next; pc = pc-&gt;next; break; } } } } } 
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/2006-d-%E4%B8%89/" rel="bookmark">
+			2006-d-三
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-10T00:00:00Z">November 10, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		//分别求出一个结点的左右孩子结点的高度做差即为平衡因子  int depth(BTNode *bt) { int r,l; if(bt==NULL) return 0; else { l=depth(bt-&gt;lchild); r=depth(bt-&gt;rchild); return (l&gt;r?l:r)+1; } } int balance(BTNode *T,int n)//n初始传入值为0 { int l,r; if(T!=NULL) { balance(T-&gt;lchild,n); balance(T-&gt;rchild,n); l=depth(T-&gt;lchild); r=depth(T-&gt;rchild); if(l+r&gt;0) ++n;//记录非叶子结点个数  printf(&#34;%d&#34;,l-r);//打印平衡因子  } return n; } 
+	</div>
+</article><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
@@ -204,57 +263,6 @@
 	<div class="content list__excerpt post__content clearfix">
 		//链表节点 typedef struct LNode { int data;//节点值  struct LNode *next;//指向下一个节点 } LNode; //哈希节点 typedef struct HNode { LNode *first;//链接的第一个指针域 } HNode; //哈希表 typedef struct HashTable { HNode list[N]; }HashTable; int seadel( HashTable *H,int k) { int pos=H(k); LNode *p,*r; p=H-&gt;list[pos]-&gt;first; //判断第一个结点是否是  if(p-&gt;data==k) { H-&gt;list[pos]-&gt;first=p-&gt;next; free(p); } r=p; p=p-&gt;next; //第一个不是  while(p!=NULL) { if(p-&gt;data==k) { r-&gt;next=p-&gt;next; free(p); return 1; }else{ r=p; p=p-&gt;next; } } return 0; } 
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/2005-d-%E5%9B%9B/" rel="bookmark">
-			2005-d-四
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-07T00:00:00Z">November 07, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		int visit[maxSize];//初始化全为0 void DFS(AGraph *G,int v,int t) { ArcNode *p; visit[v]=1; p=G-&gt;adjlist[v].firstarc; while(p!=NULL) { //在深度优先搜索中添加部分  if(p-&gt;adjvex==t) { printf(&#34;exist&#34;); break; }else{ if(visit[p-&gt;adjvex]==0) { DFS(G,p-&gt;adjvex,t); p=p-&gt;nextarc; } } } } 
-	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/2005-c-%E4%B8%80-2/" rel="bookmark">
-			2005-c-一-2
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-06T00:00:00Z">November 06, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		#include &lt;stdio.h&gt; int main() { char *s=&#34;121&#34;; int k=0,a=0,b=0; do{ k++; if(k%2==0){a=a+s[k]-&#39;0&#39;;continue;} b=b+s[k]-&#39;0&#39;;a=a+s[k]-&#39;0&#39;; }while(s[k+1]); printf(&#34;k=%d,a=%d,b=%d&#34;,k,a,b); } 
-	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/2007-c-%E5%9B%9B/" rel="bookmark">
-			2007-c-四
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-05T00:00:00Z">November 05, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		//优化简洁算法 void recycle(LNode *c) { int i=1; LNode *p,*q,*pre; pre=c; p=c-&gt;next; while(p!=NULL) { if((x&amp;(x-1))==0)//此处采取位运算：如果一个数x为2的平方，那么x&amp;x-1==0 { printf(&#34;%d&#34;,p-&gt;data); pre-&gt;next=p-&gt;next; q=p;//暂存待释放结点 p=p-&gt;next; free(q);//释放 } p=p-&gt;next;pre=pre-&gt;next;//指针下移 ++i;//报数增加一 } if(c-&gt;next!=NULL) recycle(c);//圈子里面，还有人继续报数 } ----------------------------------------------------------------------------------------- #include #include #define N 10  typedef struct LNode { int data; struct LNode *next; } LNode; //建立线性表 LNode* create() { LNode *c,*s,*r; int i; c=(LNode*)malloc(sizeof(LNode)); c-&gt;next=NULL; r=c; for(i=1;i&lt;=N;++i) { s=(LNode*)malloc(sizeof(LNode)); s-&gt;data=i; s-&gt;next=NULL; r-&gt;next=s; r=r-&gt;next; } return c; } //删除线性表某个节点 void seaDel(LNode *c,int x) { LNode *p,*q; p=c; //查找 while(p-&gt;next!
-	</div>
 </article>
 </main>
 
@@ -270,11 +278,11 @@
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/%E7%91%9E%E5%B9%B8%E6%8A%A2%E6%88%91%E4%B8%80%E5%9D%97%E4%B8%80%E6%AF%9B%E4%B9%9D/">瑞幸抢我一块一毛九</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/llm_embedding/">LLM Embedding</a></li>
+			<li class="widget__item"><a class="widget__link" href="/docs/tools/">Tools</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/seechat/">SeeChat</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/842/">842</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/llm_develop_tools/">LLM Develop Tools</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/%E5%AF%B9%E5%BD%A9%E7%A4%BC%E7%9A%84%E7%90%86%E8%A7%A3/">对彩礼的理解</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/%E5%AF%B9%E7%BB%9F%E6%B2%BB%E4%B8%8E%E8%A2%AB%E7%BB%9F%E6%B2%BB%E7%9A%84%E7%90%86%E8%A7%A3/">对统治与被统治的理解</a></li>
 		</ul>
 	</div>
 </div>
@@ -294,6 +302,7 @@
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/embedding/" title="Embedding">Embedding</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/js/" title="js">js</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/langchain/" title="langchain">langchain</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/llama-index/" title="llama-index">llama-index</a>
