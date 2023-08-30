@@ -4,11 +4,11 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>大模型token - LINTENG&#39;S BLOG</title>
+	<title>openai chatgpt token 是如何计算的？ - LINTENG&#39;S BLOG</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="大模型token">
-		<meta property="og:title" content="大模型token" />
-<meta property="og:description" content="大模型token" />
+	<meta name="description" content="gpt token">
+		<meta property="og:title" content="openai chatgpt token 是如何计算的？" />
+<meta property="og:description" content="gpt token" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/llm_token/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-08-30T00:00:00+00:00" />
@@ -16,8 +16,8 @@
 
 
 		<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="大模型token"/>
-<meta name="twitter:description" content="大模型token"/>
+<meta name="twitter:title" content="openai chatgpt token 是如何计算的？"/>
+<meta name="twitter:description" content="gpt token"/>
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -88,7 +88,7 @@
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">大模型token</h1>
+			<h1 class="post__title">openai chatgpt token 是如何计算的？</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-08-30T00:00:00Z">August 30, 2023</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/llm/" rel="category">LLM</a>
@@ -101,31 +101,34 @@
 <p>token是什么？</p>
 <ul>
 <li>
-<p>openai计费单位，按照输入token，输出token数量计算费用。</p>
+<p>大模型训练、推理本质是数值计算，文字需要转换为数字，通过文字转换得到的数字即为token。</p>
 </li>
 <li>
-<p>大模型训练、推理本质是数值计算，文字需要转换为数字，通过文字转换得到的数字即为token。</p>
+<p>openai计费单位，按照输入token，输出token数量计算费用。 <a href="https://openai.com/pricing">计费价格</a>，注意 input token 和 output token价格不同。</p>
 </li>
 </ul>
 </li>
 <li>
 <p>token是怎么计算的？</p>
+<p>通过openai提供的在线工具测试英文、中文 token结果如下：</p>
 <ul>
 <li>
 <p>英文</p>
 <p><img src="/img/image.png" alt="Alt text"></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">[<span style="color:#ae81ff">31373</span>, <span style="color:#ae81ff">644</span>, <span style="color:#ae81ff">338</span>, <span style="color:#ae81ff">534</span>, <span style="color:#ae81ff">1438</span>, <span style="color:#ae81ff">30</span>]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">TOKEN IDS [<span style="color:#ae81ff">31373</span>, <span style="color:#ae81ff">644</span>, <span style="color:#ae81ff">338</span>, <span style="color:#ae81ff">534</span>, <span style="color:#ae81ff">1438</span>, <span style="color:#ae81ff">30</span>]
 </code></pre></div><p>一个有用的经验法则是，对于普通英语文本，一个token通常对应约4个字符的文本。这大约相当于一个单词的3/4（因此100个token~=75个单词）。</p>
 </li>
 <li>
 <p>中文</p>
 <p><img src="/img/image-1.png" alt="Alt text"></p>
+<p>中文分词一个字可能对应多个token，所以可视化后可能出现乱码。</p>
 </li>
 <li>
 <p>tiktoken</p>
-<p>通过openai开源的tiktoken工具，先生成<code>算法工程师</code> token然后再对token还原可以得到id代表的字节，例如：163 代表 b'\xe7'。</p>
-<p>通过对比<code>算法工程师</code> utf-8 字节，可以发现与上述id转换得到的字节一致。</p>
-<p>token生产流程：文字 =》 utf-8 字节 =》查表 =》 token id</p>
+<p>tiktoken是openai开源的token工具，</p>
+<p>1）生成 <code>算法工程师</code> token id list。</p>
+<p>2）对每一个token还原可以得到token id代表的字节，例如：<code>163</code> 代表 <code>b'\xe7'</code>。</p>
+<p>对比<code>算法工程师</code> utf-8 字节，可以发现与上述token id转换得到的字节一致。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> tiktoken
 
 text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;算法工程师&#34;</span>
@@ -138,15 +141,64 @@ print(<span style="color:#e6db74">&#34;token_list&#34;</span>, token_list)
     print(x, enc<span style="color:#f92672">.</span>decode_bytes([x]))
 
 print(<span style="color:#e6db74">&#34;text utf-8 bytes&#34;</span>, bytes(text<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;utf-8&#39;</span>)))
-</code></pre></div><p>执行结果如下：
-<img src="/img/image-5.png" alt="Alt text"></p>
-</li>
+</code></pre></div><p>执行结果如下：</p>
+<p><img src="/img/image-5.png" alt="Alt text"></p>
+<p>token ids生产流程</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">1）算法工程师
+
+2）b&#39;xe7\xae\×97\xe6\xb3\×95\xe5\xb7\xa5\xe7\xa8\x8b\xe5\xb8\×88&#39;
+
+3）查词表 例 \xe7 =&gt; 163
+
+4) token ids [163, 106, 245, 37345, 243, 32432, 98, 163, 101, 233, 30585, 230]
+</code></pre></div></li>
 <li>
-<p>不同模型对比</p>
+<p>openai不同模型token对比</p>
 <p><a href="https://github.com/openai/tiktoken/blob/main/tiktoken/model.py">https://github.com/openai/tiktoken/blob/main/tiktoken/model.py</a></p>
-<p>gpt-4, gpt-3.5, embeddings 用同一个词表 cl100k_base</p>
-<p>除gpt2, text-davinci-edit-* 其他用同一个词表 r50k_base</p>
-<p>不同词表token数量差别很大，例如 <code>算法工程师</code> 使用cl100k_base消耗6个token，但是使用p50k_base消耗12个token。</p>
+<p>gpt-4、gpt-3.5、embeddings用同一个词表cl100k_base；除gpt2、text-davinci-edit-* 其他用同一个词表 r50k_base。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">  MODEL_TO_ENCODING: dict[str, str] <span style="color:#f92672">=</span> {
+      <span style="color:#75715e"># chat</span>
+      <span style="color:#e6db74">&#34;gpt-4&#34;</span>: <span style="color:#e6db74">&#34;cl100k_base&#34;</span>,
+      <span style="color:#e6db74">&#34;gpt-3.5-turbo&#34;</span>: <span style="color:#e6db74">&#34;cl100k_base&#34;</span>,
+      <span style="color:#e6db74">&#34;gpt-35-turbo&#34;</span>: <span style="color:#e6db74">&#34;cl100k_base&#34;</span>,  <span style="color:#75715e"># Azure deployment name</span>
+      <span style="color:#75715e"># text</span>
+      <span style="color:#e6db74">&#34;text-davinci-003&#34;</span>: <span style="color:#e6db74">&#34;p50k_base&#34;</span>,
+      <span style="color:#e6db74">&#34;text-davinci-002&#34;</span>: <span style="color:#e6db74">&#34;p50k_base&#34;</span>,
+      <span style="color:#e6db74">&#34;text-davinci-001&#34;</span>: <span style="color:#e6db74">&#34;r50k_base&#34;</span>,
+      <span style="color:#e6db74">&#34;text-curie-001&#34;</span>: <span style="color:#e6db74">&#34;r50k_base&#34;</span>,
+      <span style="color:#e6db74">&#34;text-babbage-001&#34;</span>: <span style="color:#e6db74">&#34;r50k_base&#34;</span>,
+      <span style="color:#e6db74">&#34;text-ada-001&#34;</span>: <span style="color:#e6db74">&#34;r50k_base&#34;</span>,
+      <span style="color:#e6db74">&#34;davinci&#34;</span>: <span style="color:#e6db74">&#34;r50k_base&#34;</span>,
+      <span style="color:#e6db74">&#34;curie&#34;</span>: <span style="color:#e6db74">&#34;r50k_base&#34;</span>,
+      <span style="color:#e6db74">&#34;babbage&#34;</span>: <span style="color:#e6db74">&#34;r50k_base&#34;</span>,
+      <span style="color:#e6db74">&#34;ada&#34;</span>: <span style="color:#e6db74">&#34;r50k_base&#34;</span>,
+      <span style="color:#75715e"># code</span>
+      <span style="color:#e6db74">&#34;code-davinci-002&#34;</span>: <span style="color:#e6db74">&#34;p50k_base&#34;</span>,
+      <span style="color:#e6db74">&#34;code-davinci-001&#34;</span>: <span style="color:#e6db74">&#34;p50k_base&#34;</span>,
+      <span style="color:#e6db74">&#34;code-cushman-002&#34;</span>: <span style="color:#e6db74">&#34;p50k_base&#34;</span>,
+      <span style="color:#e6db74">&#34;code-cushman-001&#34;</span>: <span style="color:#e6db74">&#34;p50k_base&#34;</span>,
+      <span style="color:#e6db74">&#34;davinci-codex&#34;</span>: <span style="color:#e6db74">&#34;p50k_base&#34;</span>,
+      <span style="color:#e6db74">&#34;cushman-codex&#34;</span>: <span style="color:#e6db74">&#34;p50k_base&#34;</span>,
+      <span style="color:#75715e"># edit</span>
+      <span style="color:#e6db74">&#34;text-davinci-edit-001&#34;</span>: <span style="color:#e6db74">&#34;p50k_edit&#34;</span>,
+      <span style="color:#e6db74">&#34;code-davinci-edit-001&#34;</span>: <span style="color:#e6db74">&#34;p50k_edit&#34;</span>,
+      <span style="color:#75715e"># embeddings</span>
+      <span style="color:#e6db74">&#34;text-embedding-ada-002&#34;</span>: <span style="color:#e6db74">&#34;cl100k_base&#34;</span>,
+      <span style="color:#75715e"># old embeddings</span>
+      <span style="color:#e6db74">&#34;text-similarity-davinci-001&#34;</span>: <span style="color:#e6db74">&#34;r50k_base&#34;</span>,
+      <span style="color:#e6db74">&#34;text-similarity-curie-001&#34;</span>: <span style="color:#e6db74">&#34;r50k_base&#34;</span>,
+      <span style="color:#e6db74">&#34;text-similarity-babbage-001&#34;</span>: <span style="color:#e6db74">&#34;r50k_base&#34;</span>,
+      <span style="color:#e6db74">&#34;text-similarity-ada-001&#34;</span>: <span style="color:#e6db74">&#34;r50k_base&#34;</span>,
+      <span style="color:#e6db74">&#34;text-search-davinci-doc-001&#34;</span>: <span style="color:#e6db74">&#34;r50k_base&#34;</span>,
+      <span style="color:#e6db74">&#34;text-search-curie-doc-001&#34;</span>: <span style="color:#e6db74">&#34;r50k_base&#34;</span>,
+      <span style="color:#e6db74">&#34;text-search-babbage-doc-001&#34;</span>: <span style="color:#e6db74">&#34;r50k_base&#34;</span>,
+      <span style="color:#e6db74">&#34;text-search-ada-doc-001&#34;</span>: <span style="color:#e6db74">&#34;r50k_base&#34;</span>,
+      <span style="color:#e6db74">&#34;code-search-babbage-code-001&#34;</span>: <span style="color:#e6db74">&#34;r50k_base&#34;</span>,
+      <span style="color:#e6db74">&#34;code-search-ada-code-001&#34;</span>: <span style="color:#e6db74">&#34;r50k_base&#34;</span>,
+      <span style="color:#75715e"># open source</span>
+      <span style="color:#e6db74">&#34;gpt2&#34;</span>: <span style="color:#e6db74">&#34;gpt2&#34;</span>,
+  }
+</code></pre></div><p>不同词表token数量差别很大，例如 <code>算法工程师</code> 使用cl100k_base消耗6个token，但是使用p50k_base消耗12个token。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> tiktoken
 
 text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;算法工程师&#34;</span>
@@ -162,49 +214,22 @@ print(<span style="color:#e6db74">&#34;token_list_p50k_base&#34;</span>, len(tok
 <span style="color:#75715e"># token_list_cl100k_base 6  [70203, 25333, 49792, 39607, 13821, 230]</span>
 <span style="color:#75715e"># token_list_p50k_base   12 [163, 106, 245, 37345, 243, 32432, 98, 163, 101, 233, 30585, 230]</span>
 
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">MODEL_TO_ENCODING: dict[str, str] <span style="color:#f92672">=</span> {
-    <span style="color:#75715e"># chat</span>
-    <span style="color:#e6db74">&#34;gpt-4&#34;</span>: <span style="color:#e6db74">&#34;cl100k_base&#34;</span>,
-    <span style="color:#e6db74">&#34;gpt-3.5-turbo&#34;</span>: <span style="color:#e6db74">&#34;cl100k_base&#34;</span>,
-    <span style="color:#e6db74">&#34;gpt-35-turbo&#34;</span>: <span style="color:#e6db74">&#34;cl100k_base&#34;</span>,  <span style="color:#75715e"># Azure deployment name</span>
-    <span style="color:#75715e"># text</span>
-    <span style="color:#e6db74">&#34;text-davinci-003&#34;</span>: <span style="color:#e6db74">&#34;p50k_base&#34;</span>,
-    <span style="color:#e6db74">&#34;text-davinci-002&#34;</span>: <span style="color:#e6db74">&#34;p50k_base&#34;</span>,
-    <span style="color:#e6db74">&#34;text-davinci-001&#34;</span>: <span style="color:#e6db74">&#34;r50k_base&#34;</span>,
-    <span style="color:#e6db74">&#34;text-curie-001&#34;</span>: <span style="color:#e6db74">&#34;r50k_base&#34;</span>,
-    <span style="color:#e6db74">&#34;text-babbage-001&#34;</span>: <span style="color:#e6db74">&#34;r50k_base&#34;</span>,
-    <span style="color:#e6db74">&#34;text-ada-001&#34;</span>: <span style="color:#e6db74">&#34;r50k_base&#34;</span>,
-    <span style="color:#e6db74">&#34;davinci&#34;</span>: <span style="color:#e6db74">&#34;r50k_base&#34;</span>,
-    <span style="color:#e6db74">&#34;curie&#34;</span>: <span style="color:#e6db74">&#34;r50k_base&#34;</span>,
-    <span style="color:#e6db74">&#34;babbage&#34;</span>: <span style="color:#e6db74">&#34;r50k_base&#34;</span>,
-    <span style="color:#e6db74">&#34;ada&#34;</span>: <span style="color:#e6db74">&#34;r50k_base&#34;</span>,
-    <span style="color:#75715e"># code</span>
-    <span style="color:#e6db74">&#34;code-davinci-002&#34;</span>: <span style="color:#e6db74">&#34;p50k_base&#34;</span>,
-    <span style="color:#e6db74">&#34;code-davinci-001&#34;</span>: <span style="color:#e6db74">&#34;p50k_base&#34;</span>,
-    <span style="color:#e6db74">&#34;code-cushman-002&#34;</span>: <span style="color:#e6db74">&#34;p50k_base&#34;</span>,
-    <span style="color:#e6db74">&#34;code-cushman-001&#34;</span>: <span style="color:#e6db74">&#34;p50k_base&#34;</span>,
-    <span style="color:#e6db74">&#34;davinci-codex&#34;</span>: <span style="color:#e6db74">&#34;p50k_base&#34;</span>,
-    <span style="color:#e6db74">&#34;cushman-codex&#34;</span>: <span style="color:#e6db74">&#34;p50k_base&#34;</span>,
-    <span style="color:#75715e"># edit</span>
-    <span style="color:#e6db74">&#34;text-davinci-edit-001&#34;</span>: <span style="color:#e6db74">&#34;p50k_edit&#34;</span>,
-    <span style="color:#e6db74">&#34;code-davinci-edit-001&#34;</span>: <span style="color:#e6db74">&#34;p50k_edit&#34;</span>,
-    <span style="color:#75715e"># embeddings</span>
-    <span style="color:#e6db74">&#34;text-embedding-ada-002&#34;</span>: <span style="color:#e6db74">&#34;cl100k_base&#34;</span>,
-    <span style="color:#75715e"># old embeddings</span>
-    <span style="color:#e6db74">&#34;text-similarity-davinci-001&#34;</span>: <span style="color:#e6db74">&#34;r50k_base&#34;</span>,
-    <span style="color:#e6db74">&#34;text-similarity-curie-001&#34;</span>: <span style="color:#e6db74">&#34;r50k_base&#34;</span>,
-    <span style="color:#e6db74">&#34;text-similarity-babbage-001&#34;</span>: <span style="color:#e6db74">&#34;r50k_base&#34;</span>,
-    <span style="color:#e6db74">&#34;text-similarity-ada-001&#34;</span>: <span style="color:#e6db74">&#34;r50k_base&#34;</span>,
-    <span style="color:#e6db74">&#34;text-search-davinci-doc-001&#34;</span>: <span style="color:#e6db74">&#34;r50k_base&#34;</span>,
-    <span style="color:#e6db74">&#34;text-search-curie-doc-001&#34;</span>: <span style="color:#e6db74">&#34;r50k_base&#34;</span>,
-    <span style="color:#e6db74">&#34;text-search-babbage-doc-001&#34;</span>: <span style="color:#e6db74">&#34;r50k_base&#34;</span>,
-    <span style="color:#e6db74">&#34;text-search-ada-doc-001&#34;</span>: <span style="color:#e6db74">&#34;r50k_base&#34;</span>,
-    <span style="color:#e6db74">&#34;code-search-babbage-code-001&#34;</span>: <span style="color:#e6db74">&#34;r50k_base&#34;</span>,
-    <span style="color:#e6db74">&#34;code-search-ada-code-001&#34;</span>: <span style="color:#e6db74">&#34;r50k_base&#34;</span>,
-    <span style="color:#75715e"># open source</span>
-    <span style="color:#e6db74">&#34;gpt2&#34;</span>: <span style="color:#e6db74">&#34;gpt2&#34;</span>,
-}
 </code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>不同词表是怎么得到的？（cl100k_base、p50k_base、&hellip;）</p>
+<ul>
+<li>
+<p>根据<a href="https://github.com/openai/tiktoken">tiktoken</a> openai采用<code>BPE</code>算法生成不同词表（Byte pair encoding）</p>
+</li>
+<li>
+<p>关于<code>BPE</code>算法</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Byte_pair_encoding">https://en.wikipedia.org/wiki/Byte_pair_encoding</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/448147465">https://zhuanlan.zhihu.com/p/448147465</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
@@ -286,7 +311,7 @@ print(<span style="color:#e6db74">&#34;token_list_p50k_base&#34;</span>, len(tok
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="/post/llm_token/">大模型token</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/llm_token/">openai chatgpt token 是如何计算的？</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E7%91%9E%E5%B9%B8%E6%8A%A2%E6%88%91%E4%B8%80%E5%9D%97%E4%B8%80%E6%AF%9B%E4%B9%9D/">瑞幸抢我一块一毛九</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/llm_embedding/">LLM Embedding</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/tools/">Tools</a></li>
