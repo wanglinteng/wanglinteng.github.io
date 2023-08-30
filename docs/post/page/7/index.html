@@ -91,6 +91,23 @@
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
+			<a href="/post/2013-d-%E4%BA%8C-3/" rel="bookmark">
+			2013-d-二-3
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-28T00:00:00Z">October 28, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		/** 算法思想：从一个顶点采用深度优先搜索遍历， 如果能访问到所有结点则该顶点为根。 **/ #define maxSize 100 int visit[maxSize];//标记访问数组 int num=0;//用于统计访问过的节点数  void SearchRoot(AGraph *G) { int i; for(i=0;i&lt;G-&gt;n;++i) visit[i]=0;//设置未访问  for(i=0;i&lt;G-&gt;n;++i) { DFS(G,i); if(num==G-&gt;n) printf(&#34;%c&#34;,G-&gt;adjlist[i].data); for(i=0;i&lt;G-&gt;n;++i) visit[i]=0;//设置未访问  num=0; } } void DFS(AGraph G,int v) { ArcNode *p; visit[v]=1; ++num;//用于记录访问过顶点的数量  p=adjlist[v].firstarc; while(p!=NULL) { if(visit[p-&gt;adjvex]==0) DFS(G,p-&gt;adjvex); p=p-&gt;nextarc; } } 
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
 			<a href="/post/2013-c-%E4%BA%8C-1/" rel="bookmark">
 			2013-c-二-1
 			</a>
@@ -241,23 +258,6 @@ int visit[maxSize]; int stack[maxSize]; int j=0; int u,pre;//第二个结点、�
 	<div class="content list__excerpt post__content clearfix">
 		//改进算法 void fun(int a[][maxSize],int row,int col) { int i,j,k,min,min_j,flag; for (i=0;i&lt;row;++i) { min=a[i][0]; min_j=0; for (j=0;j&lt;col;++j)//找行最小值 {  if(a[i][j]&lt;min_j) { min=a[i][j]; //记录本行最小值  min_j=j; //记录最小数列标  } } flag=1; //判断最小数在列上是否为最大值  for (k=0;k&lt;row;++k) { if(min&lt;a[k][min_j])//如果有一个数比行最小值大证明不是鞍点 {  flag=0; break; } } if(flag) { printf(&#34;鞍点坐标：%d,%d且值为：&#34;,i,min_j,min); break; } } } //此算法过于复杂,不需要记录最大行坐标数组，改进算法的行最小列最大与此相反，原理相同 #include #include#define maxSize 100 /** 算法思想： 找到每一行的最大值，用数组记录此时最大值坐标 根据坐标循环判断是否为此列的最小值 **/ int main() { //构造数据  int m,n; scanf(&#34;%d,%d&#34;,&amp;m,&amp;n); int p[maxSize][maxSize]; int i,j,k; int h_max[maxSize]; //行最大值数组  for (i=0;i&lt;m;i++) { for (j=0;j&lt;n;j++) { printf(&#34;请输入%d行%d列：\n&#34;,i,j); scanf(&#34;%d&#34;,&amp;p[i][j]); } } for (i=0;i&lt;m;i++) { for (j=0;j&lt;n;j++) printf(&#34;%d\t&#34;,p[i][j]); printf(&#34;\n&#34;); } //查找行最大值元素，将最大值的列坐标记录下来  for (i=0;i&lt;m;i++) { h_max[i]=0; //先取第i行第0列为最大值  for (j=0;j&lt;n;j++) { if(p[i][j]&gt;p[i][h_max[i]]) { h_max[i]=j; //记录行最大值的列坐标  } } printf(&#34;第%d行最大值为第%d列\n&#34;,i, h_max[i]); } //判断行最大值是否为列最小值  for (i=0;i&lt;m;i++) { int t = h_max[i]; int v_min = p[i][t]; int flag; for (k=0;k&lt;m;k++) { if(p[k][t]&gt;=v_min)//注意要有等号！！！  flag=1; else { flag=0; break; //不是最小值立即跳出循环  } } if(flag==1) printf(&#34;满足条件的是%d行%d列元素，值为%d\n&#34;,i,t,v_min); } } 
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/2015-d-%E4%BA%8C-1/" rel="bookmark">
-			2015-d-二-1
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-18T00:00:00Z">October 18, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		/** 算法思想：如果有序有两种情况1.递增2.递减,注意有相邻相等情况 从前之后两两比较相邻节点差值 **/ #include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;//链表结构体 typedef struct lNode { int data; struct LNode *next; }LNode; // 返回值0：无序 1：有序 // init 、flag 0：两个值相等 1：递增 -1：递减 int isOrder(LNode *l) { LNode *p,*q; int flag,init;//init为第一个结点标记 flag为循环中标记  p=l;//p指向开始结点  q=p-&gt;next;//q指向p的下一个结点  while(p-&gt;data==q-&gt;data&amp;&amp;q-&gt;next!=NULL)//恰好两个比较的值相等  { p=p-&gt;next; q=p-&gt;next; } if(p-&gt;data&gt;q-&gt;data) init=-1;//递减  else if (p-&gt;data&lt;q-&gt;data) init=1;//递增  else { init=0;//从头至尾都相等  return 1; } while(q) { if(p-&gt;data&gt;q-&gt;data) flag=-1;//递减  else if (p-&gt;data&lt;q-&gt;data) flag=1;//递增  else flag=0;//说明此时链表中元素均相等  if(flag+init==0) return 0;//无序  p=p-&gt;next; q=q-&gt;next; } return 1; } //链表建立,测试数据 LNode* create() { LNode *c,*s,*r; s=(LNode*)malloc(sizeof(LNode)); s-&gt;next=NULL; s-&gt;data=6; r=s; c=s; s=(LNode*)malloc(sizeof(LNode)); s-&gt;next=NULL; s-&gt;data=6; r-&gt;next=s; r=r-&gt;next; s=(LNode*)malloc(sizeof(LNode)); s-&gt;next=NULL; s-&gt;data=5; r-&gt;next=s; r=r-&gt;next; s=(LNode*)malloc(sizeof(LNode)); s-&gt;next=NULL; s-&gt;data=4; r-&gt;next=s; r=r-&gt;next; s=(LNode*)malloc(sizeof(LNode)); s-&gt;next=NULL; s-&gt;data=1; r-&gt;next=s; r=r-&gt;next; s=(LNode*)malloc(sizeof(LNode)); s-&gt;next=NULL; s-&gt;data=1; r-&gt;next=s; r=r-&gt;next; return c; } int main() { LNode *l = create();; printf(&#34;%d&#34;,isOrder(l)); } 
-	</div>
 </article>
 </main>
 
@@ -275,10 +275,10 @@ int visit[maxSize]; int stack[maxSize]; int j=0; int u,pre;//第二个结点、�
 	<div class="widget__content">
 		<ul class="widget__list">
 			<li class="widget__item"><a class="widget__link" href="/post/llm_token/">openai chatgpt token 是如何计算的？</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/llm_diff/">开源LLM</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E7%91%9E%E5%B9%B8%E6%8A%A2%E6%88%91%E4%B8%80%E5%9D%97%E4%B8%80%E6%AF%9B%E4%B9%9D/">瑞幸抢我一块一毛九</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/llm_embedding/">LLM Embedding</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/tools/">Tools</a></li>
-			<li class="widget__item"><a class="widget__link" href="/docs/seechat/">SeeChat</a></li>
 		</ul>
 	</div>
 </div>

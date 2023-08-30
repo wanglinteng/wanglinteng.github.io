@@ -91,6 +91,23 @@
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
+			<a href="/post/2010-d-%E4%BA%8C-3/" rel="bookmark">
+			2010-d-二-3
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-01T00:00:00Z">November 01, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		//void BFS(AGraph *G,int v,int visit[maxSize]) void DS(AGraph *G,int v,int visit[maxSize]) { //visit数组被初始化为全0  ArcNode *p; //int que[maxSize],front=0,rear=0;  int stack[maxSize],top=-1; int j; visit[v]=1; //rear=(rear+1)%maxSize;  //que[rear]=v;  stack[++top]=v; while(front!=rear) { //front =(front+1)%maxSize;  //j=que[front];  j=stack[top--]; p=G-&gt;adjlist[j].firstarc; while(p!=NULL) { if(visit[p-&gt;adjvex]==0) { visit[p-&gt;adjvex]=1; //rear=rear+1;  //que[rear]=p-&gt;adjvex;  stack[++top]=p-&gt;adjvex; } p=p-&gt;nextarc; } } } 
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
 			<a href="/post/2011-c-%E4%B8%80-5/" rel="bookmark">
 			2011-c-一-5
 			</a>
@@ -243,23 +260,6 @@ int dec(int a[], int n) { //printf(&#34;n=%d,&#34;,n);  //printf(&#34;a[0]=%d\n&
 	<div class="content list__excerpt post__content clearfix">
 		int L=1; void leno(BTNode *p,char x) { if(p!=NULL) { if(p-&gt;data==x) cout&lt;&lt;L&lt;&lt;endl; ++L; leno(p-&gt;lchild,x); leno(p-&gt;rchild,x); --L; } } 
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/2013-d-%E4%BA%8C-3/" rel="bookmark">
-			2013-d-二-3
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-28T00:00:00Z">October 28, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		/** 算法思想：从一个顶点采用深度优先搜索遍历， 如果能访问到所有结点则该顶点为根。 **/ #define maxSize 100 int visit[maxSize];//标记访问数组 int num=0;//用于统计访问过的节点数  void SearchRoot(AGraph *G) { int i; for(i=0;i&lt;G-&gt;n;++i) visit[i]=0;//设置未访问  for(i=0;i&lt;G-&gt;n;++i) { DFS(G,i); if(num==G-&gt;n) printf(&#34;%c&#34;,G-&gt;adjlist[i].data); for(i=0;i&lt;G-&gt;n;++i) visit[i]=0;//设置未访问  num=0; } } void DFS(AGraph G,int v) { ArcNode *p; visit[v]=1; ++num;//用于记录访问过顶点的数量  p=adjlist[v].firstarc; while(p!=NULL) { if(visit[p-&gt;adjvex]==0) DFS(G,p-&gt;adjvex); p=p-&gt;nextarc; } } 
-	</div>
 </article>
 </main>
 
@@ -277,10 +277,10 @@ int dec(int a[], int n) { //printf(&#34;n=%d,&#34;,n);  //printf(&#34;a[0]=%d\n&
 	<div class="widget__content">
 		<ul class="widget__list">
 			<li class="widget__item"><a class="widget__link" href="/post/llm_token/">openai chatgpt token 是如何计算的？</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/llm_diff/">开源LLM</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E7%91%9E%E5%B9%B8%E6%8A%A2%E6%88%91%E4%B8%80%E5%9D%97%E4%B8%80%E6%AF%9B%E4%B9%9D/">瑞幸抢我一块一毛九</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/llm_embedding/">LLM Embedding</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/tools/">Tools</a></li>
-			<li class="widget__item"><a class="widget__link" href="/docs/seechat/">SeeChat</a></li>
 		</ul>
 	</div>
 </div>

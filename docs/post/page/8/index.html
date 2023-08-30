@@ -91,6 +91,23 @@
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
+			<a href="/post/2015-d-%E4%BA%8C-1/" rel="bookmark">
+			2015-d-二-1
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-18T00:00:00Z">October 18, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		/** 算法思想：如果有序有两种情况1.递增2.递减,注意有相邻相等情况 从前之后两两比较相邻节点差值 **/ #include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;//链表结构体 typedef struct lNode { int data; struct LNode *next; }LNode; // 返回值0：无序 1：有序 // init 、flag 0：两个值相等 1：递增 -1：递减 int isOrder(LNode *l) { LNode *p,*q; int flag,init;//init为第一个结点标记 flag为循环中标记  p=l;//p指向开始结点  q=p-&gt;next;//q指向p的下一个结点  while(p-&gt;data==q-&gt;data&amp;&amp;q-&gt;next!=NULL)//恰好两个比较的值相等  { p=p-&gt;next; q=p-&gt;next; } if(p-&gt;data&gt;q-&gt;data) init=-1;//递减  else if (p-&gt;data&lt;q-&gt;data) init=1;//递增  else { init=0;//从头至尾都相等  return 1; } while(q) { if(p-&gt;data&gt;q-&gt;data) flag=-1;//递减  else if (p-&gt;data&lt;q-&gt;data) flag=1;//递增  else flag=0;//说明此时链表中元素均相等  if(flag+init==0) return 0;//无序  p=p-&gt;next; q=q-&gt;next; } return 1; } //链表建立,测试数据 LNode* create() { LNode *c,*s,*r; s=(LNode*)malloc(sizeof(LNode)); s-&gt;next=NULL; s-&gt;data=6; r=s; c=s; s=(LNode*)malloc(sizeof(LNode)); s-&gt;next=NULL; s-&gt;data=6; r-&gt;next=s; r=r-&gt;next; s=(LNode*)malloc(sizeof(LNode)); s-&gt;next=NULL; s-&gt;data=5; r-&gt;next=s; r=r-&gt;next; s=(LNode*)malloc(sizeof(LNode)); s-&gt;next=NULL; s-&gt;data=4; r-&gt;next=s; r=r-&gt;next; s=(LNode*)malloc(sizeof(LNode)); s-&gt;next=NULL; s-&gt;data=1; r-&gt;next=s; r=r-&gt;next; s=(LNode*)malloc(sizeof(LNode)); s-&gt;next=NULL; s-&gt;data=1; r-&gt;next=s; r=r-&gt;next; return c; } int main() { LNode *l = create();; printf(&#34;%d&#34;,isOrder(l)); } 
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
 			<a href="/post/2015-d-%E4%BA%8C-2/" rel="bookmark">
 			2015-d-二-2
 			</a>
@@ -241,23 +258,6 @@
 		找出指定字符在字串中首次出现的位置
 // 在编写这个程序的时候遇到的问题：  /** scanf(&#34;%s&#34;,str); 输入完成时会有一个\n被压栈存储，导致第二个scanf失效 解决方案： 1. scanf(&#34;%s]&#34;,str); fflush(stdin);//清空缓冲区 2. scanf(&#34;%s&#34;,str);//用getchar将\n取出 char test = getchar(); printf(&#34;%d&#34;,test); 3.gets(str);// 串中有空格等： 1.字符串里面可能有空格、制表符等空白字符，如果直接用%s是不可以的 2.gets()可以实现，但是gets不安全，控制难度大。 3.scanf(&#34;%[^\n]%*c&#34;,str); //%*c的作用是读入\n,否则后面读入的将一直是\n 、%*c表示读入不存储注意c不可以换成其他字符 //^表示&#34;非&#34;，即读入其后面的字符就结束读入 **/ // 参考链接： // http://blog.csdn.net/hao5743/article/details/6939661 // http://blog.sina.com.cn/s/blog_60cbc1700100ohil.html // http://blog.csdn.net/why850901938/article/details/51298656  // 本题答案：  #include #define MaxSize 100 int search_pos(char *str,char c) { int i = 1;//用于标记位置 while(*str) { if(*str==c) return i; str++;//指针下移 i++;//标记加一  } return 0; } int main() { char str[MaxSize],x; int pos; printf(&#34;请输入字符串\n&#34;); gets(str);//考试应该可以写 //scanf(&#34;%[^\n]%*c&#34;,str);//%*c表示输入但不存储 标准写法 printf(&#34;请输入要查找的字符\n&#34;); scanf(&#34;%c&#34;,&amp;x); pos = search_pos(str,x); if(pos == 0) printf(&#34;此字符不存在于字符串中\n&#34;); else printf(&#34;查找成功此字符在字符串的第%d个位置\n&#34;,pos); } 另一种思路：先输入字符再输入字符串，可以完美解决 #include int main(){ char str[100]; printf(&#34;输入字符\n&#34;); char c = getchar(); //char x = getchar(); //printf(&#34;%d&#34;,x); printf(&#34;输入字符串\n&#34;); scanf(&#34;%s&#34;,str); printf(&#34;%d&#34;,str[0]); } 补充： #include int main(){ // 同时使用scanf输入两个字符串可以 /** char str[100], a[100]; printf(&#34;输入字符串\n&#34;); scanf(&#34;%s&#34;,str); printf(&#34;输入字符串\n&#34;); scanf(&#34;%s&#34;,a); **/ //先输入字符（getchar、scanf均可）后输入字符串可以 /** char str[100], a; printf(&#34;输入字符\n&#34;); scanf(&#34;%c&#34;,&amp;a); printf(&#34;输入字符串\n&#34;); scanf(&#34;%s&#34;,str); **/ //先输入字符串（scanf输入），后输入字符不可以但是使用gets()可以 char str[100], a; printf(&#34;输入字符串\n&#34;); //scanf(&#34;%s&#34;,str); gets(str); printf(&#34;输入字符\n&#34;); scanf(&#34;%c&#34;,&amp;a); //总结：不能使用scanf先输入字符串再输入字符，其他情况均可  } 
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/2016-c-%E4%B8%89-1/" rel="bookmark">
-			【2016-c-三-1】求1&#43;2×3&#43;4x5x6&#43;7x8x9x10&#43;……至n项
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-06T00:00:00Z">October 06, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		#include &lt;stdio.h&gt; int main() { int i,j,l;//中间变量  int n;//项数  int s=0;//总和  printf(&#34;请输入项数n的值\n&#34;); scanf(&#34;%d&#34;,&amp;n); for(i=1;i&lt;=n;i++) { int k =1;//每次开始的值  int m =1;//每次累乘和  for(j=1;j&lt;i;j++) k=k+j;//求出每项开始值  for(l=k;l&lt;k+i;l++) m=m*l;//每项累乘  s=s+m; } printf(&#34;前%d项和为：%d\n&#34;,n,s); } 
-	</div>
 </article>
 </main>
 
@@ -275,10 +275,10 @@
 	<div class="widget__content">
 		<ul class="widget__list">
 			<li class="widget__item"><a class="widget__link" href="/post/llm_token/">openai chatgpt token 是如何计算的？</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/llm_diff/">开源LLM</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E7%91%9E%E5%B9%B8%E6%8A%A2%E6%88%91%E4%B8%80%E5%9D%97%E4%B8%80%E6%AF%9B%E4%B9%9D/">瑞幸抢我一块一毛九</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/llm_embedding/">LLM Embedding</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/tools/">Tools</a></li>
-			<li class="widget__item"><a class="widget__link" href="/docs/seechat/">SeeChat</a></li>
 		</ul>
 	</div>
 </div>

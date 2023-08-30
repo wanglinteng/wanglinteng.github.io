@@ -91,6 +91,23 @@
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
+			<a href="/post/2000-c-7/" rel="bookmark">
+			2000-c-7
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-12-03T00:00:00Z">December 03, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		void merge(int arg1[],int n,int arg2[],int m) { int arg3[maxSize]; int i=0,j=0,k=0,l=0; while(i&lt;n&amp;&amp;j&lt;m) { if(arg1[i]&lt;arg2[j]) arg3[k++]=arg1[i++]; if(arg1[i]&gt;arg2[j]) arg3[k++]=arg2[j++]; } if(i&lt;n) while(i&lt;n) arg3[k++]=arg1[i++]; if(j&lt;m) while(j&lt;m) arg3[k++]=arg2[j++]; while(l&lt;k)//复制到arg1中  { arg1[l]=arg3[l]; ++l; } } 
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
 			<a href="/post/1999-c-%E5%85%AD/" rel="bookmark">
 			1999-c-六
 			</a>
@@ -242,24 +259,6 @@
 	<div class="content list__excerpt post__content clearfix">
 		//优化版 #include &lt;stdio.h&gt;int main() { FILE *fp; int num, numCur, flag = 0; printf(&#34;\nInput a integer: &#34;); scanf(&#34;%d&#34;, &amp;num); //&#34;r+&#34; 以可读写方式打开文件，该文件必须存在。  //&#34;w&#34; 打开只写文件，若文件存在则文件长度清为0，即该文件内容会消失。若文件不存在则建立该文件。  //&#34;a&#34;为追加写、只写  //&#34;a+&#34;为追加写、可读可写  if ((fp = fopen(&#34;a.dat&#34;, &#34;a+&#34;))!=NULL) { while (!feof(fp)) { fscanf(fp, &#34;%d&#34;, &amp;numCur); if (numCur == num)flag = 1; } if (!flag) { fprintf(fp, &#34; %d&#34;, num); //因为要将这个数字写到文件中（相当于计算机input），所以用的是fp1  fclose(fp); } } } /*五.试编写一个程序，从键盘上输入一个整数，在整数文件&#34;a.dat&#34;中查找，要求： 1.若文件&#34;a.dat&#34;不存在，则建立一个新文件&#34;a.dat&#34;，将该整数写入文件； 2.若文件中找到了这个整数，则显示数据存在，否则将该数据写入文件。*/ #include &lt;stdio.h&gt;int main() { FILE *fp1, *fp2; int num, numCur, flag = 0; printf(&#34;\nInput a integer: &#34;); scanf(&#34;%d&#34;, &amp;num); //“r+” 以可读写方式打开文件，该文件必须存在。  //“w” 打开只写文件，若文件存在则文件长度清为0，即该文件内容会消失。若文件不存在则建立该文件。  if ((fp1 = fopen(&#34;a.
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/2006-c-%E5%9B%9B/" rel="bookmark">
-			2006-c-四
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-10T00:00:00Z">November 10, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		链表的创建、输出等 原文链接
-void Delete(LNode *La, LNode *Lb, LNode *Lc) //删除链表A中既存在B又存在C中的元素 { LNode *pa, *pb, *pc, *q; pa = La; pb = Lb-&gt;next; pc = Lc-&gt;next; while (pb &amp;&amp; pc) //思路：在链表B和C中查找相同的元素看看此元素是否在A链表中  { if (pb-&gt;data &lt; pc-&gt;data) pb = pb-&gt;next; else if (pc-&gt;data &lt; pb-&gt;data) pc = pc-&gt;next; else //找到lb和lc中都出现的结点  { while (pa-&gt;next) { if (pa-&gt;next-&gt;data &lt; pb-&gt;data) pa = pa-&gt;next; else if (pa-&gt;next-&gt;data &gt; pb-&gt;data) { //pa = pa-&gt;next;//此处注释，原因，添加此句会有漏解情况  pb = pb-&gt;next; pc = pc-&gt;next; break; } else //删除la中也包含的该元素  { q = pa-&gt;next; pa-&gt;next = q-&gt;next; free(q); pa = pa-&gt;next; pb = pb-&gt;next; pc = pc-&gt;next; break; } } } } } 
-	</div>
 </article>
 </main>
 
@@ -277,10 +276,10 @@ void Delete(LNode *La, LNode *Lb, LNode *Lc) //删除链表A中既存在B又存�
 	<div class="widget__content">
 		<ul class="widget__list">
 			<li class="widget__item"><a class="widget__link" href="/post/llm_token/">openai chatgpt token 是如何计算的？</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/llm_diff/">开源LLM</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E7%91%9E%E5%B9%B8%E6%8A%A2%E6%88%91%E4%B8%80%E5%9D%97%E4%B8%80%E6%AF%9B%E4%B9%9D/">瑞幸抢我一块一毛九</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/llm_embedding/">LLM Embedding</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/tools/">Tools</a></li>
-			<li class="widget__item"><a class="widget__link" href="/docs/seechat/">SeeChat</a></li>
 		</ul>
 	</div>
 </div>

@@ -122,6 +122,43 @@ import tiktoken text = &#34;算法工程师&#34; enc = tiktoken.encoding_for_mod
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
+			<a href="/post/llm_diff/" rel="bookmark">
+			开源LLM
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-08-30T00:00:00Z">August 30, 2023</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/llm/" rel="category">LLM</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		LLMs 支持中英文开源大模型   Causal Decoder // 单向注意力
+1）LLaMA
+  1.1 LLaMA 从零训练：Baichuan-7B/13B（百川智能）、Qwen-7B（阿里云）
+  1.2 LLaMA 增量微调：BELLE-7B/13B（链家）
+  2）GPT、ChatGPT、BLOOM
+  Prefix Decoder // Encoder双向注意力、Decoder单向注意力、Encoder&amp;Decoder共享参数
+1）ChatGLM-6B、ChatGLM2-6B（清华、智谱）
+  Encoder-Decoder // Encoder双向注意力、Decoder单向注意力
+1） Flan-T5、Transformer
+   https://www.cnblogs.com/heyjjjjj/p/17488423.html
+  https://zhuanlan.zhihu.com/p/626310493
+  https://arxiv.org/pdf/2303.18223.pdf
+ LLaMA、GPT、Transformer 1）我们经常说GPT是transformer右侧部分，其实GPT不包含transformer右侧中间的Multi-Head Attention模块。
+2）LLaMA在GPT基础上对多个组件优化。
+ https://dugas.ch/artificial_curiosity/GPT_architecture.html
+  https://zhuanlan.zhihu.com/p/636784644
+ 多模型对比  https://zhuanlan.zhihu.com/p/651747035
+  https://zhuanlan.zhihu.com/p/644815089
+ 组件优化 PE（位置编码） Learned、Relative、RoPE、ALiBi
+ https://zhuanlan.zhihu.com/p/650469278
+ Activation（激活函数） SwiGLU、ReLU、GeLU、GeGLU
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
 			<a href="/post/llm_embedding/" rel="bookmark">
 			LLM Embedding
 			</a>
@@ -214,10 +251,10 @@ inputs = tokenizer([text], return_tensors=&#34;pt&#34;).to(device) resp = model.
 	<div class="widget__content">
 		<ul class="widget__list">
 			<li class="widget__item"><a class="widget__link" href="/post/llm_token/">openai chatgpt token 是如何计算的？</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/llm_diff/">开源LLM</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E7%91%9E%E5%B9%B8%E6%8A%A2%E6%88%91%E4%B8%80%E5%9D%97%E4%B8%80%E6%AF%9B%E4%B9%9D/">瑞幸抢我一块一毛九</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/llm_embedding/">LLM Embedding</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/tools/">Tools</a></li>
-			<li class="widget__item"><a class="widget__link" href="/docs/seechat/">SeeChat</a></li>
 		</ul>
 	</div>
 </div>

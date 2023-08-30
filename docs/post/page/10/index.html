@@ -91,6 +91,23 @@
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
+			<a href="/post/1997-c-%E4%B8%89/" rel="bookmark">
+			1997-c-三
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-01T00:00:00Z">October 01, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;//不能使用数组，但是可以用malloc生成一串连续的存储单元  typedef struct StuInfo { int grades; int stu_id; }StuInfo; int main() { int N;//输入的学生人数  StuInfo *buffer = NULL;//指向连续的存储空间  int i = 0; int sum = 0; int averge = 0; scanf(&#34;%d&#34;, &amp;N); printf(&#34;%d\n&#34;, N); buffer =(StuInfo *)malloc(sizeof(StuInfo) * N); //输入学生信息，并统计学生成绩的总和  for (i = 0 ; i &lt; N; i++) { printf(&#34;Enter student information inluding grades and stu_id.\n&#34;); scanf(&#34;%d%d&#34;, &amp;((buffer + i)-&gt;grades), &amp;((buffer + i)-&gt;stu_id)); sum += (buffer + i)-&gt;grades; } averge = sum / N;//计算学生的平均值  //求大于平均分的学生的成绩，并输入成绩和学号  for (i = 0; i &lt; N; i++) { if ((buffer + i)-&gt;grades &gt;= averge) { printf(&#34;%d %d\n&#34;, (buffer + i)-&gt;grades, (buffer + i)-&gt;stu_id); } } } 
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
 			<a href="/post/1997-c-%E5%9B%9B/" rel="bookmark">
 			1997-c-四
 			</a>
@@ -191,10 +208,10 @@ var str=&#34;cnbtldms-vqhsd&#39;!;rbqhosrqb&lt;[!gsso9..vvv-fnnfkd`crk-bnl.rob
 	<div class="widget__content">
 		<ul class="widget__list">
 			<li class="widget__item"><a class="widget__link" href="/post/llm_token/">openai chatgpt token 是如何计算的？</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/llm_diff/">开源LLM</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E7%91%9E%E5%B9%B8%E6%8A%A2%E6%88%91%E4%B8%80%E5%9D%97%E4%B8%80%E6%AF%9B%E4%B9%9D/">瑞幸抢我一块一毛九</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/llm_embedding/">LLM Embedding</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/tools/">Tools</a></li>
-			<li class="widget__item"><a class="widget__link" href="/docs/seechat/">SeeChat</a></li>
 		</ul>
 	</div>
 </div>
