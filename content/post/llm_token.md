@@ -20,7 +20,7 @@ tags:
   
   + 英文
   
-    ![Alt text](../img/image.png)
+    ![Alt text](/img/image.png)
     ```python
     [31373, 644, 338, 534, 1438, 30]
     ```
@@ -28,7 +28,7 @@ tags:
   
   + 中文
 
-    ![Alt text](../img/image-1.png)
+    ![Alt text](/img/image-1.png)
 
   + tiktoken
   
@@ -54,7 +54,7 @@ tags:
     ```
 
     执行结果如下：
-    ![Alt text](../img/image-5.png)
+    ![Alt text](/img/image-5.png)
 
   + 不同模型对比
   
