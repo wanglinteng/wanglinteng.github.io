@@ -90,6 +90,23 @@
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
+			<a href="/post/2005-d-%E4%BA%8C/" rel="bookmark">
+			2005-d-二
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-07T00:00:00Z">November 07, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		//链表节点 typedef struct LNode { int data;//节点值  struct LNode *next;//指向下一个节点 } LNode; //哈希节点 typedef struct HNode { LNode *first;//链接的第一个指针域 } HNode; //哈希表 typedef struct HashTable { HNode list[N]; }HashTable; int seadel( HashTable *H,int k) { int pos=H(k); LNode *p,*r; p=H-&gt;list[pos]-&gt;first; //判断第一个结点是否是  if(p-&gt;data==k) { H-&gt;list[pos]-&gt;first=p-&gt;next; free(p); } r=p; p=p-&gt;next; //第一个不是  while(p!=NULL) { if(p-&gt;data==k) { r-&gt;next=p-&gt;next; free(p); return 1; }else{ r=p; p=p-&gt;next; } } return 0; } 
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
 			<a href="/post/2005-d-%E5%9B%9B/" rel="bookmark">
 			2005-d-四
 			</a>
@@ -240,23 +257,6 @@
 	<div class="content list__excerpt post__content clearfix">
 		//天勤p150原题  BTNode *CreateBT(char pre[],char in[],int l1,int r1,int l2, int r2) { BTNode *s; int i; if(l1&gt;r1) return NULL; s=(BTNode*)malloc(sizeof(BTNode)); s-&gt;lchild=s-&gt;rchild=NULL; for(i=l2,i&lt;r2;++i) if(in[i]==pre[l1]) break; s-&gt;data=in[i]; s-&gt;lchild=CreateBT(pre,in,l1+1,l1+i-l2,l2,i-1); s-&gt;rchild=CreateBT(pre,in,l1+i-l2+1,r1,i+1,r2); return s; } 
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/2010-d-%E4%BA%8C-1/" rel="bookmark">
-			2010-d-二-1
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-01T00:00:00Z">November 01, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		int fun(LNode *l) { int max,min; LNode *p; p=l; max=p-&gt;data; min=p-&gt;data; //先找出最大值最小值  while(p!=NULL) { if(p-&gt;data&gt;max) max=p-&gt;data; if(p-&gt;data&lt;min) min=p-&gt;data; p=p-&gt;next; } //判断是否符合要求  while(p-&gt;next-&gt;next!=NULL&amp;&amp;p-&gt;data==p-&gt;next-&gt;data+p-&gt;next-next-&gt;data) { p=p-&gt;next; } //判断退出循环时p-&gt;next-&gt;next的值是否为空，不为空证明提前跳出循环  if(p-&gt;next-&gt;next-&gt;data==NULL) { printf(&#34;%d&#34;,max); return 1; }else{ printf(&#34;%d&#34;,min); return 0; } } 
-	</div>
 </article>
 </main>
 
@@ -272,11 +272,11 @@
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/llm_token/">大模型token</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E7%91%9E%E5%B9%B8%E6%8A%A2%E6%88%91%E4%B8%80%E5%9D%97%E4%B8%80%E6%AF%9B%E4%B9%9D/">瑞幸抢我一块一毛九</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/llm_embedding/">LLM Embedding</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/tools/">Tools</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/seechat/">SeeChat</a></li>
-			<li class="widget__item"><a class="widget__link" href="/docs/842/">842</a></li>
 		</ul>
 	</div>
 </div>

@@ -90,6 +90,23 @@
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
+			<a href="/post/2016-d-%E4%BA%8C-1/" rel="bookmark">
+			【2016-d-二-1】双链表结点按照访问的频度递减排序
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-15T00:00:00Z">October 15, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		/** 算法思想：1.从头至尾遍历双链表，找到data值为x的节点 2.将此节点频度加一，将此节点在链表中删除 3.从右至左找到第一个频度比他大的节点，插入到此节点后面 **/ typedef struct DLNode { int data; int freq; struct DLNode *prior; struct DLNode *next; }DLNode; void locate( DLNode *l,int x) { DLNode *p,*q; p=l-&gt;next;//l即为头结点  while(p!=l) { if(p-&gt;data == x) { q=p;//p指针暂存查找到的这个节点  q-&gt;freq = q-&gt;freq+1;//访问频度加一  //先将q在原位置删除，因为我们要从后往前找到插入点，  //必须先删除，避免他位置不变，重复插入的情况  q-&gt;prior-&gt;next=q-&gt;next; q-&gt;next-&gt;prior=q-&gt;prior; //从这个点开始，向表头方向查找q的插入点  while(p!=l) { if(q-&gt;freq&lt;p-&gt;freq)//从右至左找到第一个比q的频度大的结点  { //将q插入到此位置的后面  q-&gt;next = p-&gt;next; p-&gt;next-&gt;prior=q; p-&gt;next=q; q-&gt;prior=p; } p=p-&gt;prior;//p指针前移  } } p=p-&gt;next; } } 
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
 			<a href="/post/2016-c-%E4%B8%89-3/" rel="bookmark">
 			【2016-c-三-3】找出指定字符在字串中首次出现的位置
 			</a>
@@ -243,23 +260,6 @@
 	<div class="content list__excerpt post__content clearfix">
 		#include &lt;stdio.h&gt;  //数组p中有n个数 void move (int p[],int n) { int i=0; int j=n-1; int t=p[0]; while(i&lt;j) { while(i&lt;j&amp;&amp;p[j]%2==0) j--;//从后往前找到奇数位置 	if(i&lt;j) { p[i]=p[j];//将找到的奇数移到前面 	i++;//开始位置后移		} while(i&lt;j&amp;&amp;p[i]%2==1) i++;//从前往后找到偶数位置 	if(i&lt;j) { p[j]=p[i]; j--;//结束位置前移 	} } p[i]=t; } int main() { int p[] = {2,6,1,5,14,3,18,9,10,11}; for(int i=0;i&lt;10;i++) printf(&#34;%d\n&#34;,p[i]); printf(&#34;-----------\n&#34;); move(p,10); for(int i=0;i&lt;10;i++) printf(&#34;%d\n&#34;,p[i]); } 
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/1996-c-8/" rel="bookmark">
-			1996-c-8
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-01T00:00:00Z">October 01, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		//假设有那个元素已经存在于数组a中，用尾插法建立链表 //需要改变的变量用引用型 void creatListR(LNode *&amp;c,int a[],int n) { LNode *s,*r; int i; c=(LNode *)malloc(sizeof(LNode)); c-&gt;next=NULL; r=c; for(i=1;i&lt;=n;++i) { s=(LNode *)malloc(sizeof(LNode)); s-&gt;data=a[i]; r-&gt;next=s; r=r-&gt;next; } r-&gt;next=NULL; } 
-	</div>
 </article>
 </main>
 
@@ -275,11 +275,11 @@
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/llm_token/">大模型token</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E7%91%9E%E5%B9%B8%E6%8A%A2%E6%88%91%E4%B8%80%E5%9D%97%E4%B8%80%E6%AF%9B%E4%B9%9D/">瑞幸抢我一块一毛九</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/llm_embedding/">LLM Embedding</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/tools/">Tools</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/seechat/">SeeChat</a></li>
-			<li class="widget__item"><a class="widget__link" href="/docs/842/">842</a></li>
 		</ul>
 	</div>
 </div>

@@ -6,7 +6,27 @@
     <description>Recent content in LLM on LINTENG&#39;S BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 07 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="/categories/llm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 30 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="/categories/llm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大模型token</title>
+      <link>/post/llm_token/</link>
+      <pubDate>Wed, 30 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/llm_token/</guid>
+      <description>token是什么？
+  openai计费单位，按照输入token，输出token数量计算费用。
+  大模型训练、推理本质是数值计算，文字需要转换为数字，通过文字转换得到的数字即为token。
+    token是怎么计算的？
+  英文
+[31373, 644, 338, 534, 1438, 30] 一个有用的经验法则是，对于普通英语文本，一个token通常对应约4个字符的文本。这大约相当于一个单词的3/4（因此100个token~=75个单词）。
+  中文
+  tiktoken
+通过openai开源的tiktoken工具，先生成算法工程师 token然后再对token还原可以得到id代表的字节，例如：163 代表 b&#39;\xe7&#39;。
+通过对比算法工程师 utf-8 字节，可以发现与上述id转换得到的字节一致。
+token生产流程：文字 =》 utf-8 字节 =》查表 =》 token id
+import tiktoken text = &amp;#34;算法工程师&amp;#34; enc = tiktoken.encoding_for_model(&amp;#34;text-davinci-003&amp;#34;) token_list = enc.encode(text) print(&amp;#34;token_list&amp;#34;, token_list) for x in token_list: print(x, enc.decode_bytes([x])) print(&amp;#34;text utf-8 bytes&amp;#34;, bytes(text.encode(&amp;#39;utf-8&amp;#39;))) 执行结果如下：   不同模型对比</description>
+    </item>
+    
     <item>
       <title>LLM Embedding</title>
       <link>/post/llm_embedding/</link>

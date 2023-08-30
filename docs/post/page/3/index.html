@@ -91,6 +91,23 @@
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
+			<a href="/post/1999-c-%E5%85%AD/" rel="bookmark">
+			1999-c-六
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-12-02T00:00:00Z">December 02, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		//将指针转化为数组形式进行操作 #include &lt;stdio.h&gt; char *RRSindex (char *str,char *substr) { int i=0;//主串工作指针  int j=0;//子串工作指针  int k=0;//每次开始比较位置  int p=0;//最后一个位置  for(i=0;str[i]!=&#39;\0&#39;;i++) { k=i;//记录本次比较开始位置  j=0;//每次子串从头开始  while((str[i]!=&#39;\0&#39;)&amp;&amp;(substr[j]!=&#39;\0&#39;)&amp;&amp;(str[i]==substr[j])) { i++; j++; } if(substr[j]==&#39;\0&#39;)//匹配  { p=k; } } //printf(&#34;%d&#34;,p);  return &amp;str[p]; } int main() { char str[100]=&#34;xxx123xxx123xx&#34;; char substr[100]=&#34;123&#34;; RRSindex(str,substr); } 
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
 			<a href="/post/1999-c-%E5%9B%9B/" rel="bookmark">
 			1999-c-四
 			</a>
@@ -243,23 +260,6 @@
 		链表的创建、输出等 原文链接
 void Delete(LNode *La, LNode *Lb, LNode *Lc) //删除链表A中既存在B又存在C中的元素 { LNode *pa, *pb, *pc, *q; pa = La; pb = Lb-&gt;next; pc = Lc-&gt;next; while (pb &amp;&amp; pc) //思路：在链表B和C中查找相同的元素看看此元素是否在A链表中  { if (pb-&gt;data &lt; pc-&gt;data) pb = pb-&gt;next; else if (pc-&gt;data &lt; pb-&gt;data) pc = pc-&gt;next; else //找到lb和lc中都出现的结点  { while (pa-&gt;next) { if (pa-&gt;next-&gt;data &lt; pb-&gt;data) pa = pa-&gt;next; else if (pa-&gt;next-&gt;data &gt; pb-&gt;data) { //pa = pa-&gt;next;//此处注释，原因，添加此句会有漏解情况  pb = pb-&gt;next; pc = pc-&gt;next; break; } else //删除la中也包含的该元素  { q = pa-&gt;next; pa-&gt;next = q-&gt;next; free(q); pa = pa-&gt;next; pb = pb-&gt;next; pc = pc-&gt;next; break; } } } } } 
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/2006-d-%E4%B8%89/" rel="bookmark">
-			2006-d-三
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-10T00:00:00Z">November 10, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		//分别求出一个结点的左右孩子结点的高度做差即为平衡因子  int depth(BTNode *bt) { int r,l; if(bt==NULL) return 0; else { l=depth(bt-&gt;lchild); r=depth(bt-&gt;rchild); return (l&gt;r?l:r)+1; } } int balance(BTNode *T,int n)//n初始传入值为0 { int l,r; if(T!=NULL) { balance(T-&gt;lchild,n); balance(T-&gt;rchild,n); l=depth(T-&gt;lchild); r=depth(T-&gt;rchild); if(l+r&gt;0) ++n;//记录非叶子结点个数  printf(&#34;%d&#34;,l-r);//打印平衡因子  } return n; } 
-	</div>
 </article>
 </main>
 
@@ -276,11 +276,11 @@ void Delete(LNode *La, LNode *Lb, LNode *Lc) //删除链表A中既存在B又存�
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/llm_token/">大模型token</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E7%91%9E%E5%B9%B8%E6%8A%A2%E6%88%91%E4%B8%80%E5%9D%97%E4%B8%80%E6%AF%9B%E4%B9%9D/">瑞幸抢我一块一毛九</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/llm_embedding/">LLM Embedding</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/tools/">Tools</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/seechat/">SeeChat</a></li>
-			<li class="widget__item"><a class="widget__link" href="/docs/842/">842</a></li>
 		</ul>
 	</div>
 </div>

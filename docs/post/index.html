@@ -89,6 +89,34 @@
 		<h1 class="main__title">Posts</h1>
 	</header><article class="list__item post">
 	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/llm_token/" rel="bookmark">
+			大模型token
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-08-30T00:00:00Z">August 30, 2023</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/llm/" rel="category">LLM</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		token是什么？
+  openai计费单位，按照输入token，输出token数量计算费用。
+  大模型训练、推理本质是数值计算，文字需要转换为数字，通过文字转换得到的数字即为token。
+    token是怎么计算的？
+  英文
+[31373, 644, 338, 534, 1438, 30] 一个有用的经验法则是，对于普通英语文本，一个token通常对应约4个字符的文本。这大约相当于一个单词的3/4（因此100个token~=75个单词）。
+  中文
+  tiktoken
+通过openai开源的tiktoken工具，先生成算法工程师 token然后再对token还原可以得到id代表的字节，例如：163 代表 b'\xe7'。
+通过对比算法工程师 utf-8 字节，可以发现与上述id转换得到的字节一致。
+token生产流程：文字 =》 utf-8 字节 =》查表 =》 token id
+import tiktoken text = &#34;算法工程师&#34; enc = tiktoken.encoding_for_model(&#34;text-davinci-003&#34;) token_list = enc.encode(text) print(&#34;token_list&#34;, token_list) for x in token_list: print(x, enc.decode_bytes([x])) print(&#34;text utf-8 bytes&#34;, bytes(text.encode(&#39;utf-8&#39;))) 执行结果如下：   不同模型对比
+	</div>
+</article><article class="list__item post">
+	
 		
 		
 	<figure class="list__thumbnail thumbnail">
@@ -320,25 +348,6 @@ inputs = tokenizer([text], return_tensors=&#34;pt&#34;).to(device) resp = model.
 	<div class="content list__excerpt post__content clearfix">
 		#include &lt;stdio.h&gt; int main() { int k; char c; for(k=1,c=&#39;A&#39;;c&lt;&#39;F&#39;;k++) { switch(++c) { case &#39;A&#39;:k++;break; case &#39;B&#39;:k*=2;break; case &#39;C&#39;:k--; case &#39;D&#39;:k%=3;continue; default:k+=2; case &#39;E&#39;:k/=2; case &#39;F&#39;:k++; } k++; } printf(&#34;%d&#34;,k); } 
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/2002-c-%E5%9B%9B-2/" rel="bookmark">
-			2002-c-四-2
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-12-08T00:00:00Z">December 08, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		参考链接
- http://wenku.baidu.com/link?url=ur0W1vrgSqLfcAXz9-_uWFXGXjCdOzaq7uKmJ6mw_Zhs18s86ZfvgKteukXH4LPdqojg_rNo8Tivll9p8b78Ptw_dAEVgzMbFG4dWGR4ay_
- #define maxSize 1000  #include &lt;stdio.h&gt;#include &lt;stdlib.h&gt; int main() { char a[maxSize]; int i,n; for(n=0;n&lt;maxSize;n++) { scanf(&#34;%c&#34;,&amp;a[n]); if(a[n]==&#39;\n&#39;) break; } for(i=0;i&lt;n;++i) { if(a[i]==&#39;f&#39;&amp;&amp;a[i+1]==&#39;r&#39;&amp;&amp;a[i+2]==&#39;o&#39;&amp;&amp;a[i+3]==&#39;m&#39;) a[i]=a[i+1]=a[i+2]=a[i+3]=&#39;\0&#39;; if((a[i]==&#39;i&#39;&amp;&amp;a[i+1]==&#39;n&#39;)|| (a[i]==&#39;a&#39;&amp;&amp;a[i+1]==&#39;t&#39;)|| (a[i]==&#39;a&#39;&amp;&amp;a[i+1]==&#39;n&#39;)|| (a[i]==&#39;o&#39;&amp;&amp;a[i+1]==&#39;n&#39;) ) a[i]=a[i+1]=&#39;\0&#39;; } for(i=0;i&lt;n;++i) { if(a[i]==&#39;\0&#39;) continue; printf(&#34;%c&#34;,a[i]); } return 0; } 
-	</div>
 </article>
 </main>
 
@@ -354,11 +363,11 @@ inputs = tokenizer([text], return_tensors=&#34;pt&#34;).to(device) resp = model.
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/llm_token/">大模型token</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E7%91%9E%E5%B9%B8%E6%8A%A2%E6%88%91%E4%B8%80%E5%9D%97%E4%B8%80%E6%AF%9B%E4%B9%9D/">瑞幸抢我一块一毛九</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/llm_embedding/">LLM Embedding</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/tools/">Tools</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/seechat/">SeeChat</a></li>
-			<li class="widget__item"><a class="widget__link" href="/docs/842/">842</a></li>
 		</ul>
 	</div>
 </div>

@@ -90,6 +90,23 @@
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
+			<a href="/post/2013-d-%E4%BA%8C-1/" rel="bookmark">
+			2013-d-二-1
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-28T00:00:00Z">October 28, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		/** 分为三种情况： 1.链表长度&lt;i:不进行任何操作 2.i+len&gt;链表长度&gt;i:在i处将链表断开 3.链表长度&gt;i,链表长度&gt;i+len：删除后重新连接链表 i的位置分为两种情况： i=1,从首结点开始删除：需考虑l指针修改问题 i不等于1，从中间节点删除：无需考虑 **/ #include &lt;stdlib.h&gt;#include &lt;stdio.h&gt;typedef struct LNode { int data; struct LNode *next; }LNode; //查找指定位置指针 LNode* FindPos(LNode *l,int x) { LNode *p; p=l; int n=1; while(p-&gt;next!=NULL) { if(n==x)return p; p=p-&gt;next; ++n; } return NULL; } //删除操作 LNode* DelFun(LNode *l,int i,int len) { LNode *p,*n,*m; p=l; int count=0; //统计链表长度  while(p!=NULL) { ++count; p=p-&gt;next; } //判断链表是否为空  if(count&gt;0) { if(i&gt;1)//不从首结点开始删  { if(count&gt;i&amp;&amp;count&lt;i+len) { n=FindPos(l,i-1); n-&gt;next=NULL; } if(count&gt;i&amp;&amp;count&gt;i+len) { n=FindPos(l,i-1); m=FindPos(l,i+len); n-&gt;next=m; } }else{ //从头结点开始删  if(count&lt;=len) l=NULL; if(count&gt;len) { n=FindPos(l,i+len); l=n; } } } return l; } /**用于测试 //创建链表 LNode* create() { LNode *c,*s,*r; c=(LNode*)malloc(sizeof(LNode)); c-&gt;next=NULL; c-&gt;data=1; r=c; int i; for(i=2;i&lt;=20;++i) { s=(LNode*)malloc(sizeof(LNode)); s-&gt;next=NULL; s-&gt;data=i; r-&gt;next=s; r=r-&gt;next; } return c; } //打印链表 void printL(LNode *l) { LNode *p; p=l; while(p!
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
 			<a href="/post/2013-d-%E4%BA%8C-2/" rel="bookmark">
 			2013-d-二-2
 			</a>
@@ -240,23 +257,6 @@ int visit[maxSize]; int stack[maxSize]; int j=0; int u,pre;//第二个结点、�
 	<div class="content list__excerpt post__content clearfix">
 		int main() { int i=1; while(((i%5==1)&amp;&amp;(i%6==5)&amp;&amp;(i%7==4)&amp;&amp;(i%11==10))==0) { i++; } printf(&#34;i=%d&#34;,i); } 
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/2014-c-%E4%B8%89-2/" rel="bookmark">
-			2014-c-三-2
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-10-20T00:00:00Z">October 20, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		#include &lt;stdio.h&gt;#define maxSize 100 int main() { char str[maxSize];//字符串  char *p;//字符指针  int b=0,s=0;//定义大小写数量  p=str; scanf(&#34;%s&#34;,str); //统计个数注意等号  while(*p!=&#39;\0&#39;) { if(*p&gt;=&#39;A&#39;&amp;&amp;*p&lt;=&#39;Z&#39;) ++b; if(*p&gt;=&#39;a&#39;&amp;&amp;*p&lt;=&#39;z&#39;) ++s; p++; } printf(&#34;小写字符个数%d\n&#34;,s); printf(&#34;大写字符个数%d\n&#34;,b); p--;//此时指针在\0位置，前移一个位置  while(p&gt;=str) { if(*p&gt;=&#39;A&#39;&amp;&amp;*p&lt;=&#39;Z&#39;) { printf(&#34;%c&#34;,*p); } p--; } } 
-	</div>
 </article>
 </main>
 
@@ -272,11 +272,11 @@ int visit[maxSize]; int stack[maxSize]; int j=0; int u,pre;//第二个结点、�
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/llm_token/">大模型token</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E7%91%9E%E5%B9%B8%E6%8A%A2%E6%88%91%E4%B8%80%E5%9D%97%E4%B8%80%E6%AF%9B%E4%B9%9D/">瑞幸抢我一块一毛九</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/llm_embedding/">LLM Embedding</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/tools/">Tools</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/seechat/">SeeChat</a></li>
-			<li class="widget__item"><a class="widget__link" href="/docs/842/">842</a></li>
 		</ul>
 	</div>
 </div>

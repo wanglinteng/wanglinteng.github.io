@@ -90,6 +90,25 @@
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
+			<a href="/post/2006-c-%E4%BA%8C-4/" rel="bookmark">
+			2006-c-二-4
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-10T00:00:00Z">November 10, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		http://www.ppkao.com/daan/222163/BD304E420A92B02C21C9193192FE26C3
+  http://ryanlunar.blog.163.com/blog/static/183577092201241294031508
+ 关于外部变量作用域
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
 			<a href="/post/2006-c-%E4%BA%94/" rel="bookmark">
 			2006-c-五
 			</a>
@@ -246,23 +265,6 @@ void Delete(LNode *La, LNode *Lb, LNode *Lc) //删除链表A中既存在B又存�
  http://www.acmerblog.com/ancestors-of-a-given-node-6048.html
  /** 1、顺序存储，假设根的存储下标是1 将当前结点的下标连续整除以2，直到1为止， 中间所有得到的商的下标都是其祖先，并且是从其双亲直到根为止。 2、链式存储 （1）使用非递归的后序遍历，当遍历到该结点时，辅助栈中从栈顶到栈底依次为该结点从双亲开始到根为止的所有祖先。 （2）递归实现。 **/ //顺序存储，采用下标关系找出祖先结点 void ancestor(int bt[],int i,int x) { if(bt[i]==x)//满足条件，输出祖先  { while(i!=1) { printf(&#34;%d&#34;,i/2); i/=2; } } else { ancestor(bt,2*i,x); ancestor(bt,2*i+1,x); } } //后序非递归遍历,输出值为x的所有祖先  void afterOrder(BiTree *root,int x) { struct Tree { BiTree *bt; int tag;//1-第一次访问(左孩子)、2-非第一次访问（右孩子）  }; Tree stack[maxSize],top=0;//定义一个栈  Tree p; p.bt=root; p.tag=1;//根结点入栈  while(p!=NULL || top&gt;0)//此处当p==NULL时，继续出栈  { while(p.bt!=NULL) { ++top; stack[top].bt=p; stack[top].tag=1; p.bt=p.bt-&gt;lchild;//指向左孩子  } //添加代码功能START  if(bt-&gt;data==x)//找到x  { printf(&#34;所查结点的所有祖先结点的值为：\n&#34;); for(i=1;i&lt;=top;i++) printf(&#34;%d&#34;,stack[i].
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/2005-d-%E4%BA%8C/" rel="bookmark">
-			2005-d-二
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-07T00:00:00Z">November 07, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6842%E8%80%83%E7%A0%94/" rel="category">东北大学842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		//链表节点 typedef struct LNode { int data;//节点值  struct LNode *next;//指向下一个节点 } LNode; //哈希节点 typedef struct HNode { LNode *first;//链接的第一个指针域 } HNode; //哈希表 typedef struct HashTable { HNode list[N]; }HashTable; int seadel( HashTable *H,int k) { int pos=H(k); LNode *p,*r; p=H-&gt;list[pos]-&gt;first; //判断第一个结点是否是  if(p-&gt;data==k) { H-&gt;list[pos]-&gt;first=p-&gt;next; free(p); } r=p; p=p-&gt;next; //第一个不是  while(p!=NULL) { if(p-&gt;data==k) { r-&gt;next=p-&gt;next; free(p); return 1; }else{ r=p; p=p-&gt;next; } } return 0; } 
-	</div>
 </article>
 </main>
 
@@ -278,11 +280,11 @@ void Delete(LNode *La, LNode *Lb, LNode *Lc) //删除链表A中既存在B又存�
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/llm_token/">大模型token</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E7%91%9E%E5%B9%B8%E6%8A%A2%E6%88%91%E4%B8%80%E5%9D%97%E4%B8%80%E6%AF%9B%E4%B9%9D/">瑞幸抢我一块一毛九</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/llm_embedding/">LLM Embedding</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/tools/">Tools</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/seechat/">SeeChat</a></li>
-			<li class="widget__item"><a class="widget__link" href="/docs/842/">842</a></li>
 		</ul>
 	</div>
 </div>

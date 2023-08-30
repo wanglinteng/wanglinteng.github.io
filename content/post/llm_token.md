@@ -1,3 +1,15 @@
+
+---
+title: 大模型token
+description: 大模型token
+date: 2023-08-30
+categories:
+  - "LLM"
+tags:
+  - "LLM"
+
+---
+
 + token是什么？
   
   + openai计费单位，按照输入token，输出token数量计算费用。
@@ -8,7 +20,7 @@
   
   + 英文
   
-    ![Alt text](image.png)
+    ![Alt text](../img/image.png)
     ```python
     [31373, 644, 338, 534, 1438, 30]
     ```
@@ -16,7 +28,7 @@
   
   + 中文
 
-    ![Alt text](image-1.png)
+    ![Alt text](../img/image-1.png)
 
   + tiktoken
   
@@ -42,7 +54,7 @@
     ```
 
     执行结果如下：
-    ![Alt text](image-5.png)
+    ![Alt text](../img/image-5.png)
 
   + 不同模型对比
   
