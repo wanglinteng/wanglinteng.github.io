@@ -8,26 +8,25 @@
     <language>en-us</language>
     <lastBuildDate>Wed, 30 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="/categories/llm/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>openai chatgpt token 是如何计算的？</title>
+      <title>大模型中的token</title>
       <link>/post/llm_token/</link>
       <pubDate>Wed, 30 Aug 2023 00:00:00 +0000</pubDate>
       
       <guid>/post/llm_token/</guid>
       <description>token是什么？
-  大模型训练、推理本质是数值计算，文字需要转换为数字，通过文字转换得到的数字即为token。
-  openai计费单位，按照输入token，输出token数量计算费用。 计费价格，注意 input token 和 output token价格不同。
+  大模型训练、推理本仍然是数值计算，文本通过分词、转换得到的数字即为token，不同模型采用不同词表得到的token不同。例如 算法工程师 在gpt3模型中对应的token是 [163, 106, 245, 37345, 243, 32432, 98, 163, 101, 233, 30585, 230]
+  openai计费单位，按照输入token，输出token数量计算费用。 注意 input token 和 output token价格一般不同。openai计费价格，千帆大模型平台价格
     token是怎么计算的？
 通过openai提供的在线工具测试英文、中文 token结果如下：
   英文
-TOKEN IDS [31373, 644, 338, 534, 1438, 30] 一个有用的经验法则是，对于普通英语文本，一个token通常对应约4个字符的文本。这大约相当于一个单词的3/4（因此100个token~=75个单词）。
+TOKEN IDS [31373, 644, 338, 534, 1438, 30] openai给出的经验法则是，对于普通英文文本，一个token通常对应约4个字符的文本。这大约相当于一个单词的3/4（因此100个token~=75个单词）。
   中文
-中文分词一个字可能对应多个token，所以可视化后可能出现乱码。
+中文分词一个汉字可能对应多个token。
   tiktoken
 tiktoken是openai开源的token工具，
 1）生成 算法工程师 token id list。
-2）对每一个token还原可以得到token id代表的字节，例如：163 代表 b&#39;\xe7&#39;。
-对比算法工程师 utf-8 字节，可以发现与上述token id转换得到的字节一致。
-import tiktoken text = &amp;#34;算法工程师&amp;#34; enc = tiktoken.encoding_for_model(&amp;#34;text-davinci-003&amp;#34;) token_list = enc.encode(text) print(&amp;#34;token_list&amp;#34;, token_list) for x in token_list: print(x, enc.</description>
+2）对每一个token还原可以得到token id代表的字节，例如：163 代表 b&#39;\xe7&#39;。对比算法工程师 utf-8 字节，可以发现与上述token id转换得到的字节一致。
+import tiktoken text = &amp;#34;算法工程师&amp;#34; enc = tiktoken.</description>
     </item>
     
     <item>
@@ -36,27 +35,23 @@ import tiktoken text = &amp;#34;算法工程师&amp;#34; enc = tiktoken.encoding
       <pubDate>Wed, 30 Aug 2023 00:00:00 +0000</pubDate>
       
       <guid>/post/llm_diff/</guid>
-      <description>LLMs 支持中英文开源大模型   Causal Decoder // 单向注意力
+      <description>LLMs LLaMA、GPT、Transformer 1）我们经常说GPT是transformer右侧部分，其实GPT不包含transformer右侧中间的Multi-Head Attention模块。
+2）LLaMA在GPT基础上对多个组件优化。
+ https://dugas.ch/artificial_curiosity/GPT_architecture.html
+  https://zhuanlan.zhihu.com/p/636784644
+ 支持中英文开源大模型 三种主流架构的注意力模式比较。
+  蓝色: 前缀 token 之间的注意力
+  绿色: 前缀 token 和目标 token 之间的注意力
+  黄色: 目标 token 之间的注意力
+  灰色: 掩码注意力
+    Causal Decoder // 单向注意力
 1）LLaMA
   1.1 LLaMA 从零训练：Baichuan-7B/13B（百川智能）、Qwen-7B（阿里云）
   1.2 LLaMA 增量微调：BELLE-7B/13B（链家）
   2）GPT、ChatGPT、BLOOM
   Prefix Decoder // Encoder双向注意力、Decoder单向注意力、Encoder&amp;amp;Decoder共享参数
 1）ChatGLM-6B、ChatGLM2-6B（清华、智谱）
-  Encoder-Decoder // Encoder双向注意力、Decoder单向注意力
-1） Flan-T5、Transformer
-   https://www.cnblogs.com/heyjjjjj/p/17488423.html
-  https://zhuanlan.zhihu.com/p/626310493
-  https://arxiv.org/pdf/2303.18223.pdf
- LLaMA、GPT、Transformer 1）我们经常说GPT是transformer右侧部分，其实GPT不包含transformer右侧中间的Multi-Head Attention模块。
-2）LLaMA在GPT基础上对多个组件优化。
- https://dugas.ch/artificial_curiosity/GPT_architecture.html
-  https://zhuanlan.zhihu.com/p/636784644
- 多模型对比  https://zhuanlan.zhihu.com/p/651747035
-  https://zhuanlan.zhihu.com/p/644815089
- 组件优化 PE（位置编码） Learned、Relative、RoPE、ALiBi
- https://zhuanlan.zhihu.com/p/650469278
- Activation（激活函数） SwiGLU、ReLU、GeLU、GeGLU</description>
+  Encoder-Decoder // Encoder双向注意力、Decoder单向注意力</description>
     </item>
     
     <item>

@@ -97,8 +97,33 @@
 		</header>
 		<div class="content post__content clearfix">
 			<h2 id="llms">LLMs</h2>
+<h3 id="llamagpttransformer">LLaMA、GPT、Transformer</h3>
+<p>1）我们经常说GPT是transformer右侧部分，其实GPT不包含transformer右侧中间的Multi-Head Attention模块。</p>
+<p>2）LLaMA在GPT基础上对多个组件优化。</p>
+<p><img src="/img/llama_gpt_transformer.png" alt="Alt text"></p>
+<blockquote>
+<p><a href="https://dugas.ch/artificial_curiosity/GPT_architecture.html">https://dugas.ch/artificial_curiosity/GPT_architecture.html</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/636784644">https://zhuanlan.zhihu.com/p/636784644</a></p>
+</blockquote>
 <h3 id="支持中英文开源大模型">支持中英文开源大模型</h3>
 <p><img src="/img/three_llm_mode.png" alt="Alt text"></p>
+<p>三种主流架构的注意力模式比较。</p>
+<ul>
+<li>
+<p>蓝色: 前缀 token 之间的注意力</p>
+</li>
+<li>
+<p>绿色: 前缀 token 和目标 token 之间的注意力</p>
+</li>
+<li>
+<p>黄色: 目标 token 之间的注意力</p>
+</li>
+<li>
+<p>灰色: 掩码注意力</p>
+</li>
+</ul>
 <ol>
 <li>
 <p>Causal Decoder // <code>单向注意力</code></p>
@@ -130,16 +155,6 @@
 </blockquote>
 <blockquote>
 <p><a href="https://arxiv.org/pdf/2303.18223.pdf">https://arxiv.org/pdf/2303.18223.pdf</a></p>
-</blockquote>
-<h3 id="llamagpttransformer">LLaMA、GPT、Transformer</h3>
-<p>1）我们经常说GPT是transformer右侧部分，其实GPT不包含transformer右侧中间的Multi-Head Attention模块。</p>
-<p>2）LLaMA在GPT基础上对多个组件优化。</p>
-<p><img src="/img/llama_gpt_transformer.png" alt="Alt text"></p>
-<blockquote>
-<p><a href="https://dugas.ch/artificial_curiosity/GPT_architecture.html">https://dugas.ch/artificial_curiosity/GPT_architecture.html</a></p>
-</blockquote>
-<blockquote>
-<p><a href="https://zhuanlan.zhihu.com/p/636784644">https://zhuanlan.zhihu.com/p/636784644</a></p>
 </blockquote>
 <h3 id="多模型对比">多模型对比</h3>
 <p><img src="/img/multi_model_diff.png" alt="Alt text"></p>
@@ -209,7 +224,7 @@
 	<div class="pager__item pager__item--next">
 		<a class="pager__link" href="/post/llm_token/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
-			<p class="pager__title">openai chatgpt token 是如何计算的？</p>
+			<p class="pager__title">大模型中的token</p>
 		</a>
 	</div>
 </nav>
@@ -244,7 +259,7 @@
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="/post/llm_token/">openai chatgpt token 是如何计算的？</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/llm_token/">大模型中的token</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/llm_diff/">开源LLM</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E7%91%9E%E5%B9%B8%E6%8A%A2%E6%88%91%E4%B8%80%E5%9D%97%E4%B8%80%E6%AF%9B%E4%B9%9D/">瑞幸抢我一块一毛九</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/llm_embedding/">LLM Embedding</a></li>

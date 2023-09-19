@@ -14,13 +14,13 @@
     <loc>/categories/llm/</loc>
     <lastmod>2023-08-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/post/llm_token/</loc>
-    <lastmod>2023-08-30T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/post/</loc>
     <lastmod>2023-08-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/</loc>
+    <lastmod>2023-08-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/post/llm_token/</loc>
     <lastmod>2023-08-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/post/llm_diff/</loc>

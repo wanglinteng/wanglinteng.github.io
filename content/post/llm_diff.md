@@ -12,9 +12,32 @@ tags:
 
 ## LLMs
 
+
+### LLaMA、GPT、Transformer
+
+   1）我们经常说GPT是transformer右侧部分，其实GPT不包含transformer右侧中间的Multi-Head Attention模块。
+
+   2）LLaMA在GPT基础上对多个组件优化。
+
+ ![Alt text](/img/llama_gpt_transformer.png)
+
+ > https://dugas.ch/artificial_curiosity/GPT_architecture.html
+
+ > https://zhuanlan.zhihu.com/p/636784644
+
 ### 支持中英文开源大模型
 
 ![Alt text](/img/three_llm_mode.png)
+
+三种主流架构的注意力模式比较。
+
+- 蓝色: 前缀 token 之间的注意力
+
+- 绿色: 前缀 token 和目标 token 之间的注意力
+
+- 黄色: 目标 token 之间的注意力
+
+- 灰色: 掩码注意力
    
  1. Causal Decoder // `单向注意力`
    
@@ -41,19 +64,6 @@ tags:
  > https://zhuanlan.zhihu.com/p/626310493
 
  > https://arxiv.org/pdf/2303.18223.pdf
-
-
-### LLaMA、GPT、Transformer
-
-   1）我们经常说GPT是transformer右侧部分，其实GPT不包含transformer右侧中间的Multi-Head Attention模块。
-
-   2）LLaMA在GPT基础上对多个组件优化。
-
- ![Alt text](/img/llama_gpt_transformer.png)
-
- > https://dugas.ch/artificial_curiosity/GPT_architecture.html
-
- > https://zhuanlan.zhihu.com/p/636784644
 
 
 ### 多模型对比
