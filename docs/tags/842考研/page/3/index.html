@@ -91,23 +91,6 @@
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
-			<a href="/post/2006-d-%E5%9B%9B/" rel="bookmark">
-			2006-d-四
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-11T00:00:00Z">November 11, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/842%E8%80%83%E7%A0%94/" rel="category">842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		/** 本题有各种答案，无论是学姐的还是红皮书都是错误的。 正确思想在于采用拓扑排序，也是本题考点。深度优先搜索等无法解决。 **/ typedef struct VNode { char data; int no; int count; ArcNode *firstarc; }VNode;//重新定义邻接表表头结点  int TopSort(AGraph *G) { int i,j ,n=0; int stack[maxSize],top=-1;//定义并初始化栈  ArcNode *p; for(i=1;i&lt;G-&gt;n;++i) { if(G-&gt;adjlist[i].count==0) stack[++top]=i; } while(top!=-1) { i=stack[top--]; ++n;//计数器加1  G-&gt;adjlist[i].no=n;//将整形序号赋值给结点  p=G-&gt;adjlist[i].firstarc; while(p!=NULL) { j=p-&gt;adjvex; --(G-&gt;adjlist[j].count); if(G-&gt;adjlist[j].count==0) stack[++top]=j; p=p-&gt;nextarc; } } if(n==G-&gt;n) return 1; else return 0; } 
-	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
 			<a href="/post/2006-c-%E4%B8%89/" rel="bookmark">
 			2006-c-三
 			</a>
@@ -264,6 +247,23 @@ void Delete(LNode *La, LNode *Lb, LNode *Lc) //删除链表A中既存在B又存�
 	<div class="content list__excerpt post__content clearfix">
 		#include&lt;stdio.h&gt;int main() { int i,temp,reversedNum; for(i=1993; i&gt;0; --i) { temp=i; reversedNum=0; while(temp)//除2取余倒排的逆运算！！！  { reversedNum=reversedNum*2+temp%2; temp/=2; } if(i==reversedNum) { printf(&#34;%d&#34;,i); break; } } return 0; } 
 	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/post/2005-c-%E4%BA%8C-2/" rel="bookmark">
+			2005-c-二-2
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-07T00:00:00Z">November 07, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/842%E8%80%83%E7%A0%94/" rel="category">842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		#include &lt;stdio.h&gt; #define maxSize 100  void delstring(char *pstr1,char *pstr2) { char *p,*q,*t; int len=0;//子串长度  p=pstr1; q=pstr2; while(*q!=&#39;\0&#39;) { ++len;//求子串长度  ++q; } while(*p!=&#39;\0&#39;) { q=pstr2;//每次完成后子串指针复位  while(*p==*q&amp;&amp;*q!=&#39;\0&#39;)//匹配子串  { p++; q++; } if(*q==&#39;\0&#39;) { t=p-len; while(*p!=&#39;\0&#39;) { *(p-len)=*p; p++; } *(p-len)=&#39;\0&#39;; p=t; }else{ ++p; } } printf(&#34;%s&#34;,pstr1); } int main() { char a[maxSize],b[maxSize]; scanf(&#34;%s&#34;,a); scanf(&#34;%s&#34;,b); printf(&#34;%s\n&#34;,a); delstring(a,b); } 
+	</div>
 </article>
 </main>
 
@@ -297,6 +297,8 @@ void Delete(LNode *La, LNode *Lb, LNode *Lc) //删除链表A中既存在B又存�
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/llm/">LLM</a></li>
 			<li class="widget__item">
+				<a class="widget__link" href="/categories/thinking/">Thinking</a></li>
+			<li class="widget__item">
 				<a class="widget__link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></li>
 		</ul>
 	</div>
@@ -312,9 +314,12 @@ void Delete(LNode *La, LNode *Lb, LNode *Lc) //删除链表A中既存在B又存�
 		<a class="widget-taglist__link widget__link btn" href="/tags/llm/" title="LLM">LLM</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/php/" title="php">php</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/semantic-kernel/" title="semantic-kernel">semantic-kernel</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/%E6%97%A5%E5%B8%B8/" title="日常">日常</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E5%BD%A9%E7%A4%BC/" title="彩礼">彩礼</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%E6%9C%A8%E9%A9%AC/" title="木马">木马</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%E7%91%9E%E5%B9%B8/" title="瑞幸">瑞幸</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E7%BB%9F%E6%B2%BB/" title="统治">统治</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E8%80%83%E7%A0%94/" title="考研">考研</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%E8%B0%83%E5%89%82/" title="调剂">调剂</a>
 	</div>
 </div>
 <div class="widget-social widget">
