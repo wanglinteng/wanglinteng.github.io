@@ -13,8 +13,6 @@ My name is Linteng Wang. I’m a Machine Learning Engineer working in NLP, news 
 
 Previously, I was a Machine Learning Intern at Meituan working in Anti-Cheat in the Bike Share Team.
 
-This blog is my little corner of the internet!
-
 ## Education
 
 * Master (Sep 2017 - Jun 2020)
