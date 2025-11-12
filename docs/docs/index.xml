@@ -6,7 +6,16 @@
     <description>Recent content in Documentation on linteng&#39;s little corner</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 07 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="/docs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="/docs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Giffgaff</title>
+      <link>/docs/giffgaff/</link>
+      <pubDate>Wed, 12 Nov 2025 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/giffgaff/</guid>
+      <description>Giffgaff What is it? Giffgaff是英国的一家虚拟运营商，其SIM卡非常适合长期保号使用。最初，Giffgaff仅提供实体SIM卡，后来开始支持将实体卡转换为eSIM或直接购买新的eSIM。不同于其他运营商，Giffgaff不会提供eSIM二维码，而是通过Giffgaff App直接将eSIM配置文件下载到手机中。</description>
+    </item>
+    
     <item>
       <title>Tools</title>
       <link>/docs/tools/</link>

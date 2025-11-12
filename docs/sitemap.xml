@@ -2,10 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/categories/</loc>
-    <lastmod>2023-08-30T00:00:00+00:00</lastmod>
+    <loc>/docs/</loc>
+    <lastmod>2025-11-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/docs/giffgaff/</loc>
+    <lastmod>2025-11-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/</loc>
+    <lastmod>2025-11-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/categories/</loc>
     <lastmod>2023-08-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/llm/</loc>
@@ -34,9 +40,6 @@
   </url><url>
     <loc>/post/%E7%91%9E%E5%B9%B8%E6%8A%A2%E6%88%91%E4%B8%80%E5%9D%97%E4%B8%80%E6%AF%9B%E4%B9%9D/</loc>
     <lastmod>2023-06-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/docs/</loc>
-    <lastmod>2023-06-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/embedding/</loc>
     <lastmod>2023-06-07T00:00:00+00:00</lastmod>
