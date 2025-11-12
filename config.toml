@@ -24,7 +24,7 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
   mainSections = ["post", "docs"]
 
 [Params.style.vars]
-  highlightColor = "#fcc31e" # Override highlight color
+  highlightColor = "#2e9fff" # Override highlight color
 
 [Params.logo]
   subtitle = "Code, Life, and Thoughts" # Logo subtitle
