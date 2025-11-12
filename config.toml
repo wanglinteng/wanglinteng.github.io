@@ -1,5 +1,5 @@
 baseurl = "/"
-title = "LINTENG'S BLOG"
+title = "linteng's little corner"
 languageCode = "en-us"
 paginate = "10" # Number of posts per page
 theme = "mainroad"
@@ -24,7 +24,7 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
   mainSections = ["post", "docs"]
 
 [Params.logo]
-  subtitle = "linteng's little corner of the internet!" # Logo subtitle
+  subtitle = "linteng's code, life and thoughts" # Logo subtitle
 
 [Params.sidebar]
   home = "right"   # Configure layout for home page
