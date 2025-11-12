@@ -23,8 +23,6 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
   post_meta = ["date", "categories"] # Order of post meta information
   mainSections = ["post", "docs"]
 
-[Params.style.vars]
-  highlightColor = "#2e9fff" # Override highlight color
 
 [Params.logo]
   subtitle = "Code, Life, and Thoughts" # Logo subtitle
