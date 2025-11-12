@@ -30,6 +30,8 @@ Previously, I was a Machine Learning Intern at Meituan working in Anti-Cheat in 
 
 ## Publication 
 
+* Patent: A Test Paper Segmentation Algorithm in Complex Scenarios (CN109815948A)
+
 * Examination Paper Text Detection Based on Character Discriminator. Linteng Wang, Xiaoguang Li. International Conference on Digital Image Processing（ICDIP), 2019
 
 * Event Extraction via DMCNN in Open Domain Public Sentiment Information. Zhanghui Wang, Le Sun, Xiaoguang Li, Linteng Wang. International Conference of Pioneering Computer Scientists, Engineers and Educators (ICPCSEE), 2020
