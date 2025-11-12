@@ -36,4 +36,4 @@ This blog is my little corner of the internet!
 
 * Event Extraction via DMCNN in Open Domain Public Sentiment Information. Zhanghui Wang, Le Sun, Xiaoguang Li, Linteng Wang. International Conference of Pioneering Computer Scientists, Engineers and Educators (ICPCSEE), 2020
 
-Feel free to connect with me through [Email](mailto:wanglinteng@outlook.com) or follow me on [Twitter](https://x.com/leuntang).
+Feel free to connect with me through [Email](mailto:wanglinteng@outlook.com) or follow me on [X](https://x.com/leuntang).
