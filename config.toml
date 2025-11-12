@@ -39,5 +39,6 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
 
 [Params.widgets.social]
   cached = false
-  x = "leuntang"
+  twitter = "leuntang"
+  telegram = "leuntang"
   github = "wanglinteng"
