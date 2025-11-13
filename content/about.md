@@ -1,7 +1,7 @@
 ---
 title: About
 date: 2023-05-31T14:00:00.000Z
-authorbox: false
+authorbox: true
 sidebar: false
 pager: false
 menu: main
