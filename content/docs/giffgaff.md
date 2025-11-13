@@ -1,5 +1,5 @@
 ---
-title: Giffgaff
+title: 🇬🇧 Giffgaff 使用与保号全攻略
 description: Common tools.
 date: 2025-11-12
 authorbox: false
@@ -10,8 +10,6 @@ menu:
     name: Giffgaff
     weight: 5
 ---
-
-# 🇬🇧 Giffgaff 使用与保号全攻略
 
 ## 一、Giffgaff 是什么？
 
