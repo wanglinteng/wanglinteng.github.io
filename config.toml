@@ -8,7 +8,7 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
 
 [Author]
   name = "Linteng Wang"
-  bio = "Machine Learning Engineer working in NLP, news recommendation and LLM at Sina Weibo."
+  bio = "Algorithm Engineer working in NLP, Recommendation and LLM at Sina Weibo."
   avatar = "img/avatar.jpeg"
 
 [Params]
