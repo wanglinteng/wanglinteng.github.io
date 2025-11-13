@@ -9,7 +9,7 @@ menu: main
 comments: false
 ---
 
-My name is Linteng Wang. I’m a Machine Learning Engineer working in NLP, news recommendation and LLM at Sina Weibo.
+My name is Linteng Wang. I’m a Algorithm Engineer working in NLP, Recommendation and LLM at Sina Weibo.
 
 Previously, I was a Machine Learning Intern at Meituan working in Anti-Cheat in the Bike Share Team.
 

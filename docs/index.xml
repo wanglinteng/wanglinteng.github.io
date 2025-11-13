@@ -157,7 +157,7 @@ inputs = tokenizer([text], return_tensors=&amp;#34;pt&amp;#34;).to(device) resp 
       <pubDate>Wed, 31 May 2023 14:00:00 +0000</pubDate>
       
       <guid>/about/</guid>
-      <description>My name is Linteng Wang. I’m a Machine Learning Engineer working in NLP, news recommendation and LLM at Sina Weibo.
+      <description>My name is Linteng Wang. I’m a Algorithm Engineer working in NLP, Recommendation and LLM at Sina Weibo.
 Previously, I was a Machine Learning Intern at Meituan working in Anti-Cheat in the Bike Share Team.
 Education   Master (Sep 2017 - Jun 2020)
 Liaoning University - Computer Application Technology
