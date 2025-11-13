@@ -91,6 +91,23 @@
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
+			<a href="/post/1999-c-%E4%BA%94/" rel="bookmark">
+			1999-c-五
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-12-03T00:00:00Z">December 03, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/842%E8%80%83%E7%A0%94/" rel="category">842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		#include &lt;stdio.h&gt;#define maxSize 100 /** 打开方式&#34;wb&#34;（二进制文件）无法换行 &#34;w&#34;可以换行 &#34;wb+&#34;可读可写 **/ int main() { FILE *fin; char name[maxSize]; char age[maxSize]; char sex[maxSize]; char depart[maxSize]; char salary[maxSize]; if((fin=fopen(&#34;file.txt&#34;,&#34;wb+&#34;))==NULL) printf(&#34;open error&#34;); else { fprintf(fin,&#34;%20s&#34;,&#34;王教授&#34;); fprintf(fin,&#34;%20s&#34;,&#34;45&#34;); fprintf(fin,&#34;%20s&#34;,&#34;男&#34;); fprintf(fin,&#34;%20s&#34;,&#34;计算机&#34;); fprintf(fin,&#34;%20s&#34;,&#34;80000&#34;); fseek(fin,-20L,SEEK_END); fscanf(fin,&#34;%20s&#34;,salary); printf(&#34;%s\n&#34;,salary); fseek(fin,-40L,SEEK_END); fscanf(fin,&#34;%20s&#34;,depart); printf(&#34;%s\n&#34;,depart); fseek(fin,-60L,SEEK_END); fscanf(fin,&#34;%20s&#34;,sex); printf(&#34;%s\n&#34;,sex); fseek(fin,-80L,SEEK_END); fscanf(fin,&#34;%20s&#34;,age); printf(&#34;%s\n&#34;,age); fseek(fin,-100L,SEEK_END); fscanf(fin,&#34;%20s&#34;,name); printf(&#34;%s\n&#34;,name); } } 
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
 			<a href="/post/2000-c-7/" rel="bookmark">
 			2000-c-7
 			</a>
@@ -242,23 +259,6 @@
   http://ryanlunar.blog.163.com/blog/static/183577092201241294031508
  关于外部变量作用域
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/2006-c-%E4%BA%94/" rel="bookmark">
-			2006-c-五
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-10T00:00:00Z">November 10, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/842%E8%80%83%E7%A0%94/" rel="category">842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		//优化版 #include &lt;stdio.h&gt;int main() { FILE *fp; int num, numCur, flag = 0; printf(&#34;\nInput a integer: &#34;); scanf(&#34;%d&#34;, &amp;num); //&#34;r+&#34; 以可读写方式打开文件，该文件必须存在。  //&#34;w&#34; 打开只写文件，若文件存在则文件长度清为0，即该文件内容会消失。若文件不存在则建立该文件。  //&#34;a&#34;为追加写、只写  //&#34;a+&#34;为追加写、可读可写  if ((fp = fopen(&#34;a.dat&#34;, &#34;a+&#34;))!=NULL) { while (!feof(fp)) { fscanf(fp, &#34;%d&#34;, &amp;numCur); if (numCur == num)flag = 1; } if (!flag) { fprintf(fp, &#34; %d&#34;, num); //因为要将这个数字写到文件中（相当于计算机input），所以用的是fp1  fclose(fp); } } } /*五.试编写一个程序，从键盘上输入一个整数，在整数文件&#34;a.dat&#34;中查找，要求： 1.若文件&#34;a.dat&#34;不存在，则建立一个新文件&#34;a.dat&#34;，将该整数写入文件； 2.若文件中找到了这个整数，则显示数据存在，否则将该数据写入文件。*/ #include &lt;stdio.h&gt;int main() { FILE *fp1, *fp2; int num, numCur, flag = 0; printf(&#34;\nInput a integer: &#34;); scanf(&#34;%d&#34;, &amp;num); //“r+” 以可读写方式打开文件，该文件必须存在。  //“w” 打开只写文件，若文件存在则文件长度清为0，即该文件内容会消失。若文件不存在则建立该文件。  if ((fp1 = fopen(&#34;a.
-	</div>
 </article>
 </main>
 
@@ -275,11 +275,11 @@
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/llm-qa-100/">大模型100问</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/giffgaff/">🇬🇧 Giffgaff 使用与保号全攻略</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/llm_token/">大模型中的token</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/llm_diff/">开源LLM</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E7%91%9E%E5%B9%B8%E6%8A%A2%E6%88%91%E4%B8%80%E5%9D%97%E4%B8%80%E6%AF%9B%E4%B9%9D/">瑞幸退款bug</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/llm_embedding/">LLM Embedding</a></li>
 		</ul>
 	</div>
 </div>

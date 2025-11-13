@@ -90,6 +90,23 @@
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
+			<a href="/post/2001-c-%E4%B8%89/" rel="bookmark">
+			2001-c-三
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-12-05T00:00:00Z">December 05, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/842%E8%80%83%E7%A0%94/" rel="category">842考研</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		void common(char *str,char *sub) { int i=0,j=0,k=0,max=0; for(i=0;str[i]!=&#39;\0&#39;;++i) { j=0; k=i; while(str[k]==sub[j]) { ++k; ++j; } if(j&gt;max) max=j; } sub[max]=&#39;\0&#39;; printf(&#34;%s&#34;,sub); } int main() { char str1[40]=&#34;123456123456vhgaaasdd&#34;; char str2[20]=&#34;123456vhgvhg&#34;; common(str1,str2); } 
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
 			<a href="/post/2001-c-%E4%BA%94/" rel="bookmark">
 			2001-c-五
 			</a>
@@ -241,23 +258,6 @@
 	<div class="content list__excerpt post__content clearfix">
 		#include &lt;stdio.h&gt;#define maxSize 100  int main() { int i=1,j,k,l,d;//循环变量  int n;//平方数  int m=0;//数组下标  int arr[maxSize];//存储平方数集合  int num[10];//暂存数组  int flag=0;//标记  while(1)//生成三位平方数  { n=i*i; if(n&gt;99&amp;&amp;n&lt;1000) arr[++m]=n;//数组下标从1开始  if(n&gt;1000) break; i++; } for(i=1;i&lt;=m;i++)//判断构成三组数不重复  { num[1]= arr[i] / 1 % 10; num[2]= arr[i] / 10 % 10; num[3]= arr[i] / 100 % 10; for(j=i+1;j&lt;=m;j++) { num[4]= arr[j] / 1 % 10; num[5]= arr[j] / 10 % 10; num[6]= arr[j] / 100 % 10; for(k=j+1;k&lt;=m;k++) { num[7]= arr[k] / 1 % 10; num[8]= arr[k] / 10 % 10; num[9]= arr[k] / 100 % 10; flag=0;//重复标记初始化，每次都需初始化  //判断是否重复  for(l=1;l&lt;=9;l++) { for(d=l+1;d&lt;=9;d++) { if(num[l]==num[d]) flag=1; } } if(flag==0) //如果不重复  { printf(&#34;%d %d %d\n&#34;,arr[i],arr[j],arr[k]); } } } } } 
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/post/2006-d-%E5%9B%9B/" rel="bookmark">
-			2006-d-四
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2016-11-11T00:00:00Z">November 11, 2016</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/842%E8%80%83%E7%A0%94/" rel="category">842考研</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		/** 本题有各种答案，无论是学姐的还是红皮书都是错误的。 正确思想在于采用拓扑排序，也是本题考点。深度优先搜索等无法解决。 **/ typedef struct VNode { char data; int no; int count; ArcNode *firstarc; }VNode;//重新定义邻接表表头结点  int TopSort(AGraph *G) { int i,j ,n=0; int stack[maxSize],top=-1;//定义并初始化栈  ArcNode *p; for(i=1;i&lt;G-&gt;n;++i) { if(G-&gt;adjlist[i].count==0) stack[++top]=i; } while(top!=-1) { i=stack[top--]; ++n;//计数器加1  G-&gt;adjlist[i].no=n;//将整形序号赋值给结点  p=G-&gt;adjlist[i].firstarc; while(p!=NULL) { j=p-&gt;adjvex; --(G-&gt;adjlist[j].count); if(G-&gt;adjlist[j].count==0) stack[++top]=j; p=p-&gt;nextarc; } } if(n==G-&gt;n) return 1; else return 0; } 
-	</div>
 </article>
 </main>
 
@@ -273,11 +273,11 @@
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/llm-qa-100/">大模型100问</a></li>
 			<li class="widget__item"><a class="widget__link" href="/docs/giffgaff/">🇬🇧 Giffgaff 使用与保号全攻略</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/llm_token/">大模型中的token</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/llm_diff/">开源LLM</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E7%91%9E%E5%B9%B8%E6%8A%A2%E6%88%91%E4%B8%80%E5%9D%97%E4%B8%80%E6%AF%9B%E4%B9%9D/">瑞幸退款bug</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/llm_embedding/">LLM Embedding</a></li>
 		</ul>
 	</div>
 </div>
