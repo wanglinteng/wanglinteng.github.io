@@ -22,6 +22,7 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
   twitter_cards = true # Enable Twitter Cards if true
   post_meta = ["date", "categories"] # Order of post meta information
   mainSections = ["post", "docs"]
+  copyright = "Linteng"
 
 
 [Params.logo]
