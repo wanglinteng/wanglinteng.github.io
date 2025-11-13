@@ -9,9 +9,11 @@ menu: main
 comments: false
 ---
 
-My name is Linteng Wang. I’m a Algorithm Engineer working in NLP, Recommendation and LLM at Sina Weibo.
+Hi, I’m Linteng Wang, an Algorithm Engineer at Sina Weibo, specializing in NLP, Recommendation Systems, and Large Language Models.
 
-Previously, I was a Machine Learning Intern at Meituan working in Anti-Cheat in the Bike Share Team.
+I joined Sina Weibo in December 2019 as an intern and became a full-time engineer in July 2020, contributing to various AI-driven features and recommendation algorithms.
+
+Previously, I worked as a Machine Learning Intern at Meituan, focusing on Anti-Cheat solutions for Bike Sharing.
 
 ## Education
 
@@ -28,7 +30,7 @@ Previously, I was a Machine Learning Intern at Meituan working in Anti-Cheat in 
   Penglai No.1 Middle School Of Shandong
 
 
-## Publication 
+## Publications & Patents 
 
 * Patent: A Test Paper Segmentation Algorithm in Complex Scenarios (CN109815948A)
 
