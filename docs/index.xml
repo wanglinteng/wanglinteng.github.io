@@ -13,7 +13,7 @@
       <pubDate>Thu, 13 Nov 2025 00:00:00 +0000</pubDate>
       
       <guid>/post/llm-qa-100/</guid>
-      <description> 讲一下KV cache，GQA的思想是什么？ （字节）  </description>
+      <description> 讲一下KV cache，GQA的思想是什么？ ## 字节 讲一下FlashAttention的思想和做法？ 了解过哪些模型训练推理优化的方法（Deepspeed、数据并行、张量并行、流水线并行）  </description>
     </item>
     
     <item>
